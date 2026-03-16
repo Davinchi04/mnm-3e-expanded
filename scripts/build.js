@@ -2,6 +2,9 @@ const fs = require('fs-extra');
 const csv = require('csv-parser');
 const path = require('path');
 
+const EXTRAS = require('./extras');
+const FLAWS = require('./flaws');
+
 // M&M 3e French System Translation Mappings
 const translationMap = {
   type: {
@@ -78,24 +81,52 @@ async function build() {
     const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
     const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
 
+    const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
+    const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
+
+    const extrasObject = {};
+    if (extrasText) {
+      const extraNames = extrasText.split(',').map(e => e.trim());
+      let count = 1;
+      for (const extraName of extraNames) {
+        if (EXTRAS[extraName]) {
+          extrasObject[count] = EXTRAS[extraName];
+          count++;
+        }
+      }
+    }
+
+    const flawsObject = {};
+    if (flawsText) {
+      const flawNames = flawsText.split(',').map(f => f.trim());
+      let count = 1;
+      for (const flawName of flawNames) {
+        if (FLAWS[flawName]) {
+          flawsObject[count] = FLAWS[flawName];
+          count++;
+        }
+      }
+    }
+
     const foundryItem = {
       name: name,
       type: translationMap.type[type] || 'pouvoir',
       img: `systems/mutants-and-masterminds-3e/assets/icons/${translationMap.type[type] || 'pouvoir'}.svg`,
       system: {
-        activate: false, // Set to false as per blueprint
+        activate: false,
         special: translationMap.action[action] || 'simple',
-        type: 'generaux', // Set to 'generaux' as per blueprint
+        type: 'generaux',
         action: translationMap.action[action] || 'simple',
         portee: translationMap.range[range] || 'contact',
         duree: translationMap.duration[duration] || 'instantane',
         effets: fullDescription,
         notes: row.Description || row.description || row.DESCRIPTION || '',
+        extras: extrasObject,
+        defauts: flawsObject,
         cout: {
           rang: parseInt(row.Rank || row.rank || row.RANK) || 0,
           parrang: parseInt(row.Cost || row.cost || row.COST) || 1,
           total: (parseInt(row.Rank || row.rank || row.RANK) || 0) * (parseInt(row.Cost || row.cost || row.COST) || 1),
-          // Add other cost fields from blueprint if needed, initialized to 0
           rangDyn: 0,
           rangDynMax: 0,
           divers: 0,
