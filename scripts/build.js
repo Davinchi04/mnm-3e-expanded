@@ -20,13 +20,13 @@ const translationMap = {
   range: {
     'personal': 'personnelle',
     'close': 'contact',
-    'ranged': 'a distance',
+    'ranged': 'distance', // Corrected value
     'perception': 'perception',
     'rank': 'rang'
   },
   duration: {
     'instant': 'instantane',
-    'sustained': 'maintenu',
+    'sustained': 'prolonge', // Corrected value
     'continuous': 'continu',
     'concentration': 'concentration',
     'permanent': 'permanent'
@@ -83,18 +83,26 @@ async function build() {
       type: translationMap.type[type] || 'pouvoir',
       img: `systems/mutants-and-masterminds-3e/assets/icons/${translationMap.type[type] || 'pouvoir'}.svg`,
       system: {
-        activate: true,
-        special: translationMap.action[action] || action,
-        type: 'attaque',
-        action: translationMap.action[action] || action,
-        portee: translationMap.range[range] || range,
-        duree: translationMap.duration[duration] || duration,
+        activate: false, // Set to false as per blueprint
+        special: translationMap.action[action] || 'simple',
+        type: 'generaux', // Set to 'generaux' as per blueprint
+        action: translationMap.action[action] || 'simple',
+        portee: translationMap.range[range] || 'contact',
+        duree: translationMap.duration[duration] || 'instantane',
         effets: fullDescription,
         notes: row.Description || row.description || row.DESCRIPTION || '',
         cout: {
           rang: parseInt(row.Rank || row.rank || row.RANK) || 0,
           parrang: parseInt(row.Cost || row.cost || row.COST) || 1,
-          total: (parseInt(row.Rank || row.rank || row.RANK) || 0) * (parseInt(row.Cost || row.cost || row.COST) || 1)
+          total: (parseInt(row.Rank || row.rank || row.RANK) || 0) * (parseInt(row.Cost || row.cost || row.COST) || 1),
+          // Add other cost fields from blueprint if needed, initialized to 0
+          rangDyn: 0,
+          rangDynMax: 0,
+          divers: 0,
+          modrang: 0,
+          modfixe: 0,
+          totalTheorique: 0,
+          parrangtotal: "0"
         }
       },
       _id: Math.random().toString(36).substring(2, 18)

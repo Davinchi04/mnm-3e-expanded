@@ -1,0 +1,58 @@
+{
+  "folder": null,
+  "name": "Blueprint",
+  "type": "pouvoir",
+  "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+  "system": {
+    "activate": false,
+    "special": "standard",
+    "type": "generaux",
+    "action": "simple",
+    "portee": "distance",
+    "duree": "prolonge",
+    "effetsprincipaux": "",
+    "effets": "",
+    "notes": "",
+    "link": "",
+    "descripteurs": {},
+    "extras": {},
+    "defauts": {},
+    "effectsVarianteSelected": "",
+    "listEffectsVariantes": {},
+    "edit": false,
+    "cout": {
+      "rangDyn": 0,
+      "rangDynMax": 0,
+      "rang": 0,
+      "parrang": 0,
+      "divers": 0,
+      "modrang": 0,
+      "modfixe": 0,
+      "total": 0,
+      "totalTheorique": 0,
+      "parrangtotal": "0"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Compendium.world.powers.Item.1gDk7qP1JIA2ItW1",
+    "duplicateSource": null,
+    "exportSource": {
+      "worldId": "mandm",
+      "uuid": "Item.PudvX41ZDIoI37Dx",
+      "coreVersion": "13.350",
+      "systemId": "mutants-and-masterminds-3e",
+      "systemVersion": "1.39.13"
+    },
+    "coreVersion": "13.350",
+    "systemId": "mutants-and-masterminds-3e",
+    "systemVersion": "1.39.13",
+    "createdTime": 1773635566700,
+    "modifiedTime": 1773635566700,
+    "lastModifiedBy": "fX1RCZ8V9Lfz2Nbd"
+  },
+  "ownership": {
+    "default": 0
+  }
+}
