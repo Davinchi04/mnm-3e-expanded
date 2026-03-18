@@ -2,8 +2,8 @@
   "id": "mnm-3e-expanded",
   "title": "M&M 3e Expanded",
   "description": "A comprehensive library of Powers, Advantages, and Items for Mutants & Masterminds 3e.",
-  "version": "0.2.0",
-  "author": "Alex",
+  "version": "0.2.1",
+  "author": "Davinchi",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
