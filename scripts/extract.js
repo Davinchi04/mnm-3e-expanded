@@ -33,19 +33,27 @@ async function extract() {
 
     if (startIndex !== -1) {
       // Find the "End" by looking for the next power or a reasonable limit
-      // For this simple version, we'll just take 3000 characters
-      let powerText = text.substring(startIndex, startIndex + 3000).trim();
+      let powerText = text.substring(startIndex, startIndex + 5000).trim();
       
-      // Clean text
-      powerText = powerText.replace(/\s+/g, ' ');
+      // Split the text into main description, Extras, and Flaws
+      const extrasSplit = powerText.split(/\bEXTRAS\b/i);
+      let mainText = extrasSplit[0];
+      let extrasBlock = extrasSplit[1] || '';
+      
+      const flawsSplit = extrasBlock.split(/\bFLAWS\b/i);
+      extrasBlock = flawsSplit[0];
+      let flawsBlock = flawsSplit[1] || '';
 
-      // Extract Stats
+      // Clean text
+      mainText = mainText.replace(/\s+/g, ' ').trim();
+      
+      // Extract Stats from the mainText only
       let action = 'Standard';
       let range = 'Personal';
       let duration = 'Instant';
       let cost = 1;
 
-      const lowerText = powerText.toLowerCase();
+      const lowerText = mainText.toLowerCase();
       if (lowerText.includes('action: standard')) action = 'Standard';
       else if (lowerText.includes('action: move')) action = 'Move';
       else if (lowerText.includes('action: free')) action = 'Free';
@@ -59,8 +67,22 @@ async function extract() {
       else if (lowerText.includes('duration: sustained')) duration = 'Sustained';
       else if (lowerText.includes('duration: continuous')) duration = 'Continuous';
 
-      const costMatch = powerText.match(/Cost: (\d+) point/i);
+      const costMatch = mainText.match(/Cost: (\d+) point/i);
       if (costMatch) cost = parseInt(costMatch[1]);
+
+      // Identify modifier names (best effort - usually capitalized words followed by a colon)
+      const extractModifierNames = (block) => {
+        const names = [];
+        const regex = /\b([A-Z][a-z]+(?:\s[A-Z][a-z]+)*):/g;
+        let match;
+        while ((match = regex.exec(block)) !== null) {
+          names.push(match[1]);
+        }
+        return names.join(', ');
+      };
+
+      const extrasNames = extractModifierNames(extrasBlock);
+      const flawsNames = extractModifierNames(flawsBlock);
 
       extractedPowers.push({
         Name: powerName.charAt(0) + powerName.slice(1).toLowerCase(),
@@ -70,8 +92,10 @@ async function extract() {
         Action: action,
         Range: range,
         Duration: duration,
-        Description: powerText.substring(0, 1000),
-        Mechanics: powerText.substring(1000)
+        Description: mainText.substring(0, 500),
+        Mechanics: mainText.substring(500),
+        Extras: extrasNames,
+        Flaws: flawsNames
       });
     }
   }
