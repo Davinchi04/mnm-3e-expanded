@@ -71,28 +71,35 @@ async function buildPowers() {
     const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
     const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
 
+    // PROCESS EXTRAS (Smart Lookup)
     const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
-    const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
-
     const extrasObject = {};
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
       let count = 1;
       for (const extraName of extraNames) {
-        if (EXTRAS[extraName]) {
-          extrasObject[count] = JSON.parse(JSON.stringify(EXTRAS[extraName]));
+        // Try to find the extra in our master list (Case-Insensitive)
+        const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
+        if (masterExtra) {
+          extrasObject[count] = JSON.parse(JSON.stringify(EXTRAS[masterExtra]));
+          extrasObject[count].details = true; // Ensure it shows up on the sheet
           count++;
         }
       }
     }
 
+    // PROCESS FLAWS (Smart Lookup)
+    const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
     const flawsObject = {};
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
       let count = 1;
       for (const flawName of flawNames) {
-        if (FLAWS[flawName]) {
-          flawsObject[count] = JSON.parse(JSON.stringify(FLAWS[flawName]));
+        // Try to find the flaw in our master list (Case-Insensitive)
+        const masterFlaw = Object.keys(FLAWS).find(k => k.toLowerCase() === flawName.toLowerCase());
+        if (masterFlaw) {
+          flawsObject[count] = JSON.parse(JSON.stringify(FLAWS[masterFlaw]));
+          flawsObject[count].details = true; // Ensure it shows up on the sheet
           count++;
         }
       }
@@ -103,7 +110,7 @@ async function buildPowers() {
       type: translationMap.type[type] || 'pouvoir',
       img: `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       system: {
-        activate: false,
+        activate: true,
         special: translationMap.action[action] || 'simple',
         type: 'generaux',
         action: translationMap.action[action] || 'simple',
@@ -114,9 +121,9 @@ async function buildPowers() {
         extras: extrasObject,
         defauts: flawsObject,
         cout: {
-          rang: parseInt(row.Rank || row.rank || row.RANK) || 0,
+          rang: parseInt(row.Rank || row.rank || row.RANK) || 1, // Default to Rank 1
           parrang: parseInt(row.Cost || row.cost || row.COST) || 1,
-          total: (parseInt(row.Rank || row.rank || row.RANK) || 0) * (parseInt(row.Cost || row.cost || row.COST) || 1),
+          total: 0, // Foundry will calculate this automatically if modifiers are present
           rangDyn: 0, rangDynMax: 0, divers: 0, modrang: 0, modfixe: 0, totalTheorique: 0, parrangtotal: "0"
         }
       },
