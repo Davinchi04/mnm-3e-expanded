@@ -121,6 +121,15 @@ async function buildPowers() {
       }
     }
 
+    // DYNAMIC POWER TYPE (Fixes transfer issue)
+    let systemType = 'generaux';
+    const lowerName = name.toLowerCase();
+    const attackPowers = ['blast', 'affliction', 'damage', 'dazzle', 'nullify', 'mind control', 'strike', 'trip', 'weaken'];
+    
+    if (attackPowers.some(p => lowerName.includes(p)) || row.Power.toLowerCase() === 'attack') {
+      systemType = 'attaque';
+    }
+
     const powerItem = {
       ...getBaseMetadata(),
       name: name,
@@ -129,7 +138,7 @@ async function buildPowers() {
       system: {
         activate: true,
         special: translationMap.action[action] || 'simple',
-        type: 'generaux',
+        type: systemType, // Dynamically set to 'attaque' or 'generaux'
         action: translationMap.action[action] || 'simple',
         portee: translationMap.range[range] || 'contact',
         duree: translationMap.duration[duration] || 'instantane',
