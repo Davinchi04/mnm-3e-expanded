@@ -67,69 +67,6 @@ async function buildPowers() {
 
 Mechanics: ${cleanMech || ''}`;
 
-    const action = (row.Action || row.action || row.ACTION || 'standard').trim().toLowerCase();
-    const range = (row.Range || row.range || row.RANGE || 'close').trim().toLowerCase();
-    const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
-    const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
-
-    const baseRank = parseInt(row.Rank || row.rank || row.RANK) || 1;
-    const baseCostPerRank = parseInt(row.Cost || row.cost || row.COST) || 1;
-    let modCostPerRank = 0;
-    let flatCost = 0;
-    let extrasList = [];
-    let flawsList = [];
-
-    const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
-    if (extrasText) {
-      const extraNames = extrasText.split(',').map(e => e.trim());
-      for (const extraName of extraNames) {
-        const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
-        if (masterExtra) {
-          const mod = EXTRAS[masterExtra];
-          if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
-          if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
-          extrasList.push(`${mod.name} (+${mod.data.cout.value})`);
-        }
-      }
-    }
-
-    const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
-    if (flawsText) {
-      const flawNames = flawsText.split(',').map(f => f.trim());
-      for (const flawName of flawNames) {
-        const masterFlaw = Object.keys(FLAWS).find(k => k.toLowerCase() === flawName.toLowerCase());
-        if (masterFlaw) {
-          const mod = FLAWS[masterFlaw];
-          modCostPerRank += mod.data.cout.rang ? mod.data.cout.value : 0;
-          flatCost += mod.data.cout.fixe ? mod.data.cout.value : 0;
-          flawsList.push(`${mod.name} (${mod.data.cout.value})`);
-        }
-      }
-    }
-
-    const finalCostPerRank = Math.max(1, baseCostPerRank + modCostPerRank);
-    const finalTotal = Math.max(1, (finalCostPerRank * baseRank) + flatCost);
-
-    let recipe = `[ POWER SETUP RECIPE ]
-`;
-    recipe += `* Rank: Set Rank to ${baseRank}
-`;
-    recipe += `* Action: Select ${action.toUpperCase()}
-`;
-    recipe += `* Range: Select ${range.toUpperCase()}
-`;
-    recipe += `* Duration: Select ${duration.toUpperCase()}
-`;
-    recipe += `* PP/Rank Ratio: Select ${finalCostPerRank}:1
-`;
-    if (extrasList.length) recipe += `* Extras to Include: ${extrasList.join(', ')}
-`;
-    if (flawsList.length) recipe += `* Flaws to Include: ${flawsList.join(', ')}
-`;
-    recipe += `TARGET TOTAL COST: ${finalTotal} PP
---------------------
-`;
-
     let systemType = 'generaux';
     const lowerName = name.toLowerCase();
     const attackPowers = ['blast', 'affliction', 'damage', 'dazzle', 'nullify', 'mind control', 'strike', 'trip', 'weaken'];
@@ -144,7 +81,7 @@ Mechanics: ${cleanMech || ''}`;
       "img": `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       "system": {
         "type": systemType,
-        "description": recipe + fullDescription
+        "description": fullDescription
       }
     };
     items.push(JSON.stringify(powerItem));
