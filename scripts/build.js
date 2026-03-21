@@ -240,5 +240,4 @@ async function main() {
   await buildModifiers(EXTRAS, 'extras.db', 'extra');
   await buildModifiers(FLAWS, 'flaws.db', 'defaut');
 }
-
 main().catch(err => console.error(err));
