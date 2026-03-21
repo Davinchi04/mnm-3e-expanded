@@ -189,8 +189,7 @@ async function buildEquipment() {
       allItems.push(JSON.stringify(gearItem));
     }
   }
-  await fs.writeFile(outFile, allItems.join('
-'));
+  await fs.writeFile(outFile, allItems.join('\n'));
 }
 
 async function buildModifiers(dataMap, fileName, subType) {
