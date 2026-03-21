@@ -69,14 +69,15 @@ async function buildPowers() {
     const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
     const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
 
-    // DYNAMIC COST CALCULATION (The "Grand Formula")
+    // DYNAMIC COST CALCULATION (For the Summary)
     const baseRank = parseInt(row.Rank || row.rank || row.RANK) || 1;
     const baseCostPerRank = parseInt(row.Cost || row.cost || row.COST) || 1;
-    
     let modCostPerRank = 0;
     let flatCost = 0;
+    let extrasList = [];
+    let flawsList = [];
 
-    const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
+    // Process Extras for Summary
     const extrasObject = {};
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
@@ -87,19 +88,17 @@ async function buildPowers() {
           const mod = EXTRAS[masterExtra];
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
+          extrasList.push(`${mod.name} (${mod.data.cout.rang ? '+' : 'Flat '}${mod.data.cout.value})`);
           extrasObject[count] = {
             name: mod.name,
-            data: {
-              description: mod.data.description,
-              cout: mod.data.cout
-            }
+            data: { description: mod.data.description, cout: mod.data.cout }
           };
           count++;
         }
       }
     }
 
-    const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
+    // Process Flaws for Summary
     const flawsObject = {};
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
@@ -110,33 +109,33 @@ async function buildPowers() {
           const mod = FLAWS[masterFlaw];
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
+          flawsList.push(`${mod.name} (${mod.data.cout.rang ? '' : 'Flat '}${mod.data.cout.value})`);
           flawsObject[count] = {
             name: mod.name,
-            data: {
-              description: mod.data.description,
-              cout: mod.data.cout
-            }
+            data: { description: mod.data.description, cout: mod.data.cout }
           };
           count++;
         }
       }
     }
 
-    // Formula: ((Base + Modifiers) * Rank) + Flat
     const finalCostPerRank = Math.max(1, baseCostPerRank + modCostPerRank);
     const finalTotal = (finalCostPerRank * baseRank) + flatCost;
 
-    let systemType = 'generaux';
-    const lowerName = name.toLowerCase();
-    const attackPowers = ['blast', 'affliction', 'damage', 'dazzle', 'nullify', 'mind control', 'strike', 'trip', 'weaken'];
-    if (attackPowers.some(p => lowerName.includes(p)) || (row.Power && row.Power.toLowerCase() === 'attack')) {
-      systemType = 'attaque';
-    }
+    // BUILD MECHANICAL SUMMARY
+    let summary = `<div style="background: #f0f0f0; padding: 10px; border: 1px solid #ccc; margin-bottom: 10px;">`;
+    summary += `<strong>[ MECHANICAL SUMMARY ]</strong><br/>`;
+    summary += `* <strong>Base Cost:</strong> ${baseCostPerRank} PP / Rank<br/>`;
+    summary += `* <strong>Current Rank:</strong> ${baseRank}<br/>`;
+    if (extrasList.length) summary += `* <strong>Extras:</strong> ${extrasList.join(', ')}<br/>`;
+    if (flawsList.length) summary += `* <strong>Flaws:</strong> ${flawsList.join(', ')}<br/>`;
+    summary += `<hr/><strong>TOTAL POINT COST: ${finalTotal} PP</strong>`;
+    summary += `</div>`;
 
     const powerItem = {
       "_id": Math.random().toString(36).substring(2, 18),
       "name": name,
-      "type": translationMap.type[type] || 'pouvoir',
+      "type": "pouvoir",
       "img": `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       "system": {
         "activate": true,
@@ -145,18 +144,14 @@ async function buildPowers() {
         "action": translationMap.action[action] || 'simple',
         "portee": translationMap.range[range] || 'contact',
         "duree": translationMap.duration[duration] || 'instantane',
-        "effets": fullDescription,
+        "description": summary + fullDescription,
         "notes": row.Description || '',
         "extras": extrasObject,
         "defauts": flawsObject,
         "cout": {
-          "rang": baseRank,
-          "parrang": baseCostPerRank,
-          "total": finalTotal
+          "total": 1 // Keep minimalist to avoid rejection
         }
-      },
-      "effects": [],
-      "flags": {}
+      }
     };
     items.push(JSON.stringify(powerItem));
   }
