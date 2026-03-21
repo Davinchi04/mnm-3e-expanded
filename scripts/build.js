@@ -113,7 +113,16 @@ async function buildPowers() {
         "type": systemType,
         "description": recipe + fullDescription,
         "cout": {
-          "total": 1
+          "rang": baseRank,
+          "parrang": baseCostPerRank,
+          "total": finalTotal,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": modCostPerRank,
+          "modfixe": flatCost,
+          "totalTheorique": finalTotal,
+          "parrangtotal": "0"
         }
       }
     };
