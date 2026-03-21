@@ -69,6 +69,9 @@ async function buildPowers() {
     const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
     const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
 
+    const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
+    const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
+
     // DYNAMIC COST CALCULATION (For the Summary)
     const baseRank = parseInt(row.Rank || row.rank || row.RANK) || 1;
     const baseCostPerRank = parseInt(row.Cost || row.cost || row.COST) || 1;
@@ -77,7 +80,7 @@ async function buildPowers() {
     let extrasList = [];
     let flawsList = [];
 
-    // Process Extras for Summary
+    // PROCESS EXTRAS
     const extrasObject = {};
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
@@ -98,7 +101,7 @@ async function buildPowers() {
       }
     }
 
-    // Process Flaws for Summary
+    // PROCESS FLAWS
     const flawsObject = {};
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
@@ -123,7 +126,7 @@ async function buildPowers() {
     const finalTotal = (finalCostPerRank * baseRank) + flatCost;
 
     // BUILD MECHANICAL SUMMARY
-    let summary = `<div style="background: #f0f0f0; padding: 10px; border: 1px solid #ccc; margin-bottom: 10px;">`;
+    let summary = `<div style="background: #f0f0f0; padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; color: #333;">`;
     summary += `<strong>[ MECHANICAL SUMMARY ]</strong><br/>`;
     summary += `* <strong>Base Cost:</strong> ${baseCostPerRank} PP / Rank<br/>`;
     summary += `* <strong>Current Rank:</strong> ${baseRank}<br/>`;
@@ -131,6 +134,13 @@ async function buildPowers() {
     if (flawsList.length) summary += `* <strong>Flaws:</strong> ${flawsList.join(', ')}<br/>`;
     summary += `<hr/><strong>TOTAL POINT COST: ${finalTotal} PP</strong>`;
     summary += `</div>`;
+
+    let systemType = 'generaux';
+    const lowerName = name.toLowerCase();
+    const attackPowers = ['blast', 'affliction', 'damage', 'dazzle', 'nullify', 'mind control', 'strike', 'trip', 'weaken'];
+    if (attackPowers.some(p => lowerName.includes(p)) || (row.Power && row.Power.toLowerCase() === 'attack')) {
+      systemType = 'attaque';
+    }
 
     const powerItem = {
       "_id": Math.random().toString(36).substring(2, 18),
@@ -149,9 +159,11 @@ async function buildPowers() {
         "extras": extrasObject,
         "defauts": flawsObject,
         "cout": {
-          "total": 1 // Keep minimalist to avoid rejection
+          "total": 1
         }
-      }
+      },
+      "effects": [],
+      "flags": {}
     };
     items.push(JSON.stringify(powerItem));
   }
