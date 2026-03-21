@@ -10,27 +10,6 @@ const translationMap = {
   type: {
     'power': 'pouvoir',
     'advantage': 'talent'
-  },
-  action: {
-    'standard': 'simple',
-    'move': 'mouvement',
-    'free': 'libre',
-    'reaction': 'reaction',
-    'none': 'aucune'
-  },
-  range: {
-    'personal': 'personnelle',
-    'close': 'contact',
-    'ranged': 'distance',
-    'perception': 'perception',
-    'rank': 'rang'
-  },
-  duration: {
-    'instant': 'instantane',
-    'sustained': 'prolonge',
-    'continuous': 'continu',
-    'concentration': 'concentration',
-    'permanent': 'permanent'
   }
 };
 
@@ -64,10 +43,9 @@ async function buildPowers() {
     let fullDescription = `<h3>Description</h3><p>${row.Description || row.description || row.DESCRIPTION || ''}</p>`;
     if (row.Mechanics || row.mechanics || row.MECHANICS) fullDescription += `<h3>Mechanics</h3><p>${row.Mechanics || row.mechanics || row.MECHANICS}</p>`;
 
-    const action = (row.Action || row.action || row.ACTION || 'standard').trim().toLowerCase();
-    const range = (row.Range || row.range || row.RANGE || 'close').trim().toLowerCase();
-    const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
-    const type = (row.Power || row.power || row.POWER || 'power').trim().toLowerCase();
+    const action = (row.Action || row.action || row.ACTION || 'standard').trim();
+    const range = (row.Range || row.range || row.RANGE || 'close').trim();
+    const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim();
 
     // DYNAMIC COST CALCULATION (For the Summary)
     const baseRank = parseInt(row.Rank || row.rank || row.RANK) || 1;
@@ -77,44 +55,30 @@ async function buildPowers() {
     let extrasList = [];
     let flawsList = [];
 
-    const extrasObject = {};
     const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
-      let count = 1;
       for (const extraName of extraNames) {
         const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
         if (masterExtra) {
           const mod = EXTRAS[masterExtra];
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
-          extrasList.push(`${mod.name} (${mod.data.cout.rang ? '+' : 'Flat '}${mod.data.cout.value})`);
-          extrasObject[count] = {
-            name: mod.name,
-            data: { description: mod.data.description, cout: mod.data.cout }
-          };
-          count++;
+          extrasList.push(`${mod.name} (+${mod.data.cout.value})`);
         }
       }
     }
 
-    const flawsObject = {};
     const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
-      let count = 1;
       for (const flawName of flawNames) {
         const masterFlaw = Object.keys(FLAWS).find(k => k.toLowerCase() === flawName.toLowerCase());
         if (masterFlaw) {
           const mod = FLAWS[masterFlaw];
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
-          flawsList.push(`${mod.name} (${mod.data.cout.rang ? '' : 'Flat '}${mod.data.cout.value})`);
-          flawsObject[count] = {
-            name: mod.name,
-            data: { description: mod.data.description, cout: mod.data.cout }
-          };
-          count++;
+          flawsList.push(`${mod.name} (${mod.data.cout.value})`);
         }
       }
     }
@@ -122,15 +86,20 @@ async function buildPowers() {
     const finalCostPerRank = Math.max(1, baseCostPerRank + modCostPerRank);
     const finalTotal = (finalCostPerRank * baseRank) + flatCost;
 
-    // BUILD MECHANICAL SUMMARY (HTML)
-    let summary = `<div style="background: #f0f0f0; padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; color: #333; font-family: sans-serif;">`;
-    summary += `<strong style="color: #d00;">[ MECHANICAL SUMMARY ]</strong><br/>`;
-    summary += `* <strong>Base Cost:</strong> ${baseCostPerRank} PP / Rank<br/>`;
-    summary += `* <strong>Recommended Rank:</strong> ${baseRank}<br/>`;
-    if (extrasList.length) summary += `* <strong>Extras:</strong> ${extrasList.join(', ')}<br/>`;
-    if (flawsList.length) summary += `* <strong>Flaws:</strong> ${flawsList.join(', ')}<br/>`;
-    summary += `<hr/><strong>TARGET TOTAL COST: ${finalTotal} PP</strong>`;
-    summary += `</div>`;
+    // BUILD FINAL RECIPE SUMMARY (HTML)
+    let recipe = `<div style="background: #efefff; padding: 12px; border: 2px solid #4a4a8a; border-radius: 5px; margin-bottom: 15px; font-family: sans-serif; color: #111;">`;
+    recipe += `<strong style="font-size: 1.1em; color: #2a2a6a;">📜 [ POWER SETUP RECIPE ]</strong><br/>`;
+    recipe += `<ul style="margin: 8px 0; padding-left: 20px;">`;
+    recipe += `<li><strong>Rank:</strong> Set to <strong>${baseRank}</strong></li>`;
+    recipe += `<li><strong>Action:</strong> Select <strong>${action}</strong></li>`;
+    recipe += `<li><strong>Range:</strong> Select <strong>${range}</strong></li>`;
+    recipe += `<li><strong>Duration:</strong> Select <strong>${duration}</strong></li>`;
+    recipe += `<li><strong>Cost Per Rank:</strong> <strong>${finalCostPerRank} PP</strong></li>`;
+    if (extrasList.length) recipe += `<li><strong>Included Extras:</strong> ${extrasList.join(', ')}</li>`;
+    if (flawsList.length) recipe += `<li><strong>Included Flaws:</strong> ${flawsList.join(', ')}</li>`;
+    recipe += `</ul>`;
+    recipe += `<div style="text-align: right; font-weight: bold; border-top: 1px solid #aaa; padding-top: 5px;">TARGET TOTAL: ${finalTotal} PP</div>`;
+    recipe += `</div>`;
 
     let systemType = 'generaux';
     const lowerName = name.toLowerCase();
@@ -145,26 +114,13 @@ async function buildPowers() {
       "type": "pouvoir",
       "img": `systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg`,
       "system": {
-        "activate": true,
-        "special": translationMap.action[action] || 'simple',
         "type": systemType,
-        "action": translationMap.action[action] || 'simple',
-        "portee": translationMap.range[range] || 'contact',
-        "duree": translationMap.duration[duration] || 'instantane',
-        "description": summary + fullDescription,
-        "notes": row.Description || '',
+        "description": recipe + fullDescription,
         "cout": {
-          "rang": baseRank,
-          "parrang": baseCostPerRank,
-          "total": finalTotal
+          "total": 1
         }
       }
     };
-
-    // Only add modifiers if they exist to keep JSON clean
-    if (Object.keys(extrasObject).length > 0) powerItem.system.extras = extrasObject;
-    if (Object.keys(flawsObject).length > 0) powerItem.system.defauts = flawsObject;
-
     items.push(JSON.stringify(powerItem));
   }
   await fs.writeFile(outFile, items.join('\n'));
