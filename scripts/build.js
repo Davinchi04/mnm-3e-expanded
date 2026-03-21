@@ -39,12 +39,19 @@ const distDir = path.join(__dirname, '../mnm-3e-expanded/packs');
 function sanitizeText(text) {
   if (!text) return "";
   return text
+    .replace(/\?\?\?s/g, "'s")
+    .replace(/\?\?\?t/g, "'t")
+    .replace(/\?\?\?re/g, "'re")
+    .replace(/\?\?\?ve/g, "'ve")
+    .replace(/\?\?\? /g, "— ")
+    .replace(/ \?\?\?/g, " —")
     .replace(/\?\?\?/g, "—")
     .replace(/â€“/g, "—")
     .replace(/â€¢/g, "•")
     .replace(/â€™/g, "'")
     .replace(/â€œ/g, '"')
     .replace(/â€\?/g, '"')
+    .replace(/Â/g, "")
     .replace(/\s\s+/g, ' ')
     .trim();
 }
