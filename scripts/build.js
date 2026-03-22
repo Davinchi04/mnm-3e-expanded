@@ -122,9 +122,7 @@ async function buildPowers() {
     const finalCostPerRank = Math.max(1, baseCostPerRank + modCostPerRank);
     const finalTotal = Math.max(1, (finalCostPerRank * baseRank) + flatCost);
 
-    // HIGH FIDELITY FORMATTING
     const headerInfo = `<p>Action: ${action.charAt(0).toUpperCase() + action.slice(1)} &bull; Range: ${range.charAt(0).toUpperCase() + range.slice(1)}<br>Duration: ${duration.charAt(0).toUpperCase() + duration.slice(1)} &bull; Cost: ${finalCostPerRank} point${finalCostPerRank > 1 ? 's' : ''} per rank</p>`;
-    
     const notesHtml = headerInfo + `<p>${cleanDesc}</p>`;
     const effectsHtml = cleanMech ? `<p>${cleanMech.toUpperCase()}</p>` : "";
 
@@ -143,7 +141,7 @@ async function buildPowers() {
       "system": {
         "type": systemType,
         "activate": true,
-        "special": "simple", // Force Standard Effect
+        "special": "simple",
         "action": translationMap.action[action] || 'simple',
         "portee": translationMap.range[range] || 'contact',
         "duree": translationMap.duration[duration] || 'instantane',
@@ -325,19 +323,9 @@ async function buildModifiers(dataMap, fileName, subType) {
   await fs.writeFile(outFile, items.join('\n'));
 }
 
-async function updateVersion() {
-  const manifestPath = path.join(__dirname, '../mnm-3e-expanded/module.json');
-  const manifest = await fs.readJson(manifestPath);
-  const versionParts = manifest.version.split('.');
-  versionParts[2] = parseInt(versionParts[2]) + 1;
-  manifest.version = versionParts.join('.');
-  await fs.writeJson(manifestPath, manifest, { spaces: 2 });
-  console.log(`Auto-incremented version to ${manifest.version}`);
-}
-
 async function main() {
   await fs.ensureDir(distDir);
-  await updateVersion();
+  // Disabled auto-incrementer for milestone release v3.3.0
   await buildPowers();
   await buildAdvantages();
   await buildEquipment();
