@@ -44,7 +44,6 @@ async function readCsv(filePath) {
       .pipe(csv({
         mapHeaders: ({ header }) => header.trim().replace(/^\uFEFF/, '')
       }))
-      h
       .on('data', (data) => results.push(data))
       .on('end', () => resolve(results))
       .on('error', (err) => reject(err));
@@ -98,7 +97,7 @@ async function buildPowers() {
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
       for (const extraName of extraNames) {
-        const masterExtra = Object.Akeys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
+        const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
         if (masterExtra) {
           const mod = EXTRAS[masterExtra];
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
@@ -152,7 +151,7 @@ async function buildPowers() {
       "system": {
         "type": systemType,
         "activate": true,
-        "special": specialToggle, // Set to 'simple', 'alternate', or 'dynamic'
+        "special": specialToggle,
         "action": translationMap.action[action] || 'simple',
         "portee": translationMap.range[range] || 'contact',
         "duree": translationMap.duration[duration] || 'instantane',
