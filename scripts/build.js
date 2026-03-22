@@ -94,6 +94,7 @@ async function buildPowers() {
     let flatCost = 0;
 
     const extrasText = (row.Extras || row.extras || row.EXTRAS || '');
+    const extrasArray = []; // Changed to array
     if (extrasText) {
       const extraNames = extrasText.split(',').map(e => e.trim());
       for (const extraName of extraNames) {
@@ -102,11 +103,16 @@ async function buildPowers() {
           const mod = EXTRAS[masterExtra];
           if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
+          extrasArray.push({ // Pushed as object in array
+            name: mod.name,
+            data: { description: mod.data.description, cout: mod.data.cout }
+          });
         }
       }
     }
 
     const flawsText = (row.Flaws || row.flaws || row.FLAWS || '');
+    const flawsArray = []; // Changed to array
     if (flawsText) {
       const flawNames = flawsText.split(',').map(f => f.trim());
       for (const flawName of flawNames) {
@@ -116,6 +122,10 @@ async function buildPowers() {
           if (mod.data.cout.rang) modCostPerRank -= mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost -= mod.data.cout.value;
         }
+        flawsArray.push({ // Pushed as object in array
+          name: mod.name,
+          data: { description: mod.data.description, cout: mod.data.cout }
+        });
       }
     }
 
@@ -166,7 +176,9 @@ async function buildPowers() {
           "modrang": modCostPerRank,
           "modfixe": flatCost,
           "parrangtotal": "0"
-        }
+        },
+        "extras": extrasArray, // Use the array
+        "defauts": flawsArray  // Use the array
       },
       "effects": [],
       "flags": {}
