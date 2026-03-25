@@ -16,10 +16,16 @@ function calculatePowerCost(power) {
   if (power.system.extras) {
     for (let extra of Object.values(power.system.extras)) {
       if (extra.data && extra.data.cout) {
-        if (extra.data.cout.rang) {
+        if (extra.data.cout.rang && !extra.data.cout.fixe) {
+          // Per Rank of Power (+1 per rank)
           modCostPerRank += extra.data.cout.value;
         } else if (extra.data.cout.fixe) {
-          flatModTotal += extra.data.cout.value;
+          // Flat cost (Simple Flat OR Flat per Modifier Rank)
+          if (extra.data.cout.rang) {
+            flatModTotal += (extra.rang || 1) * extra.data.cout.value;
+          } else {
+            flatModTotal += extra.data.cout.value;
+          }
         }
       }
     }
@@ -29,11 +35,18 @@ function calculatePowerCost(power) {
   if (power.system.defauts) {
     for (let flaw of Object.values(power.system.defauts)) {
       if (flaw.data && flaw.data.cout) {
-        if (flaw.data.cout.rang) {
+        if (flaw.data.cout.rang && !flaw.data.cout.fixe) {
+          // Per Rank of Power (-1 per rank)
           modCostPerRank -= flaw.data.cout.value;
         } else if (flaw.data.cout.fixe) {
           if (flaw.name !== 'Removable' && flaw.name !== 'Easily Removable') {
-             flatModTotal -= flaw.data.cout.value;
+             if (flaw.data.cout.rang) {
+               // Flat per rank of the modifier (Check Required, etc.)
+               flatModTotal -= (flaw.rang || 1) * flaw.data.cout.value;
+             } else {
+               // Simple flat cost
+               flatModTotal -= flaw.data.cout.value;
+             }
           }
         }
       }

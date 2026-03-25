@@ -1,6 +1,6 @@
 [
   {
-    "_id": "mw2wc4ygcds",
+    "_id": "yhx8kymvsn",
     "name": "Absorption",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -30,7 +30,7 @@
     "flags": {}
   },
   {
-    "_id": "ma8p59yppo",
+    "_id": "0350255k7hse",
     "name": "Affliction",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -60,7 +60,7 @@
     "flags": {}
   },
   {
-    "_id": "w6mtrzi3ycn",
+    "_id": "67403j80pyn",
     "name": "Animal Control",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -90,7 +90,7 @@
     "flags": {}
   },
   {
-    "_id": "4yo2fnw6z1m",
+    "_id": "s5maex9xls",
     "name": "Armor",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -120,7 +120,7 @@
     "flags": {}
   },
   {
-    "_id": "xrehfj75af9",
+    "_id": "l2b04j51bc8",
     "name": "Blast",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -150,7 +150,7 @@
     "flags": {}
   },
   {
-    "_id": "1995bjt0nxp",
+    "_id": "lknn7qhykym",
     "name": "Burrowing",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -180,7 +180,7 @@
     "flags": {}
   },
   {
-    "_id": "gehk1ipiip",
+    "_id": "23z196hmfy5",
     "name": "Communication",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -210,7 +210,7 @@
     "flags": {}
   },
   {
-    "_id": "w7fuwnd110e",
+    "_id": "nos8l5nrygo",
     "name": "Comprehend",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -240,7 +240,7 @@
     "flags": {}
   },
   {
-    "_id": "urobkvewmaa",
+    "_id": "yr7hl7eguc9",
     "name": "Concealment",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -270,7 +270,7 @@
     "flags": {}
   },
   {
-    "_id": "92d7k59v6dc",
+    "_id": "5sszpj4b1ct",
     "name": "Create",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -300,7 +300,7 @@
     "flags": {}
   },
   {
-    "_id": "xa3c6f7qii",
+    "_id": "r0ev86dqos",
     "name": "Damage",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -330,7 +330,7 @@
     "flags": {}
   },
   {
-    "_id": "97wrcikhl9h",
+    "_id": "57giz20o6rp",
     "name": "Dazzle",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -360,7 +360,7 @@
     "flags": {}
   },
   {
-    "_id": "7lml38tldkq",
+    "_id": "8krwbcotp74",
     "name": "Deflect",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -390,7 +390,7 @@
     "flags": {}
   },
   {
-    "_id": "9r0eiti46yj",
+    "_id": "bqqzeij456",
     "name": "Device",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -420,7 +420,7 @@
     "flags": {}
   },
   {
-    "_id": "9pltgz621f",
+    "_id": "6jvg18nngid",
     "name": "Dimension travel",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -450,7 +450,7 @@
     "flags": {}
   },
   {
-    "_id": "rlp6veiv26",
+    "_id": "xls738rjxh",
     "name": "Duplication",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -480,7 +480,7 @@
     "flags": {}
   },
   {
-    "_id": "kond376q81n",
+    "_id": "xtpp7dwtdp",
     "name": "Elongation",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -510,7 +510,7 @@
     "flags": {}
   },
   {
-    "_id": "q5sn8ghngna",
+    "_id": "krjo7y1oa6q",
     "name": "Enhanced trait",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -540,7 +540,7 @@
     "flags": {}
   },
   {
-    "_id": "4zcnyzhgo8b",
+    "_id": "4s4pgj8tfvg",
     "name": "Environment",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -570,7 +570,7 @@
     "flags": {}
   },
   {
-    "_id": "tmkuwpkd0h8",
+    "_id": "ifsvqkrh35l",
     "name": "Extra limbs",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -600,7 +600,7 @@
     "flags": {}
   },
   {
-    "_id": "ngh8gsot26s",
+    "_id": "ci9xdjfxd0e",
     "name": "Feature",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -630,7 +630,7 @@
     "flags": {}
   },
   {
-    "_id": "pj32sz47spl",
+    "_id": "myxamtifyap",
     "name": "Flight",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -660,7 +660,7 @@
     "flags": {}
   },
   {
-    "_id": "ciyw93kiq57",
+    "_id": "kumywzlqz7",
     "name": "Growth",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -690,7 +690,7 @@
     "flags": {}
   },
   {
-    "_id": "0jd0os6khxdn",
+    "_id": "r0zc0zz2tio",
     "name": "Healing",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -720,7 +720,7 @@
     "flags": {}
   },
   {
-    "_id": "0j9cme7b78m",
+    "_id": "px0z7t24cig",
     "name": "Illusion",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -750,7 +750,7 @@
     "flags": {}
   },
   {
-    "_id": "4dlh6rfh6m5",
+    "_id": "hyrklocmfrd",
     "name": "Immunity",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -780,7 +780,7 @@
     "flags": {}
   },
   {
-    "_id": "hp2c3ayuq9",
+    "_id": "ynbha3gjv7l",
     "name": "Insubstantial",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -810,7 +810,7 @@
     "flags": {}
   },
   {
-    "_id": "lsd6iv86sx8",
+    "_id": "778vakft4ip",
     "name": "Invisibility",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -840,7 +840,7 @@
     "flags": {}
   },
   {
-    "_id": "e2wb1r71ml5",
+    "_id": "cutxuvqvwpg",
     "name": "Leaping",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -870,7 +870,7 @@
     "flags": {}
   },
   {
-    "_id": "24stg7sdvdf",
+    "_id": "bpd5kgcqzxk",
     "name": "Mind Control",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -888,7 +888,7 @@
         "rang": 1,
         "parrang": 4,
         "total": 7,
-        "totalTheorique": 10,
+        "totalTheorique": 7,
         "modrang": 3,
         "modfixe": 0,
         "parrangtotal": "7"
@@ -900,7 +900,7 @@
           "data": {
             "description": "<p>A Cumulative Affliction adds any further degrees to the existing degrees on the target. For example, if you hit a target and impose a vulnerable condition (one degree), then attack again and get one degree on the effect, you impose the Affliction’s second degree condition.</p><p>+1 cost per rank.</p>",
             "cout": {
-              "fixe": true,
+              "fixe": false,
               "rang": true,
               "value": 1
             }
@@ -912,7 +912,7 @@
           "data": {
             "description": "<p>This modifier causes an Affliction to increase incrementally without any effort from you. If the target fails a resistance check to end the Affliction, it not only persists, but increases in effect by one degree!</p><p>+2 cost per rank.</p>",
             "cout": {
-              "fixe": true,
+              "fixe": false,
               "rang": true,
               "value": 2
             }
@@ -925,7 +925,7 @@
     "flags": {}
   },
   {
-    "_id": "dw7lkw6zh2k",
+    "_id": "990w1rshd6i",
     "name": "Mind Reading",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -943,7 +943,7 @@
         "rang": 1,
         "parrang": 2,
         "total": 2,
-        "totalTheorique": 1,
+        "totalTheorique": 2,
         "modrang": -1,
         "modfixe": 1,
         "parrangtotal": "1"
@@ -969,7 +969,7 @@
           "data": {
             "description": "<p>You suffer damage when a manifestation of your effect is damaged.</p><p>–1 cost per rank.</p>",
             "cout": {
-              "fixe": true,
+              "fixe": false,
               "rang": true,
               "value": 1
             }
@@ -981,7 +981,7 @@
     "flags": {}
   },
   {
-    "_id": "4o19vr97jmp",
+    "_id": "dnovt5791g8",
     "name": "Morph",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -999,7 +999,7 @@
         "rang": 1,
         "parrang": 5,
         "total": 4,
-        "totalTheorique": 3,
+        "totalTheorique": 4,
         "modrang": -1,
         "modfixe": 0,
         "parrangtotal": "4"
@@ -1012,7 +1012,7 @@
           "data": {
             "description": "<p>An effect with this flaw allows an additional resistance check, or is resisted by a different defense than usual.</p><p>–1 cost per rank.</p>",
             "cout": {
-              "fixe": true,
+              "fixe": false,
               "rang": true,
               "value": 1
             }
@@ -1024,7 +1024,7 @@
     "flags": {}
   },
   {
-    "_id": "3vmb5l4drk",
+    "_id": "5m27rj4meg9",
     "name": "Move Object",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1079,7 +1079,7 @@
     "flags": {}
   },
   {
-    "_id": "ff46aol8nmi",
+    "_id": "2nph5wyptk1",
     "name": "Movement",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1109,7 +1109,7 @@
     "flags": {}
   },
   {
-    "_id": "qohv566j9qs",
+    "_id": "snarh7hs8kj",
     "name": "Nullify",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1127,7 +1127,7 @@
         "rang": 1,
         "parrang": 1,
         "total": 2,
-        "totalTheorique": 3,
+        "totalTheorique": 2,
         "modrang": 1,
         "modfixe": 0,
         "parrangtotal": "2"
@@ -1139,7 +1139,7 @@
           "data": {
             "description": "<p>This extra allows an effect that normally works on a single target to affect an area. No attack check is needed; potential targets are permitted a Dodge resistance check (DC 10 + effect rank) to reduce the effect.</p><p>+1 cost per rank.</p>",
             "cout": {
-              "fixe": true,
+              "fixe": false,
               "rang": true,
               "value": 1
             }
@@ -1152,7 +1152,7 @@
     "flags": {}
   },
   {
-    "_id": "ku9axdt8gy",
+    "_id": "cdhtwkcsrqw",
     "name": "Power-Lifting",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1182,7 +1182,7 @@
     "flags": {}
   },
   {
-    "_id": "fwuat3gkzgv",
+    "_id": "f1zlu0uw8c",
     "name": "Protection",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1200,7 +1200,7 @@
         "rang": 1,
         "parrang": 1,
         "total": 1,
-        "totalTheorique": 2,
+        "totalTheorique": 1,
         "modrang": 1,
         "modfixe": -1,
         "parrangtotal": "2"
@@ -1212,7 +1212,7 @@
           "data": {
             "description": "<p>A defense with this modifier ignores any effect with a resistance difficulty modifier equal to or less than half the Impervious rank.</p><p>+1 cost per rank.</p>",
             "cout": {
-              "fixe": true,
+              "fixe": false,
               "rang": true,
               "value": 1
             }
@@ -1224,7 +1224,7 @@
           "data": {
             "description": "<p>Applied to a permanent duration effect, this modifier makes it sustained duration.</p><p>+0 cost per rank.</p>",
             "cout": {
-              "fixe": true,
+              "fixe": false,
               "rang": true,
               "value": 0
             }
@@ -1250,7 +1250,7 @@
     "flags": {}
   },
   {
-    "_id": "98n9rmh2s1i",
+    "_id": "b9hfzrfam4e",
     "name": "Quickness",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1280,7 +1280,7 @@
     "flags": {}
   },
   {
-    "_id": "5xwzwpyk89g",
+    "_id": "s4if7gcvtr",
     "name": "Regeneration",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1310,7 +1310,7 @@
     "flags": {}
   },
   {
-    "_id": "m0olhb773b",
+    "_id": "vhv3nnta0gn",
     "name": "Remote Sensing",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1328,7 +1328,7 @@
         "rang": 1,
         "parrang": 2,
         "total": 2,
-        "totalTheorique": 1,
+        "totalTheorique": 2,
         "modrang": -1,
         "modfixe": 1,
         "parrangtotal": "1"
@@ -1366,7 +1366,7 @@
           "data": {
             "description": "<p>You suffer damage when a manifestation of your effect is damaged.</p><p>–1 cost per rank.</p>",
             "cout": {
-              "fixe": true,
+              "fixe": false,
               "rang": true,
               "value": 1
             }
@@ -1390,7 +1390,7 @@
     "flags": {}
   },
   {
-    "_id": "ea93nv93iow",
+    "_id": "kuorszbci1",
     "name": "Senses",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1420,7 +1420,7 @@
     "flags": {}
   },
   {
-    "_id": "fj8ak7djbfc",
+    "_id": "crt1ixvnc9j",
     "name": "Shapeshift",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1450,7 +1450,7 @@
     "flags": {}
   },
   {
-    "_id": "6116o384nys",
+    "_id": "p28fio9cdln",
     "name": "Shrinking",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1480,7 +1480,7 @@
     "flags": {}
   },
   {
-    "_id": "k7h0ixshrhh",
+    "_id": "zuvs4xzaxvb",
     "name": "Speed",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1510,7 +1510,7 @@
     "flags": {}
   },
   {
-    "_id": "sydbccwykp",
+    "_id": "tyaswfebsge",
     "name": "Summon",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1540,7 +1540,7 @@
     "flags": {}
   },
   {
-    "_id": "gxinsnb2v7n",
+    "_id": "ayh13ddzxdq",
     "name": "Swimming",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1570,7 +1570,7 @@
     "flags": {}
   },
   {
-    "_id": "8kmruedeo4v",
+    "_id": "ljm8cbm7shs",
     "name": "Telekinesis",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1613,7 +1613,7 @@
     "flags": {}
   },
   {
-    "_id": "8wm65ee38jl",
+    "_id": "592wkn0adb4",
     "name": "Telepathy",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1643,7 +1643,7 @@
     "flags": {}
   },
   {
-    "_id": "uv50yc2ea7",
+    "_id": "a6unfegsx0s",
     "name": "Teleport",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1674,7 +1674,7 @@
             "description": "<p>An effect with this extra is especially accurate; you get +2 per Accurate rank to attack checks made with it.</p><p>Flat 1 point per rank.</p>",
             "cout": {
               "fixe": true,
-              "rang": false,
+              "rang": true,
               "value": 1
             }
           }
@@ -1686,7 +1686,7 @@
     "flags": {}
   },
   {
-    "_id": "f2krm0t29cf",
+    "_id": "4zhb7opiizr",
     "name": "Transform",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1717,7 +1717,7 @@
             "description": "<p>Each rank of this extra increases the mass rank you can carry or move with the effect by 1.</p><p>Flat 1 point per rank.</p>",
             "cout": {
               "fixe": true,
-              "rang": false,
+              "rang": true,
               "value": 1
             }
           }
@@ -1729,7 +1729,7 @@
     "flags": {}
   },
   {
-    "_id": "avpszbwcx0b",
+    "_id": "c3fq4yxcpgf",
     "name": "Variable",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1747,7 +1747,7 @@
         "rang": 1,
         "parrang": 7,
         "total": 8,
-        "totalTheorique": 9,
+        "totalTheorique": 8,
         "modrang": 1,
         "modfixe": 0,
         "parrangtotal": "8"
@@ -1759,7 +1759,7 @@
           "data": {
             "description": "<p>This extra allows you to give someone else use of a personal effect. You must touch the subject as a standard action, and they have control over their use of the effect.</p><p>+0 or +1 cost per rank.</p>",
             "cout": {
-              "fixe": true,
+              "fixe": false,
               "rang": true,
               "value": 1
             }
@@ -1772,7 +1772,7 @@
     "flags": {}
   },
   {
-    "_id": "tr1pz14c4r",
+    "_id": "ge9h07l9uhn",
     "name": "Weather Control",
     "type": "pouvoir",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",

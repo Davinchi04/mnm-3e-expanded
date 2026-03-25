@@ -102,7 +102,7 @@ async function buildPowers() {
         const masterExtra = Object.keys(EXTRAS).find(k => k.toLowerCase() === extraName.toLowerCase());
         if (masterExtra) {
           const mod = EXTRAS[masterExtra];
-          if (mod.data.cout.rang) modCostPerRank += mod.data.cout.value;
+          if (mod.data.cout.rang && !mod.data.cout.fixe) modCostPerRank += mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost += mod.data.cout.value;
           extrasObject[extraCount.toString()] = {
             name: mod.name,
@@ -123,7 +123,7 @@ async function buildPowers() {
         const masterFlaw = Object.keys(FLAWS).find(k => k.toLowerCase() === flawName.toLowerCase());
         if (masterFlaw) {
           const mod = FLAWS[masterFlaw];
-          if (mod.data.cout.rang) modCostPerRank -= mod.data.cout.value;
+          if (mod.data.cout.rang && !mod.data.cout.fixe) modCostPerRank -= mod.data.cout.value;
           if (mod.data.cout.fixe) flatCost -= mod.data.cout.value;
           flawsObject[flawCount.toString()] = {
             name: mod.name,
@@ -414,6 +414,7 @@ async function buildModifiers(dataMap, fileName, subType) {
         "type": subType,
         "description": sanitizeText(mod.data.description),
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": mod.data.cout.fixe,
           "rang": mod.data.cout.rang,

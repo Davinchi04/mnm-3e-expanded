@@ -1,7 +1,7 @@
 {
   "powers": [
     {
-      "_id": "mw2wc4ygcds",
+      "_id": "yhx8kymvsn",
       "name": "Absorption",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -31,7 +31,7 @@
       "flags": {}
     },
     {
-      "_id": "ma8p59yppo",
+      "_id": "0350255k7hse",
       "name": "Affliction",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -61,7 +61,7 @@
       "flags": {}
     },
     {
-      "_id": "w6mtrzi3ycn",
+      "_id": "67403j80pyn",
       "name": "Animal Control",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -91,7 +91,7 @@
       "flags": {}
     },
     {
-      "_id": "4yo2fnw6z1m",
+      "_id": "s5maex9xls",
       "name": "Armor",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -121,7 +121,7 @@
       "flags": {}
     },
     {
-      "_id": "xrehfj75af9",
+      "_id": "l2b04j51bc8",
       "name": "Blast",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -151,7 +151,7 @@
       "flags": {}
     },
     {
-      "_id": "1995bjt0nxp",
+      "_id": "lknn7qhykym",
       "name": "Burrowing",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -181,7 +181,7 @@
       "flags": {}
     },
     {
-      "_id": "gehk1ipiip",
+      "_id": "23z196hmfy5",
       "name": "Communication",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -211,7 +211,7 @@
       "flags": {}
     },
     {
-      "_id": "w7fuwnd110e",
+      "_id": "nos8l5nrygo",
       "name": "Comprehend",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -241,7 +241,7 @@
       "flags": {}
     },
     {
-      "_id": "urobkvewmaa",
+      "_id": "yr7hl7eguc9",
       "name": "Concealment",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -271,7 +271,7 @@
       "flags": {}
     },
     {
-      "_id": "92d7k59v6dc",
+      "_id": "5sszpj4b1ct",
       "name": "Create",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -301,7 +301,7 @@
       "flags": {}
     },
     {
-      "_id": "xa3c6f7qii",
+      "_id": "r0ev86dqos",
       "name": "Damage",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -331,7 +331,7 @@
       "flags": {}
     },
     {
-      "_id": "97wrcikhl9h",
+      "_id": "57giz20o6rp",
       "name": "Dazzle",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -361,7 +361,7 @@
       "flags": {}
     },
     {
-      "_id": "7lml38tldkq",
+      "_id": "8krwbcotp74",
       "name": "Deflect",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -391,7 +391,7 @@
       "flags": {}
     },
     {
-      "_id": "9r0eiti46yj",
+      "_id": "bqqzeij456",
       "name": "Device",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -421,7 +421,7 @@
       "flags": {}
     },
     {
-      "_id": "9pltgz621f",
+      "_id": "6jvg18nngid",
       "name": "Dimension travel",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -451,7 +451,7 @@
       "flags": {}
     },
     {
-      "_id": "rlp6veiv26",
+      "_id": "xls738rjxh",
       "name": "Duplication",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -481,7 +481,7 @@
       "flags": {}
     },
     {
-      "_id": "kond376q81n",
+      "_id": "xtpp7dwtdp",
       "name": "Elongation",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -511,7 +511,7 @@
       "flags": {}
     },
     {
-      "_id": "q5sn8ghngna",
+      "_id": "krjo7y1oa6q",
       "name": "Enhanced trait",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -541,7 +541,7 @@
       "flags": {}
     },
     {
-      "_id": "4zcnyzhgo8b",
+      "_id": "4s4pgj8tfvg",
       "name": "Environment",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -571,7 +571,7 @@
       "flags": {}
     },
     {
-      "_id": "tmkuwpkd0h8",
+      "_id": "ifsvqkrh35l",
       "name": "Extra limbs",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -601,7 +601,7 @@
       "flags": {}
     },
     {
-      "_id": "ngh8gsot26s",
+      "_id": "ci9xdjfxd0e",
       "name": "Feature",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -631,7 +631,7 @@
       "flags": {}
     },
     {
-      "_id": "pj32sz47spl",
+      "_id": "myxamtifyap",
       "name": "Flight",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -661,7 +661,7 @@
       "flags": {}
     },
     {
-      "_id": "ciyw93kiq57",
+      "_id": "kumywzlqz7",
       "name": "Growth",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -691,7 +691,7 @@
       "flags": {}
     },
     {
-      "_id": "0jd0os6khxdn",
+      "_id": "r0zc0zz2tio",
       "name": "Healing",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -721,7 +721,7 @@
       "flags": {}
     },
     {
-      "_id": "0j9cme7b78m",
+      "_id": "px0z7t24cig",
       "name": "Illusion",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -751,7 +751,7 @@
       "flags": {}
     },
     {
-      "_id": "4dlh6rfh6m5",
+      "_id": "hyrklocmfrd",
       "name": "Immunity",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -781,7 +781,7 @@
       "flags": {}
     },
     {
-      "_id": "hp2c3ayuq9",
+      "_id": "ynbha3gjv7l",
       "name": "Insubstantial",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -811,7 +811,7 @@
       "flags": {}
     },
     {
-      "_id": "lsd6iv86sx8",
+      "_id": "778vakft4ip",
       "name": "Invisibility",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -841,7 +841,7 @@
       "flags": {}
     },
     {
-      "_id": "e2wb1r71ml5",
+      "_id": "cutxuvqvwpg",
       "name": "Leaping",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -871,7 +871,7 @@
       "flags": {}
     },
     {
-      "_id": "24stg7sdvdf",
+      "_id": "bpd5kgcqzxk",
       "name": "Mind Control",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -888,10 +888,10 @@
         "cout": {
           "rang": 1,
           "parrang": 4,
-          "total": 10,
-          "totalTheorique": 10,
+          "total": 7,
+          "totalTheorique": 7,
           "modrang": 3,
-          "modfixe": 3,
+          "modfixe": 0,
           "parrangtotal": "7"
         },
         "extras": {
@@ -901,7 +901,7 @@
             "data": {
               "description": "<p>A Cumulative Affliction adds any further degrees to the existing degrees on the target. For example, if you hit a target and impose a vulnerable condition (one degree), then attack again and get one degree on the effect, you impose the Affliction’s second degree condition.</p><p>+1 cost per rank.</p>",
               "cout": {
-                "fixe": true,
+                "fixe": false,
                 "rang": true,
                 "value": 1
               }
@@ -913,7 +913,7 @@
             "data": {
               "description": "<p>This modifier causes an Affliction to increase incrementally without any effort from you. If the target fails a resistance check to end the Affliction, it not only persists, but increases in effect by one degree!</p><p>+2 cost per rank.</p>",
               "cout": {
-                "fixe": true,
+                "fixe": false,
                 "rang": true,
                 "value": 2
               }
@@ -926,7 +926,7 @@
       "flags": {}
     },
     {
-      "_id": "dw7lkw6zh2k",
+      "_id": "990w1rshd6i",
       "name": "Mind Reading",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -943,10 +943,10 @@
         "cout": {
           "rang": 1,
           "parrang": 2,
-          "total": 1,
-          "totalTheorique": 1,
+          "total": 2,
+          "totalTheorique": 2,
           "modrang": -1,
-          "modfixe": 0,
+          "modfixe": 1,
           "parrangtotal": "1"
         },
         "extras": {
@@ -970,7 +970,7 @@
             "data": {
               "description": "<p>You suffer damage when a manifestation of your effect is damaged.</p><p>–1 cost per rank.</p>",
               "cout": {
-                "fixe": true,
+                "fixe": false,
                 "rang": true,
                 "value": 1
               }
@@ -982,7 +982,7 @@
       "flags": {}
     },
     {
-      "_id": "4o19vr97jmp",
+      "_id": "dnovt5791g8",
       "name": "Morph",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -999,10 +999,10 @@
         "cout": {
           "rang": 1,
           "parrang": 5,
-          "total": 3,
-          "totalTheorique": 3,
+          "total": 4,
+          "totalTheorique": 4,
           "modrang": -1,
-          "modfixe": -1,
+          "modfixe": 0,
           "parrangtotal": "4"
         },
         "extras": {},
@@ -1013,7 +1013,7 @@
             "data": {
               "description": "<p>An effect with this flaw allows an additional resistance check, or is resisted by a different defense than usual.</p><p>–1 cost per rank.</p>",
               "cout": {
-                "fixe": true,
+                "fixe": false,
                 "rang": true,
                 "value": 1
               }
@@ -1025,7 +1025,7 @@
       "flags": {}
     },
     {
-      "_id": "3vmb5l4drk",
+      "_id": "5m27rj4meg9",
       "name": "Move Object",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1080,7 +1080,7 @@
       "flags": {}
     },
     {
-      "_id": "ff46aol8nmi",
+      "_id": "2nph5wyptk1",
       "name": "Movement",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1110,7 +1110,7 @@
       "flags": {}
     },
     {
-      "_id": "qohv566j9qs",
+      "_id": "snarh7hs8kj",
       "name": "Nullify",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1127,10 +1127,10 @@
         "cout": {
           "rang": 1,
           "parrang": 1,
-          "total": 3,
-          "totalTheorique": 3,
+          "total": 2,
+          "totalTheorique": 2,
           "modrang": 1,
-          "modfixe": 1,
+          "modfixe": 0,
           "parrangtotal": "2"
         },
         "extras": {
@@ -1140,7 +1140,7 @@
             "data": {
               "description": "<p>This extra allows an effect that normally works on a single target to affect an area. No attack check is needed; potential targets are permitted a Dodge resistance check (DC 10 + effect rank) to reduce the effect.</p><p>+1 cost per rank.</p>",
               "cout": {
-                "fixe": true,
+                "fixe": false,
                 "rang": true,
                 "value": 1
               }
@@ -1153,7 +1153,7 @@
       "flags": {}
     },
     {
-      "_id": "ku9axdt8gy",
+      "_id": "cdhtwkcsrqw",
       "name": "Power-Lifting",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1183,7 +1183,7 @@
       "flags": {}
     },
     {
-      "_id": "fwuat3gkzgv",
+      "_id": "f1zlu0uw8c",
       "name": "Protection",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1200,10 +1200,10 @@
         "cout": {
           "rang": 1,
           "parrang": 1,
-          "total": 2,
-          "totalTheorique": 2,
+          "total": 1,
+          "totalTheorique": 1,
           "modrang": 1,
-          "modfixe": 0,
+          "modfixe": -1,
           "parrangtotal": "2"
         },
         "extras": {
@@ -1213,7 +1213,7 @@
             "data": {
               "description": "<p>A defense with this modifier ignores any effect with a resistance difficulty modifier equal to or less than half the Impervious rank.</p><p>+1 cost per rank.</p>",
               "cout": {
-                "fixe": true,
+                "fixe": false,
                 "rang": true,
                 "value": 1
               }
@@ -1225,7 +1225,7 @@
             "data": {
               "description": "<p>Applied to a permanent duration effect, this modifier makes it sustained duration.</p><p>+0 cost per rank.</p>",
               "cout": {
-                "fixe": true,
+                "fixe": false,
                 "rang": true,
                 "value": 0
               }
@@ -1251,7 +1251,7 @@
       "flags": {}
     },
     {
-      "_id": "98n9rmh2s1i",
+      "_id": "b9hfzrfam4e",
       "name": "Quickness",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1281,7 +1281,7 @@
       "flags": {}
     },
     {
-      "_id": "5xwzwpyk89g",
+      "_id": "s4if7gcvtr",
       "name": "Regeneration",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1311,7 +1311,7 @@
       "flags": {}
     },
     {
-      "_id": "m0olhb773b",
+      "_id": "vhv3nnta0gn",
       "name": "Remote Sensing",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1328,10 +1328,10 @@
         "cout": {
           "rang": 1,
           "parrang": 2,
-          "total": 1,
-          "totalTheorique": 1,
+          "total": 2,
+          "totalTheorique": 2,
           "modrang": -1,
-          "modfixe": 0,
+          "modfixe": 1,
           "parrangtotal": "1"
         },
         "extras": {
@@ -1367,7 +1367,7 @@
             "data": {
               "description": "<p>You suffer damage when a manifestation of your effect is damaged.</p><p>–1 cost per rank.</p>",
               "cout": {
-                "fixe": true,
+                "fixe": false,
                 "rang": true,
                 "value": 1
               }
@@ -1391,7 +1391,7 @@
       "flags": {}
     },
     {
-      "_id": "ea93nv93iow",
+      "_id": "kuorszbci1",
       "name": "Senses",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1421,7 +1421,7 @@
       "flags": {}
     },
     {
-      "_id": "fj8ak7djbfc",
+      "_id": "crt1ixvnc9j",
       "name": "Shapeshift",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1451,7 +1451,7 @@
       "flags": {}
     },
     {
-      "_id": "6116o384nys",
+      "_id": "p28fio9cdln",
       "name": "Shrinking",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1481,7 +1481,7 @@
       "flags": {}
     },
     {
-      "_id": "k7h0ixshrhh",
+      "_id": "zuvs4xzaxvb",
       "name": "Speed",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1511,7 +1511,7 @@
       "flags": {}
     },
     {
-      "_id": "sydbccwykp",
+      "_id": "tyaswfebsge",
       "name": "Summon",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1541,7 +1541,7 @@
       "flags": {}
     },
     {
-      "_id": "gxinsnb2v7n",
+      "_id": "ayh13ddzxdq",
       "name": "Swimming",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1571,7 +1571,7 @@
       "flags": {}
     },
     {
-      "_id": "8kmruedeo4v",
+      "_id": "ljm8cbm7shs",
       "name": "Telekinesis",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1614,7 +1614,7 @@
       "flags": {}
     },
     {
-      "_id": "8wm65ee38jl",
+      "_id": "592wkn0adb4",
       "name": "Telepathy",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1644,7 +1644,7 @@
       "flags": {}
     },
     {
-      "_id": "uv50yc2ea7",
+      "_id": "a6unfegsx0s",
       "name": "Teleport",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1675,7 +1675,7 @@
               "description": "<p>An effect with this extra is especially accurate; you get +2 per Accurate rank to attack checks made with it.</p><p>Flat 1 point per rank.</p>",
               "cout": {
                 "fixe": true,
-                "rang": false,
+                "rang": true,
                 "value": 1
               }
             }
@@ -1687,7 +1687,7 @@
       "flags": {}
     },
     {
-      "_id": "f2krm0t29cf",
+      "_id": "4zhb7opiizr",
       "name": "Transform",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1718,7 +1718,7 @@
               "description": "<p>Each rank of this extra increases the mass rank you can carry or move with the effect by 1.</p><p>Flat 1 point per rank.</p>",
               "cout": {
                 "fixe": true,
-                "rang": false,
+                "rang": true,
                 "value": 1
               }
             }
@@ -1730,7 +1730,7 @@
       "flags": {}
     },
     {
-      "_id": "avpszbwcx0b",
+      "_id": "c3fq4yxcpgf",
       "name": "Variable",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1747,10 +1747,10 @@
         "cout": {
           "rang": 1,
           "parrang": 7,
-          "total": 9,
-          "totalTheorique": 9,
+          "total": 8,
+          "totalTheorique": 8,
           "modrang": 1,
-          "modfixe": 1,
+          "modfixe": 0,
           "parrangtotal": "8"
         },
         "extras": {
@@ -1760,7 +1760,7 @@
             "data": {
               "description": "<p>This extra allows you to give someone else use of a personal effect. You must touch the subject as a standard action, and they have control over their use of the effect.</p><p>+0 or +1 cost per rank.</p>",
               "cout": {
-                "fixe": true,
+                "fixe": false,
                 "rang": true,
                 "value": 1
               }
@@ -1773,7 +1773,7 @@
       "flags": {}
     },
     {
-      "_id": "tr1pz14c4r",
+      "_id": "ge9h07l9uhn",
       "name": "Weather Control",
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -1805,7 +1805,7 @@
   ],
   "advantages": [
     {
-      "_id": "1yton2ye4bz",
+      "_id": "3m4a8td200r",
       "name": "Accurate Attack",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -1823,7 +1823,7 @@
       "flags": {}
     },
     {
-      "_id": "dh743qzb2pa",
+      "_id": "yv3furbnfv",
       "name": "Agile Feint",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -1839,7 +1839,7 @@
       },
       "effects": [
         {
-          "_id": "eff6ur8vlz4",
+          "_id": "effttarezdi",
           "name": "Agile Feint Bonus",
           "changes": [
             {
@@ -1857,7 +1857,7 @@
       "flags": {}
     },
     {
-      "_id": "vmzb6xwgfx",
+      "_id": "h6thtdfynq6",
       "name": "All-out Attack",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -1875,7 +1875,7 @@
       "flags": {}
     },
     {
-      "_id": "1j7k0g80l4gj",
+      "_id": "15daor7xnpg",
       "name": "Improved Initiative",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -1891,7 +1891,7 @@
       },
       "effects": [
         {
-          "_id": "effel353r0i",
+          "_id": "effel0j7n00",
           "name": "Improved Initiative Bonus",
           "changes": [
             {
@@ -1909,7 +1909,7 @@
       "flags": {}
     },
     {
-      "_id": "wpio87qcqwl",
+      "_id": "s184caqx5fr",
       "name": "Iron Will",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -1925,7 +1925,7 @@
       },
       "effects": [
         {
-          "_id": "effynl75nuw",
+          "_id": "efffadk3q9r",
           "name": "Iron Will Bonus",
           "changes": [
             {
@@ -1943,7 +1943,7 @@
       "flags": {}
     },
     {
-      "_id": "3owl9qp5lsa",
+      "_id": "xz4mbshzmc8",
       "name": "Great Endurance",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -1959,7 +1959,7 @@
       },
       "effects": [
         {
-          "_id": "eff1ppomfd2",
+          "_id": "eff1xrsx1oy",
           "name": "Great Endurance Bonus",
           "changes": [
             {
@@ -1977,7 +1977,7 @@
       "flags": {}
     },
     {
-      "_id": "uhzxfqnk78d",
+      "_id": "reouqk15lem",
       "name": "Evasion",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -1993,7 +1993,7 @@
       },
       "effects": [
         {
-          "_id": "effjvzm3pjj",
+          "_id": "effdnx7kvun",
           "name": "Evasion Bonus",
           "changes": [
             {
@@ -2011,7 +2011,7 @@
       "flags": {}
     },
     {
-      "_id": "65h2c342da5",
+      "_id": "qn8lyejvzl",
       "name": "Attractive",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2027,7 +2027,7 @@
       },
       "effects": [
         {
-          "_id": "eff1hfwbqpu",
+          "_id": "eff6i8m30zt",
           "name": "Attractive Bonus",
           "changes": [
             {
@@ -2045,7 +2045,7 @@
       "flags": {}
     },
     {
-      "_id": "rtphuqk9k1",
+      "_id": "2aqmrmcv6a6",
       "name": "Eidetic Memory",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2061,7 +2061,7 @@
       },
       "effects": [
         {
-          "_id": "effsf1he44h",
+          "_id": "effpa2rplji",
           "name": "Eidetic Memory Bonus",
           "changes": [
             {
@@ -2079,7 +2079,7 @@
       "flags": {}
     },
     {
-      "_id": "8xt57kk5se5",
+      "_id": "gqfuib1ezsp",
       "name": "Animal Empathy",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2095,7 +2095,7 @@
       },
       "effects": [
         {
-          "_id": "effykdz5i7w",
+          "_id": "effvuoyekpl",
           "name": "Animal Empathy Bonus",
           "changes": [
             {
@@ -2113,7 +2113,7 @@
       "flags": {}
     },
     {
-      "_id": "ew7w9es0nxs",
+      "_id": "xxg30fgszgl",
       "name": "Artificer",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2129,7 +2129,7 @@
       },
       "effects": [
         {
-          "_id": "eff2sntb5m6",
+          "_id": "effgqqft72t",
           "name": "Artificer Bonus",
           "changes": [
             {
@@ -2147,7 +2147,7 @@
       "flags": {}
     },
     {
-      "_id": "eak4ltjycqt",
+      "_id": "zfzjbu9yr7",
       "name": "Assessment",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2163,7 +2163,7 @@
       },
       "effects": [
         {
-          "_id": "eff95uel7wy",
+          "_id": "effw2rm165d",
           "name": "Assessment Bonus",
           "changes": [
             {
@@ -2181,7 +2181,7 @@
       "flags": {}
     },
     {
-      "_id": "29lt4k42knw",
+      "_id": "nb4pj2e74w8",
       "name": "Beginner's Luck",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2199,7 +2199,7 @@
       "flags": {}
     },
     {
-      "_id": "gq6mtyu418f",
+      "_id": "ii2kdw4mdhh",
       "name": "Benefit",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2217,7 +2217,7 @@
       "flags": {}
     },
     {
-      "_id": "577x46vmjno",
+      "_id": "s4mnkpgrxhb",
       "name": "Chokehold",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2235,7 +2235,7 @@
       "flags": {}
     },
     {
-      "_id": "yiuodfrtpe",
+      "_id": "icuvwdl0p7e",
       "name": "Connected",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2251,7 +2251,7 @@
       },
       "effects": [
         {
-          "_id": "effmeuykjku",
+          "_id": "efft5rfdc4d",
           "name": "Connected Bonus",
           "changes": [
             {
@@ -2269,7 +2269,7 @@
       "flags": {}
     },
     {
-      "_id": "r4c0io7fi9h",
+      "_id": "blt4fr4qzkv",
       "name": "Contacts",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2285,7 +2285,7 @@
       },
       "effects": [
         {
-          "_id": "effv8q6sccl",
+          "_id": "eff9brilwig",
           "name": "Contacts Bonus",
           "changes": [
             {
@@ -2303,7 +2303,7 @@
       "flags": {}
     },
     {
-      "_id": "4v3pstjauzc",
+      "_id": "urriep1rixe",
       "name": "Daze",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2321,7 +2321,7 @@
       "flags": {}
     },
     {
-      "_id": "6nzay33yrq",
+      "_id": "rc76afx67x",
       "name": "Defensive Attack",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2339,7 +2339,7 @@
       "flags": {}
     },
     {
-      "_id": "lyfnny3hsq",
+      "_id": "gxbmef7om25",
       "name": "Defensive Roll",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2355,7 +2355,7 @@
       },
       "effects": [
         {
-          "_id": "effvvquh9ec",
+          "_id": "eff2thhr66o",
           "name": "Defensive Roll Bonus",
           "changes": [
             {
@@ -2373,7 +2373,7 @@
       "flags": {}
     },
     {
-      "_id": "7biz29zr2x5",
+      "_id": "ua845qukpsk",
       "name": "Diehard",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2391,7 +2391,7 @@
       "flags": {}
     },
     {
-      "_id": "hev42jvzgqu",
+      "_id": "2dwuj3qdhj7",
       "name": "Equipment",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2409,7 +2409,7 @@
       "flags": {}
     },
     {
-      "_id": "naecoznd8o",
+      "_id": "bj1negnpljg",
       "name": "Extraordinary Effort",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2427,7 +2427,7 @@
       "flags": {}
     },
     {
-      "_id": "ec0x8hr7zf",
+      "_id": "0mn85ldo2se",
       "name": "Fascinate",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2445,7 +2445,7 @@
       "flags": {}
     },
     {
-      "_id": "68ui90e0nm7",
+      "_id": "lbnmnn6iinm",
       "name": "Fast Grab",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2463,7 +2463,7 @@
       "flags": {}
     },
     {
-      "_id": "w9bk9riooc",
+      "_id": "6e6876dko5",
       "name": "Favored Environment",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2481,7 +2481,7 @@
       "flags": {}
     },
     {
-      "_id": "8f4nokof267",
+      "_id": "3kb3oh0qrnw",
       "name": "Favored Foe",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2499,7 +2499,7 @@
       "flags": {}
     },
     {
-      "_id": "i3wmdsv05ns",
+      "_id": "gkq1p681gb",
       "name": "Fearless",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2517,7 +2517,7 @@
       "flags": {}
     },
     {
-      "_id": "lb4fk6fdcot",
+      "_id": "7f6h7onku5y",
       "name": "Grabbing Finesse",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2535,7 +2535,7 @@
       "flags": {}
     },
     {
-      "_id": "3svaa1j8mq3",
+      "_id": "yq3mvvo0kbs",
       "name": "Hide in Plain Sight",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2551,7 +2551,7 @@
       },
       "effects": [
         {
-          "_id": "effm7fp2edl",
+          "_id": "eff4o30kg2a",
           "name": "Hide in Plain Sight Bonus",
           "changes": [
             {
@@ -2569,7 +2569,7 @@
       "flags": {}
     },
     {
-      "_id": "djpjogbhwyu",
+      "_id": "71wg44bhlbu",
       "name": "Improved Aim",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2587,7 +2587,7 @@
       "flags": {}
     },
     {
-      "_id": "kjts7ivupni",
+      "_id": "g7a1qm9dkjt",
       "name": "Improved Critical",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2605,7 +2605,7 @@
       "flags": {}
     },
     {
-      "_id": "gve3y2ia0b",
+      "_id": "gx4u8f25l",
       "name": "Improved Defense",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2623,7 +2623,7 @@
       "flags": {}
     },
     {
-      "_id": "pj0ltd7mn1",
+      "_id": "n2vr9eepvyn",
       "name": "Improved Disarm",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2641,7 +2641,7 @@
       "flags": {}
     },
     {
-      "_id": "6p2irj653gm",
+      "_id": "ksos8ow562s",
       "name": "Improved Grab",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2659,7 +2659,7 @@
       "flags": {}
     },
     {
-      "_id": "bgiqya5mgf9",
+      "_id": "u8i2gx0pm3m",
       "name": "Improved Hold",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2677,7 +2677,7 @@
       "flags": {}
     },
     {
-      "_id": "cycpibdkfr6",
+      "_id": "is5fasj16h",
       "name": "Improved Smash",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2695,7 +2695,7 @@
       "flags": {}
     },
     {
-      "_id": "pknziav76m",
+      "_id": "qydcsy3lbin",
       "name": "Improved Trip",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2713,7 +2713,7 @@
       "flags": {}
     },
     {
-      "_id": "5wz9o66u7re",
+      "_id": "jel6abkbbh",
       "name": "Improvised Tools",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2731,7 +2731,7 @@
       "flags": {}
     },
     {
-      "_id": "iknbsxd2gz",
+      "_id": "fgwgia9p8bq",
       "name": "Improvised Weapon",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2749,7 +2749,7 @@
       "flags": {}
     },
     {
-      "_id": "7luhlws08ji",
+      "_id": "l2m26aufnyl",
       "name": "Inspire",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2767,7 +2767,7 @@
       "flags": {}
     },
     {
-      "_id": "cvgk19bku24",
+      "_id": "59ch5auyg6g",
       "name": "Instant Up",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2785,7 +2785,7 @@
       "flags": {}
     },
     {
-      "_id": "cbed69y64gf",
+      "_id": "0pqmkdwek09i",
       "name": "Interpose",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2803,7 +2803,7 @@
       "flags": {}
     },
     {
-      "_id": "weme56w3zb",
+      "_id": "1inkqcgcnrk",
       "name": "Inventor",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2819,7 +2819,7 @@
       },
       "effects": [
         {
-          "_id": "effzoiv7phb",
+          "_id": "eff8b6py8mi",
           "name": "Inventor Bonus",
           "changes": [
             {
@@ -2837,7 +2837,7 @@
       "flags": {}
     },
     {
-      "_id": "kacb9qto4cc",
+      "_id": "1sbyomwzt1vj",
       "name": "Jack-of-all-trades",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2855,7 +2855,7 @@
       "flags": {}
     },
     {
-      "_id": "ecv6j3lpnzm",
+      "_id": "f8tqimm93x",
       "name": "Languages",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2873,7 +2873,7 @@
       "flags": {}
     },
     {
-      "_id": "f50t7508wp8",
+      "_id": "cue1qh501wj",
       "name": "Leadership",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2891,7 +2891,7 @@
       "flags": {}
     },
     {
-      "_id": "ao1lmgbzj9f",
+      "_id": "zkecr5qkmzs",
       "name": "Luck",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2909,7 +2909,7 @@
       "flags": {}
     },
     {
-      "_id": "0x98n4tco73e",
+      "_id": "p9xeolg4rqm",
       "name": "Minion",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2927,7 +2927,7 @@
       "flags": {}
     },
     {
-      "_id": "g7myyvlhnen",
+      "_id": "g2u7cpkw2fd",
       "name": "Move-by Action",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2945,7 +2945,7 @@
       "flags": {}
     },
     {
-      "_id": "h0ojs8vu5jh",
+      "_id": "0c5ix1k6z6y7",
       "name": "Power Attack",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2963,7 +2963,7 @@
       "flags": {}
     },
     {
-      "_id": "xn9gwzu6uz",
+      "_id": "pjicfe7czj",
       "name": "Precise Attack",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2981,7 +2981,7 @@
       "flags": {}
     },
     {
-      "_id": "y1lzzloz6v",
+      "_id": "3uv0wvg4yhf",
       "name": "Prone Fighting",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -2999,7 +2999,7 @@
       "flags": {}
     },
     {
-      "_id": "ongv6dfz3h",
+      "_id": "fg654f4gm5",
       "name": "Quick Draw",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3017,7 +3017,7 @@
       "flags": {}
     },
     {
-      "_id": "p4duco7209",
+      "_id": "fgahkgdd3bt",
       "name": "Ranged Attack",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3035,7 +3035,7 @@
       "flags": {}
     },
     {
-      "_id": "e5qas607und",
+      "_id": "a6uwpcglqjj",
       "name": "Redirect",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3053,7 +3053,7 @@
       "flags": {}
     },
     {
-      "_id": "7unhfprwcqm",
+      "_id": "8aamrkgctrq",
       "name": "Ritualist",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3069,7 +3069,7 @@
       },
       "effects": [
         {
-          "_id": "eff79dk1h5y",
+          "_id": "effrhi3d4a2",
           "name": "Ritualist Bonus",
           "changes": [
             {
@@ -3087,7 +3087,7 @@
       "flags": {}
     },
     {
-      "_id": "u6r7wngofdc",
+      "_id": "wifeve4hxkm",
       "name": "Second Chance",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3105,7 +3105,7 @@
       "flags": {}
     },
     {
-      "_id": "7qwe1jxfbny",
+      "_id": "gwci621x3",
       "name": "Seize Initiative",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3123,7 +3123,7 @@
       "flags": {}
     },
     {
-      "_id": "bos17c1gbds",
+      "_id": "olsk87w17te",
       "name": "Set-up",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3141,7 +3141,7 @@
       "flags": {}
     },
     {
-      "_id": "dbhsz6hpj79",
+      "_id": "jz3bn1g6itj",
       "name": "Sidekick",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3159,7 +3159,7 @@
       "flags": {}
     },
     {
-      "_id": "cpyhui8zg7p",
+      "_id": "8nd62xbfki",
       "name": "Skill Mastery",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3177,7 +3177,7 @@
       "flags": {}
     },
     {
-      "_id": "gkozz1wjei",
+      "_id": "njoyvpt06o8",
       "name": "Startle",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3193,7 +3193,7 @@
       },
       "effects": [
         {
-          "_id": "effyvzrpvwo",
+          "_id": "efffticf65x",
           "name": "Startle Bonus",
           "changes": [
             {
@@ -3211,7 +3211,7 @@
       "flags": {}
     },
     {
-      "_id": "mxqgmxjva1",
+      "_id": "87udmn1kz5f",
       "name": "Takedown",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3229,7 +3229,7 @@
       "flags": {}
     },
     {
-      "_id": "3f9wz6pbm2",
+      "_id": "egj7q9p1vql",
       "name": "Taunt",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3245,7 +3245,7 @@
       },
       "effects": [
         {
-          "_id": "effblab9h0f",
+          "_id": "eff3zfgk0hk",
           "name": "Taunt Bonus",
           "changes": [
             {
@@ -3263,7 +3263,7 @@
       "flags": {}
     },
     {
-      "_id": "xwgrxp22lr",
+      "_id": "jz51kttljs",
       "name": "Teamwork",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3281,7 +3281,7 @@
       "flags": {}
     },
     {
-      "_id": "3tzn3cltllj",
+      "_id": "mm4shx3nu9n",
       "name": "Throwing Mastery",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3299,7 +3299,7 @@
       "flags": {}
     },
     {
-      "_id": "u7brnf4t05m",
+      "_id": "n5vkmj4wd5g",
       "name": "Tracking",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3315,7 +3315,7 @@
       },
       "effects": [
         {
-          "_id": "effkp9g2dl9",
+          "_id": "efflqggvq0d",
           "name": "Tracking Bonus",
           "changes": [
             {
@@ -3333,7 +3333,7 @@
       "flags": {}
     },
     {
-      "_id": "alubczo4yw",
+      "_id": "dfoca2770ql",
       "name": "Trance",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3351,7 +3351,7 @@
       "flags": {}
     },
     {
-      "_id": "m10kdh9145g",
+      "_id": "rzs7ybkpxpm",
       "name": "Ultimate Effort",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3369,7 +3369,7 @@
       "flags": {}
     },
     {
-      "_id": "mbjjma23ck",
+      "_id": "k28a4dg1t7",
       "name": "Uncanny Dodge",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3387,7 +3387,7 @@
       "flags": {}
     },
     {
-      "_id": "swp96nxjtjn",
+      "_id": "mbf7ycaj4p",
       "name": "Weapon Bind",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3405,7 +3405,7 @@
       "flags": {}
     },
     {
-      "_id": "o774gchy0c",
+      "_id": "da9ykl3qru",
       "name": "Weapon Break",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3423,7 +3423,7 @@
       "flags": {}
     },
     {
-      "_id": "3mc87kqdfz9",
+      "_id": "k9plr3yhvc",
       "name": "Well-informed",
       "type": "talent",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/talent.svg",
@@ -3439,7 +3439,7 @@
       },
       "effects": [
         {
-          "_id": "effs2dwn1jl",
+          "_id": "effdf1fsq4v",
           "name": "Well-informed Bonus",
           "changes": [
             {
@@ -3459,7 +3459,7 @@
   ],
   "flaws": [
     {
-      "_id": "ki1yev3s0d",
+      "_id": "zuxbrctn4ya",
       "name": "Limited Degree",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3467,15 +3467,16 @@
         "type": "defaut",
         "description": "<p>Your Affliction is limited to no more than two degrees of effect. With two applications of this modifier, it is limited to no more than one degree of effect.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "5o8bz8dmdct",
+      "_id": "p9hs1oor8w",
       "name": "Activation",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3483,6 +3484,7 @@
         "type": "defaut",
         "description": "<p>A power with this flaw requires an action to prepare or activate before any of its effects are usable. Move action is –1 point, standard action is –2 points.</p><p>Flat -1 or -2 points.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -3491,7 +3493,7 @@
       }
     },
     {
-      "_id": "pyt3mxedvc9",
+      "_id": "xuvet442rbf",
       "name": "Instant Recovery",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3499,15 +3501,16 @@
         "type": "defaut",
         "description": "<p>The target of an Affliction effect with this modifier recovers automatically, no check required, at the end of the round in which the duration ends.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "s0mbzwx1n2",
+      "_id": "18ade9t4k8l",
       "name": "Check Required",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3515,15 +3518,16 @@
         "type": "defaut",
         "description": "<p>An effect with this flaw requires a check of some sort—usually a skill check—with a base difficulty of 10, +1 for each additional rank in Check Required.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "fltpg6gpo2a",
+      "_id": "r3jn0z02cs",
       "name": "Concentration",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3531,15 +3535,16 @@
         "type": "defaut",
         "description": "<p>Using a Concentration effect requires more concentration than normal. If you are unable to maintain your concentration, the effect ends.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "jcam0opieff",
+      "_id": "zpeu5ykiuur",
       "name": "Diminished Range",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3547,15 +3552,16 @@
         "type": "defaut",
         "description": "<p>Each rank of this flaw reduces the effect’s range increments by one step.</p><p>Flat -1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "3x2m098zxb",
+      "_id": "f4bdwrxo2sl",
       "name": "Distracting",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3563,15 +3569,16 @@
         "type": "defaut",
         "description": "<p>Using a Distracting effect requires so much concentration or effort that you are vulnerable until the start of your next turn.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "iy79t5xu65k",
+      "_id": "lc2x4l4ccj",
       "name": "Grab-Based",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3579,15 +3586,16 @@
         "type": "defaut",
         "description": "<p>An attack with this flaw requires you to successfully grab and hold a target before the effect can be used.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "vq7rpfq18v",
+      "_id": "vx1bsxtup9a",
       "name": "Increased Action",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3595,15 +3603,16 @@
         "type": "defaut",
         "description": "<p>Each rank of this flaw increases the action required to use an effect by one step (Free to Move, Move to Standard, etc.).</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "y83dpae6a1g",
+      "_id": "grjeetsbmvq",
       "name": "Limited",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3611,15 +3620,16 @@
         "type": "defaut",
         "description": "<p>An effect with this flaw only works under certain circumstances, or has a significant restriction on its use.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "lfwqfh7aosi",
+      "_id": "qp2bna2dm9g",
       "name": "Noticeable",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3627,6 +3637,7 @@
         "type": "defaut",
         "description": "<p>A continuous or permanent effect with this flaw is very noticeable (glows, makes a loud noise, etc.).</p><p>Flat -1 point.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -3635,7 +3646,7 @@
       }
     },
     {
-      "_id": "xr8i2dzvcbp",
+      "_id": "f0sjtfsduw",
       "name": "Quirk",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3643,6 +3654,7 @@
         "type": "defaut",
         "description": "<p>A Quirk is a minor flaw, often something specific to a character or power, that doesn’t quite rise to the level of a full -1 cost per rank flaw.</p><p>Flat -1 point.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -3651,7 +3663,7 @@
       }
     },
     {
-      "_id": "8vpllkcneaq",
+      "_id": "ogtyu0o3xjf",
       "name": "Reduced Range",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3659,15 +3671,16 @@
         "type": "defaut",
         "description": "<p>Each rank of this flaw reduces the range of an effect (Ranged to Close, etc.).</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "2h93mxup3uw",
+      "_id": "hn9sxvra6no",
       "name": "Resistible",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3675,15 +3688,16 @@
         "type": "defaut",
         "description": "<p>An effect with this flaw allows an additional resistance check, or is resisted by a different defense than usual.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "8fqs0a28mf4",
+      "_id": "bwj0p114eor",
       "name": "Sense-Dependent",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3691,15 +3705,16 @@
         "type": "defaut",
         "description": "<p>The target must be able to perceive the effect with a particular sense for it to work.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "dekqopyp1jk",
+      "_id": "few7yj22ilr",
       "name": "Side Effect",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3707,15 +3722,16 @@
         "type": "defaut",
         "description": "<p>If you fail to use the effect properly, or even if you succeed, you suffer a negative side effect.</p><p>–1 or –2 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "sedvsa35yan",
+      "_id": "a7892tdfdnt",
       "name": "Tiring",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3723,15 +3739,16 @@
         "type": "defaut",
         "description": "<p>Using the effect is physically or mentally taxing, causing you to become fatigued.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "59uo92onsg2",
+      "_id": "mjsvxsnztt8",
       "name": "Uncontrolled",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3739,15 +3756,16 @@
         "type": "defaut",
         "description": "<p>You have no control over when the effect activates or what it does; the GM decides.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "wlfyv4ytl",
+      "_id": "aif59wpg3u8",
       "name": "Unreliable",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3755,15 +3773,16 @@
         "type": "defaut",
         "description": "<p>An Unreliable effect only works some of the time (5 uses, or requires a check each time).</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "ts955ohiowb",
+      "_id": "7bt16r4z7k9",
       "name": "Feedback",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3771,15 +3790,16 @@
         "type": "defaut",
         "description": "<p>You suffer damage when a manifestation of your effect is damaged.</p><p>–1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "d9d3gj67k44",
+      "_id": "2pq6xqf6re4",
       "name": "Inaccurate",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3787,22 +3807,7 @@
         "type": "defaut",
         "description": "<p>An effect with this flaw is hard to control or wildly inaccurate. Each rank gives you a –2 penalty to attack checks.</p><p>Flat -1 point per rank.</p>",
         "rang": 1,
-        "cout": {
-          "fixe": true,
-          "rang": false,
-          "value": 1
-        }
-      }
-    },
-    {
-      "_id": "7tsau8zdatg",
-      "name": "Permanent",
-      "type": "modificateur",
-      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
-      "system": {
-        "type": "defaut",
-        "description": "<p>A continuous effect with this flaw becomes permanent in duration. It cannot be turned off and cannot be improved using extra effort.</p><p>–1 cost per rank.</p>",
-        "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": true,
@@ -3811,7 +3816,24 @@
       }
     },
     {
-      "_id": "ucc791souuf",
+      "_id": "zdbb0fbzu",
+      "name": "Permanent",
+      "type": "modificateur",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "defaut",
+        "description": "<p>A continuous effect with this flaw becomes permanent in duration. It cannot be turned off and cannot be improved using extra effort.</p><p>–1 cost per rank.</p>",
+        "rang": 1,
+        "edit": true,
+        "cout": {
+          "fixe": false,
+          "rang": true,
+          "value": 1
+        }
+      }
+    },
+    {
+      "_id": "fmluvv0pgk",
       "name": "Removable",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3819,6 +3841,7 @@
         "type": "defaut",
         "description": "<p>Removable applies to the power as a whole. The flaw is worth –1 point per 5 total power points.</p><p>Flat -1 point per 5 points.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -3827,7 +3850,7 @@
       }
     },
     {
-      "_id": "p76lx5satue",
+      "_id": "hfnp1whoq",
       "name": "Easily Removable",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3835,6 +3858,7 @@
         "type": "defaut",
         "description": "<p>An easily removable power can be taken away with a disarm or grab action. The flaw is worth –2 points per 5 total power points.</p><p>Flat -2 points per 5 points.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -3845,7 +3869,7 @@
   ],
   "extras": [
     {
-      "_id": "mwucl48q81l",
+      "_id": "u83435efmkc",
       "name": "Concentration",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3853,15 +3877,16 @@
         "type": "extra",
         "description": "<p>Once you have hit with a Concentration Affliction, so long as you continue to take a standard action each turn to maintain the effect, the target must make a new resistance check against it, with no attack check required.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "bzxsj93rzyj",
+      "_id": "e7ijm13rceu",
       "name": "Alternate Resistance",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3869,15 +3894,16 @@
         "type": "extra",
         "description": "<p>Some Afflictions may be initially resisted by Dodge, representing the need for quick reaction time or reflexes to avoid the effect. In this case, the later resistance checks to remove the Affliction’s conditions are typically still based on Fortitude or Will.</p><p>+0 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 0
         }
       }
     },
     {
-      "_id": "ny1jcg2240k",
+      "_id": "nceggexoby",
       "name": "Cumulative",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3885,15 +3911,16 @@
         "type": "extra",
         "description": "<p>A Cumulative Affliction adds any further degrees to the existing degrees on the target. For example, if you hit a target and impose a vulnerable condition (one degree), then attack again and get one degree on the effect, you impose the Affliction’s second degree condition.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "qqk11ot1kbg",
+      "_id": "n9342mmelir",
       "name": "Progressive",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3901,15 +3928,16 @@
         "type": "extra",
         "description": "<p>This modifier causes an Affliction to increase incrementally without any effort from you. If the target fails a resistance check to end the Affliction, it not only persists, but increases in effect by one degree!</p><p>+2 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 2
         }
       }
     },
     {
-      "_id": "u9jqrydcwa",
+      "_id": "y35c594ii2o",
       "name": "Accurate",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3917,15 +3945,16 @@
         "type": "extra",
         "description": "<p>An effect with this extra is especially accurate; you get +2 per Accurate rank to attack checks made with it.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "8u3lfzpz7ln",
+      "_id": "63y7ek8ib57",
       "name": "Affects Corporeal",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3933,15 +3962,16 @@
         "type": "extra",
         "description": "<p>An incorporeal being can use an effect with this extra on the corporeal world. When an effect is used against a corporeal target, the effect’s rank is equal to the rank of this extra, up to a maximum of the effect’s full rank.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "48msp9qibv8",
+      "_id": "ieivwhyxm",
       "name": "Affects Insubstantial",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3949,6 +3979,7 @@
         "type": "extra",
         "description": "<p>An effect with this extra works on insubstantial targets, in addition to having its normal effect on corporeal targets. Rank 1 allows the effect to work at half its normal rank; rank 2 allows it to function at full rank.</p><p>Flat 1 or 2 points.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -3957,7 +3988,7 @@
       }
     },
     {
-      "_id": "liurklolxge",
+      "_id": "r5nqcqu7ksr",
       "name": "Affects Objects",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3965,15 +3996,16 @@
         "type": "extra",
         "description": "<p>This modifier allows effects normally resisted by Fortitude to work on non-living objects (those with no Stamina).</p><p>+0 or +1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "ppdpal643nb",
+      "_id": "5fzfr6qnrqa",
       "name": "Affects Others",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3981,15 +4013,16 @@
         "type": "extra",
         "description": "<p>This extra allows you to give someone else use of a personal effect. You must touch the subject as a standard action, and they have control over their use of the effect.</p><p>+0 or +1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "tl8ia8k2sxg",
+      "_id": "1l0wc8r4v64",
       "name": "Alternate Effect",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -3997,6 +4030,7 @@
         "type": "extra",
         "description": "<p>This modifier allows you to “swap-out” the effect for an entire other, alternate, effect!</p><p>Flat 1 or 2 points.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -4005,7 +4039,7 @@
       }
     },
     {
-      "_id": "349fdw2kbn2",
+      "_id": "3pu7a2enpez",
       "name": "Area",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4013,15 +4047,16 @@
         "type": "extra",
         "description": "<p>This extra allows an effect that normally works on a single target to affect an area. No attack check is needed; potential targets are permitted a Dodge resistance check (DC 10 + effect rank) to reduce the effect.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "u8a3zhfcj7e",
+      "_id": "rjida7f1nu",
       "name": "Burst Area",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4029,15 +4064,16 @@
         "type": "extra",
         "description": "<p>The effect fills a sphere with a 30-foot radius (distance rank 0).</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "8t98xx5fvkk",
+      "_id": "n9av7e7qnv",
       "name": "Cloud Area",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4045,15 +4081,16 @@
         "type": "extra",
         "description": "<p>The effect fills a sphere with a 15-foot radius (distance rank –1) that lingers for one round.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "w3dxgz6npu",
+      "_id": "2ag4lxy18yq",
       "name": "Cone Area",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4061,15 +4098,16 @@
         "type": "extra",
         "description": "<p>The effect fills a cone with a length, width, and height of 60 feet (distance rank 1).</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "pp1512al12h",
+      "_id": "502gq8ptvri",
       "name": "Cylinder Area",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4077,15 +4115,16 @@
         "type": "extra",
         "description": "<p>The effect fills a cylinder 30 feet in radius and height (distance rank 0).</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "du2e2qippyb",
+      "_id": "w0o595mlky9",
       "name": "Line Area",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4093,15 +4132,16 @@
         "type": "extra",
         "description": "<p>The effect fills a path 6 feet wide and 30 feet long (distance ranks -2 and 0) in a straight line.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "8x0gtg0xx8t",
+      "_id": "1a6no0hkms1",
       "name": "Perception Area",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4109,15 +4149,16 @@
         "type": "extra",
         "description": "<p>The effect works on anyone able to perceive the target point with a particular sense. Targets get a Dodge resistance check to avoid the effect entirely.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "32ocu3fzc0a",
+      "_id": "gm0juwce3mo",
       "name": "Contagious",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4125,15 +4166,16 @@
         "type": "extra",
         "description": "<p>Contagious effects work on both the target and anyone coming into contact with the target. New targets resist the effect normally.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "niytcheek7",
+      "_id": "e123a3dzm7r",
       "name": "Dimensional",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4141,6 +4183,7 @@
         "type": "extra",
         "description": "<p>This modifier allows an effect to work on targets in other dimensions. Rank 1 affects one dimension, Rank 2 a related group, Rank 3 any dimension.</p><p>Flat 1-3 points.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -4149,7 +4192,7 @@
       }
     },
     {
-      "_id": "exp9cckr4la",
+      "_id": "unqmxhska5j",
       "name": "Extended Range",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4157,15 +4200,16 @@
         "type": "extra",
         "description": "<p>Each rank of Extended Range doubles all of the effect’s range categories.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "b1ax92o5uql",
+      "_id": "8t8qtu3z3e",
       "name": "Feature",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4173,15 +4217,16 @@
         "type": "extra",
         "description": "<p>Adds some minor additional capability or benefit to a basic effect.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "styst2ob0ls",
+      "_id": "d62ob8xskgt",
       "name": "Homing",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4189,15 +4234,16 @@
         "type": "extra",
         "description": "<p>This modifier grants a ranged effect an additional opportunity to hit if it misses.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "kigifuzapl",
+      "_id": "zmav3mc0g9k",
       "name": "Impervious",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4205,15 +4251,16 @@
         "type": "extra",
         "description": "<p>A defense with this modifier ignores any effect with a resistance difficulty modifier equal to or less than half the Impervious rank.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "jxdgndyiqk",
+      "_id": "22755wd2l9h",
       "name": "Increased Mass",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4221,15 +4268,16 @@
         "type": "extra",
         "description": "<p>Each rank of this extra increases the mass rank you can carry or move with the effect by 1.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "hdl326nfrdv",
+      "_id": "txsf2mxwzoq",
       "name": "Incurable",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4237,6 +4285,7 @@
         "type": "extra",
         "description": "<p>Effects such as Healing and Regeneration cannot heal the damage caused by an effect with this modifier.</p><p>Flat 1 point.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -4245,7 +4294,7 @@
       }
     },
     {
-      "_id": "ri2ngl4h9x",
+      "_id": "babj1cuv7mu",
       "name": "Indirect",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4253,6 +4302,7 @@
         "type": "extra",
         "description": "<p>A ranged effect with this modifier can originate from a point other than the user, ignoring cover.</p><p>Flat 1-4 points.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -4261,7 +4311,7 @@
       }
     },
     {
-      "_id": "vixzukm216o",
+      "_id": "gs9k295okwn",
       "name": "Innate",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4269,6 +4319,7 @@
         "type": "extra",
         "description": "<p>An effect with this modifier is an innate part of your nature and unaffected by Nullify.</p><p>Flat 1 point.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -4277,7 +4328,7 @@
       }
     },
     {
-      "_id": "sv95w7d81lh",
+      "_id": "lvjq4miz01",
       "name": "Insidious",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4285,6 +4336,7 @@
         "type": "extra",
         "description": "<p>This modifier makes the result of an effect harder to detect (DC 20 skill check).</p><p>Flat 1 point.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -4293,7 +4345,7 @@
       }
     },
     {
-      "_id": "ts5t7h9wqt9",
+      "_id": "gw09ghbfmc",
       "name": "Penetrating",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4301,15 +4353,16 @@
         "type": "extra",
         "description": "<p>Your effect overcomes Impervious Resistance to a degree.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "hadyu9igdj7",
+      "_id": "vwl4x8w2bq",
       "name": "Precise",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4317,6 +4370,7 @@
         "type": "extra",
         "description": "<p>You can use a Precise effect to perform tasks requiring delicacy and fine control.</p><p>Flat 1 point.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -4325,7 +4379,7 @@
       }
     },
     {
-      "_id": "zzrawxfnqrd",
+      "_id": "6hsqagjv2ud",
       "name": "Reach",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4333,15 +4387,16 @@
         "type": "extra",
         "description": "<p>Each rank of this modifier to a close range effect extends its reach by 5 feet.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "9pfmq7dkkv",
+      "_id": "7oyefgnmyta",
       "name": "Reaction",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4349,15 +4404,16 @@
         "type": "extra",
         "description": "<p>Changes an effect’s required action to a reaction, occurring automatically when a triggering event occurs.</p><p>+1 or +3 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "07zjf6b4j3zs",
+      "_id": "ucuht2k3db",
       "name": "Reversible",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4365,6 +4421,7 @@
         "type": "extra",
         "description": "<p>You can remove conditions caused by a Reversible effect at will as a free action.</p><p>Flat 1 point.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -4373,7 +4430,7 @@
       }
     },
     {
-      "_id": "y3ktxgld6dm",
+      "_id": "qk3uubfsz5",
       "name": "Ricochet",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4381,15 +4438,16 @@
         "type": "extra",
         "description": "<p>You can ricochet or bounce an attack effect off of a solid surface to change its direction.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "bzlymkg116l",
+      "_id": "mh6fl9m4xto",
       "name": "Secondary Effect",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4397,15 +4455,16 @@
         "type": "extra",
         "description": "<p>An instant duration effect with this modifier affects the target once immediately and then once again on the following round.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "ecrnxc62mpo",
+      "_id": "q2g8a3x78s",
       "name": "Selective",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4413,15 +4472,16 @@
         "type": "extra",
         "description": "<p>A resistible effect with this extra is discriminating, allowing you to decide who is and is not affected by it.</p><p>+1 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "gvwpgexs1e",
+      "_id": "iwugxrzxs2q",
       "name": "Sleep",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4429,15 +4489,16 @@
         "type": "extra",
         "description": "<p>The effect leaves targets asleep whenever it would normally render them incapacitated.</p><p>+0 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 0
         }
       }
     },
     {
-      "_id": "d47jhsy6hht",
+      "_id": "g48it4se7pr",
       "name": "Split",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4445,15 +4506,16 @@
         "type": "extra",
         "description": "<p>A resistible effect that works on one target can be split between two or more targets.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "9h47asmz6t7",
+      "_id": "jd1jl2isr1e",
       "name": "Subtle",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4461,6 +4523,7 @@
         "type": "extra",
         "description": "<p>Subtle effects are not as noticeable. Rank 1 is difficult to notice, Rank 2 is undetectable.</p><p>Flat 1-2 points.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
@@ -4469,7 +4532,7 @@
       }
     },
     {
-      "_id": "2ypfzgo1jye",
+      "_id": "o7gyisleoem",
       "name": "Sustained",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4477,15 +4540,16 @@
         "type": "extra",
         "description": "<p>Applied to a permanent duration effect, this modifier makes it sustained duration.</p><p>+0 cost per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
-          "fixe": true,
+          "fixe": false,
           "rang": true,
           "value": 0
         }
       }
     },
     {
-      "_id": "ypesmi3szjg",
+      "_id": "93qijgylmgj",
       "name": "Triggered",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4493,15 +4557,16 @@
         "type": "extra",
         "description": "<p>You can “set” an instant duration effect to activate under particular circumstances.</p><p>Flat 1 point per rank.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
-          "rang": false,
+          "rang": true,
           "value": 1
         }
       }
     },
     {
-      "_id": "io0cz61j7y7",
+      "_id": "d2cz9za6ar5",
       "name": "Variable Descriptor",
       "type": "modificateur",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -4509,6 +4574,7 @@
         "type": "extra",
         "description": "<p>You can change the descriptors of an effect with this modifier as a free action.</p><p>Flat 1-2 points.</p>",
         "rang": 1,
+        "edit": true,
         "cout": {
           "fixe": true,
           "rang": false,
