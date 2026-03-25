@@ -180,7 +180,7 @@ async function buildPowers() {
           "totalTheorique": finalTotal,
           "modrang": modCostPerRank,
           "modfixe": flatCost,
-          "parrangtotal": "0"
+          "parrangtotal": finalCostPerRank.toString()
         },
         "extras": extrasObject,
         "defauts": flawsObject

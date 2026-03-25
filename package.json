@@ -1,6 +1,6 @@
 {
   "name": "mnm-3e-expanded",
-  "version": "3.3.0",
+  "version": "3.3.11",
   "description": "Build pipeline for M&M 3e Foundry Compendiums",
   "author": "Davinchi",
   "main": "index.js",
@@ -8,11 +8,20 @@
     "build": "node scripts/build.js"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "axios": "^1.13.6",
     "csv-parse": "^6.1.0",
     "csv-parser": "^3.2.0",
     "csv-stringify": "^6.6.0",
     "fs-extra": "^11.1.0",
     "js-yaml": "^4.1.0",
-    "pdf-parse": "^1.1.1"
+    "lucide-react": "^1.6.0",
+    "pdf-parse": "^1.1.1",
+    "vite": "^8.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2"
   }
 }
