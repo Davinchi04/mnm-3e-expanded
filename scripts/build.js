@@ -12,7 +12,7 @@ const translationMap = {
   duration: { 'instant': 'instantane', 'sustained': 'prolonge', 'continuous': 'continu', 'concentration': 'concentration', 'permanent': 'permanent' }
 };
 
-const packsDir = path.join(__dirname, '../mnm-3e-expanded/packs');
+const distDir = path.join(__dirname, '../mnm-3e-expanded/packs');
 
 async function readCsv(filePath) {
   return new Promise((resolve, reject) => {
@@ -35,47 +35,8 @@ function createId() {
   return Math.random().toString(36).substring(2, 18);
 }
 
-/**
- * Modern LevelDB Folder Document
- */
-function getFolderDoc(name, folderId) {
-  return {
-    "name": name,
-    "type": "Item",
-    "_id": folderId,
-    "folder": null,
-    "sort": 0,
-    "sorting": "a",
-    "color": null,
-    "flags": {}
-  };
-}
-
-/**
- * Saves a pack in LevelDB source format (directory of JSONs)
- */
 async function savePack(packName, documents) {
-  const packPath = path.join(packsDir, packName);
-  const sourcePath = path.join(packPath, '_source');
-  
-  // Clean old files
-  if (fs.existsSync(path.join(packsDir, `${packName}.db`))) {
-    await fs.remove(path.join(packsDir, `${packName}.db`));
-  }
-  await fs.remove(packPath);
-  await fs.ensureDir(sourcePath);
-
-  for (const doc of documents) {
-    const fileName = `${doc.name.replace(/[^a-z0-9]/gi, '_').toLowerCase()}_${doc._id}.json`;
-    await fs.writeJson(path.join(sourcePath, fileName), doc, { spaces: 2 });
-  }
-}
-
-/**
- * Saves a pack in legacy NeDB format (single .db file)
- */
-async function saveLegacyPack(packName, documents) {
-  const outFile = path.join(packsDir, `${packName}.db`);
+  const outFile = path.join(distDir, `${packName}.db`);
   const lines = documents.map(d => JSON.stringify(d));
   await fs.writeFile(outFile, lines.join('\n'));
 }
@@ -109,7 +70,7 @@ async function buildPowers() {
       "flags": {}
     };
   }).filter(Boolean);
-  await saveLegacyPack('powers', items);
+  await savePack('powers', items);
 }
 
 async function buildAdvantages() {
@@ -127,12 +88,11 @@ async function buildAdvantages() {
       "flags": {}
     };
   }).filter(Boolean);
-  await saveLegacyPack('advantages', items);
+  await savePack('advantages', items);
 }
 
 async function buildEquipment() {
   const categories = ['melee', 'ranged', 'armor', 'utility'];
-  const folderMap = {};
   const allDocs = [];
 
   for (const cat of categories) {
@@ -140,18 +100,11 @@ async function buildEquipment() {
     for (const row of rows) {
       const name = (row.Name || "").trim();
       if (!name) continue;
-      const type = (row.Type || "General").trim();
-      if (!folderMap[type]) {
-        const fId = createId();
-        folderMap[type] = fId;
-        allDocs.push(getFolderDoc(type, fId));
-      }
       allDocs.push({
         "_id": createId(),
         "name": name,
         "type": "equipement",
         "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-        "folder": folderMap[type],
         "system": { "description": `<p>${row.Notes || ''}</p>`, "cout": parseInt(row.Cost) || 1 },
         "effects": [],
         "flags": {}
@@ -163,23 +116,15 @@ async function buildEquipment() {
 
 async function buildVehicles() {
   const rows = await readCsv(path.join(__dirname, '../src/vehicles/vehicles.csv'));
-  const folderMap = {};
   const allDocs = [];
   for (const row of rows) {
     const name = (row.Name || "").trim();
     if (!name) continue;
-    const cat = (row.Category || "Other").trim();
-    if (!folderMap[cat]) {
-      const fId = createId();
-      folderMap[cat] = fId;
-      allDocs.push(getFolderDoc(cat, fId));
-    }
     allDocs.push({
       "_id": createId(),
       "name": name,
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-      "folder": folderMap[cat],
       "system": { "description": `<p>${row.Notes || ''}</p>`, "cout": parseInt(row.Cost) || 1 },
       "effects": [],
       "flags": {}
@@ -190,8 +135,7 @@ async function buildVehicles() {
 
 async function buildHeadquarters() {
   const rows = await readCsv(path.join(__dirname, '../src/headquarters/headquarters.csv'));
-  const hqFolderId = createId();
-  const allDocs = [getFolderDoc("Bases & Strongholds", hqFolderId)];
+  const allDocs = [];
   for (const row of rows) {
     const name = (row.Name || "").trim();
     if (!name) continue;
@@ -200,7 +144,6 @@ async function buildHeadquarters() {
       "name": name,
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-      "folder": hqFolderId,
       "system": { "description": `<p>${row.Notes || ''}</p>`, "cout": parseInt(row.Cost) || 1 },
       "effects": [],
       "flags": {}
@@ -209,14 +152,21 @@ async function buildHeadquarters() {
   await savePack('headquarters', allDocs);
 }
 
+async function buildModifiers(items, fileName) {
+  const outFile = path.join(distDir, fileName);
+  await fs.writeFile(outFile, items.map(i => JSON.stringify(i)).join('\n'));
+}
+
 async function main() {
-  await fs.ensureDir(packsDir);
+  await fs.ensureDir(distDir);
   await buildPowers();
   await buildAdvantages();
   await buildEquipment();
   await buildVehicles();
   await buildHeadquarters();
-  console.log("Build Complete: Equipment, Vehicles, and HQ migrated to LevelDB folders.");
+  await buildModifiers(EXTRAS, 'extras.db');
+  await buildModifiers(FLAWS, 'flaws.db');
+  console.log("Build Complete: Reverted to flat .db structure (no folders).");
 }
 
 main().catch(err => console.error(err));

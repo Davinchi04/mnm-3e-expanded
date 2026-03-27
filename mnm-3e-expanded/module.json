@@ -55,21 +55,21 @@
     {
       "name": "expanded-equipment",
       "label": "M&M 3e Expanded: Equipment",
-      "path": "packs/equipment",
+      "path": "packs/equipment.db",
       "type": "Item",
       "system": "mutants-and-masterminds-3e"
     },
     {
       "name": "expanded-vehicles",
       "label": "M&M 3e Expanded: Vehicles",
-      "path": "packs/vehicles",
+      "path": "packs/vehicles.db",
       "type": "Item",
       "system": "mutants-and-masterminds-3e"
     },
     {
       "name": "expanded-headquarters",
       "label": "M&M 3e Expanded: Headquarters",
-      "path": "packs/headquarters",
+      "path": "packs/headquarters.db",
       "type": "Item",
       "system": "mutants-and-masterminds-3e"
     }
