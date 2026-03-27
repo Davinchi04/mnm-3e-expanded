@@ -70,22 +70,27 @@ function sanitizeText(text) {
     .trim();
 }
 
-function createFolder(name, folderMap, lines) {
-  if (!name) return null;
-  if (!folderMap[name]) {
-    const id = "fld" + Math.random().toString(36).substring(2, 10);
-    folderMap[name] = id;
-    lines.push(JSON.stringify({
-      "_id": id,
-      "name": name,
-      "type": "Folder",
-      "folder": null,
-      "sort": 0,
-      "color": null,
-      "flags": {}
-    }));
-  }
-  return folderMap[name];
+/**
+ * Creates a unique ID for Foundry
+ */
+function createId() {
+  return Math.random().toString(36).substring(2, 18);
+}
+
+/**
+ * Creates a Folder document structure for V11+ NeDB
+ */
+function getFolderDoc(name, folderId) {
+  return {
+    "_id": folderId,
+    "name": name,
+    "type": "Item", // MUST match the pack type
+    "folder": null,
+    "sort": 0,
+    "sorting": "a",
+    "color": null,
+    "flags": {}
+  };
 }
 
 async function buildPowers() {
@@ -104,7 +109,7 @@ async function buildPowers() {
 
     const action = (row.Action || row.action || row.ACTION || 'standard').trim().toLowerCase();
     const range = (row.Range || row.range || row.RANGE || 'close').trim().toLowerCase();
-    const duration = (row.Duration || row.duration || row.DURATION || 'instant').trim().toLowerCase();
+    const duration = (row.Duration || row.duration || duration || 'instant').trim().toLowerCase();
 
     const baseRank = parseInt(row.Rank || row.rank || row.RANK) || 1;
     const baseCostPerRank = parseInt(row.Cost || row.cost || row.COST) || 1;
@@ -177,7 +182,7 @@ async function buildPowers() {
     }
 
     const powerItem = {
-      "_id": Math.random().toString(36).substring(2, 18),
+      "_id": createId(),
       "name": name,
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -226,7 +231,7 @@ async function buildAdvantages() {
     const effects = [];
     if (row.ModKey && row.ModValue) {
       effects.push({
-        "_id": "eff" + Math.random().toString(36).substring(2, 10),
+        "_id": "eff" + createId().substring(0, 8),
         "name": `${name} Bonus`,
         "changes": [{ "key": row.ModKey, "mode": 2, "value": row.ModValue.toString(), "priority": 20 }],
         "disabled": false,
@@ -238,7 +243,7 @@ async function buildAdvantages() {
     const baseRank = parseInt(row.Ranks || row.ranks) || 1;
 
     const advantageItem = {
-      "_id": Math.random().toString(36).substring(2, 18),
+      "_id": createId(),
       "name": name,
       "type": 'talent',
       "img": 'systems/mutants-and-masterminds-3e/assets/icons/talent.svg',
@@ -263,8 +268,9 @@ async function buildAdvantages() {
 async function buildEquipment() {
   const categories = ['melee', 'ranged', 'armor', 'utility'];
   const outFile = path.join(distDir, 'equipment.db');
-  let allLines = [];
   const folderMap = {};
+  const items = [];
+  const folders = [];
 
   for (const cat of categories) {
     const csvFile = path.join(__dirname, `../src/equipment/${cat}/${cat}.csv`);
@@ -275,7 +281,11 @@ async function buildEquipment() {
       if (!name) continue;
 
       const type = (row.Type || "General").trim();
-      const folderId = createFolder(type, folderMap, allLines);
+      if (!folderMap[type]) {
+        const folderId = createId();
+        folderMap[type] = folderId;
+        folders.push(JSON.stringify(getFolderDoc(type, folderId)));
+      }
 
       const effects = [];
       const modKey = row.ModKey || row.modkey;
@@ -283,7 +293,7 @@ async function buildEquipment() {
 
       if (modKey && modValue) {
         effects.push({
-          "_id": "eff" + Math.random().toString(36).substring(2, 10),
+          "_id": "eff" + createId().substring(0, 8),
           "name": `${name} Bonus`,
           "changes": [{ "key": modKey, "mode": 2, "value": modValue.toString(), "priority": 20 }],
           "disabled": false,
@@ -302,11 +312,11 @@ async function buildEquipment() {
       gearInfo += `<hr/>`;
 
       const gearItem = {
-        "_id": Math.random().toString(36).substring(2, 18),
+        "_id": createId(),
         "name": name,
         "type": "equipement",
         "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-        "folder": folderId,
+        "folder": folderMap[type],
         "system": {
           "description": gearInfo + `<p>${row.Notes || ''}</p>`,
           "cout": parseInt(row.Cost) || 1
@@ -314,25 +324,31 @@ async function buildEquipment() {
         "effects": effects,
         "flags": {}
       };
-      allLines.push(JSON.stringify(gearItem));
+      items.push(JSON.stringify(gearItem));
     }
   }
-  await fs.writeFile(outFile, allLines.join('\n'));
+  // PREPEND folders so they are processed first
+  await fs.writeFile(outFile, folders.concat(items).join('\n'));
 }
 
 async function buildVehicles() {
   const csvFile = path.join(__dirname, '../src/vehicles/vehicles.csv');
   const outFile = path.join(distDir, 'vehicles.db');
   const rows = await readCsv(csvFile);
-  let allLines = [];
   const folderMap = {};
+  const items = [];
+  const folders = [];
 
   for (const row of rows) {
     const name = (row.Name || row.name || "").trim();
     if (!name) continue;
 
     const category = (row.Category || "Other").trim();
-    const folderId = createFolder(category, folderMap, allLines);
+    if (!folderMap[category]) {
+      const folderId = createId();
+      folderMap[category] = folderId;
+      folders.push(JSON.stringify(getFolderDoc(category, folderId)));
+    }
 
     let vehicleInfo = `<b>[ VEHICLE SPECS ]</b><br/>`;
     vehicleInfo += `&bull; <b>Size:</b> ${row.Size}<br/>`;
@@ -343,11 +359,11 @@ async function buildVehicles() {
     vehicleInfo += `<hr/>`;
 
     const vehicleItem = {
-      "_id": Math.random().toString(36).substring(2, 18),
+      "_id": createId(),
       "name": name,
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-      "folder": folderId,
+      "folder": folderMap[category],
       "system": {
         "description": vehicleInfo + `<p>${row.Notes || ''}</p>`,
         "cout": parseInt(row.Cost) || 1
@@ -355,20 +371,21 @@ async function buildVehicles() {
       "effects": [],
       "flags": {}
     };
-    allLines.push(JSON.stringify(vehicleItem));
+    items.push(JSON.stringify(vehicleItem));
   }
-  await fs.writeFile(outFile, allLines.join('\n'));
+  await fs.writeFile(outFile, folders.concat(items).join('\n'));
 }
 
 async function buildHeadquarters() {
   const csvFile = path.join(__dirname, '../src/headquarters/headquarters.csv');
   const outFile = path.join(distDir, 'headquarters.db');
   const rows = await readCsv(csvFile);
-  const allLines = [];
+  const items = [];
+  const folders = [];
   const folderMap = {};
 
-  // For Headquarters, we'll create a single folder if not specified
-  const folderId = createFolder("Bases & Strongholds", folderMap, allLines);
+  const hqFolderId = createId();
+  folders.push(JSON.stringify(getFolderDoc("Bases & Strongholds", hqFolderId)));
 
   for (const row of rows) {
     const name = (row.Name || row.name || "").trim();
@@ -381,11 +398,11 @@ async function buildHeadquarters() {
     hqInfo += `<hr/>`;
 
     const hqItem = {
-      "_id": Math.random().toString(36).substring(2, 18),
+      "_id": createId(),
       "name": name,
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-      "folder": folderId,
+      "folder": hqFolderId,
       "system": {
         "description": hqInfo + `<p>${row.Notes || ''}</p>`,
         "cout": parseInt(row.Cost) || 1
@@ -393,9 +410,9 @@ async function buildHeadquarters() {
       "effects": [],
       "flags": {}
     };
-    allLines.push(JSON.stringify(hqItem));
+    items.push(JSON.stringify(hqItem));
   }
-  await fs.writeFile(outFile, allLines.join('\n'));
+  await fs.writeFile(outFile, folders.concat(items).join('\n'));
 }
 
 async function buildModifiers(items, fileName) {
