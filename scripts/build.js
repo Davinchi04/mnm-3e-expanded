@@ -5,6 +5,7 @@ const path = require('path');
 const EXTRAS_GENERAL = require('./extras.json');
 const EXTRAS_UNIQUE = require('./extras_unique.json');
 const FLAWS_GENERAL = require('./flaws.json');
+const FLAWS_UNIQUE = require('./flaws_unique.json');
 
 const translationMap = {
   type: { 'power': 'pouvoir', 'advantage': 'talent' },
@@ -167,6 +168,7 @@ async function main() {
   await buildModifiers(EXTRAS_GENERAL, 'extras-general.db');
   await buildModifiers(EXTRAS_UNIQUE, 'extras-unique.db');
   await buildModifiers(FLAWS_GENERAL, 'flaws-general.db');
+  await buildModifiers(FLAWS_UNIQUE, 'flaws-unique.db');
   console.log("Build Complete: Reorganized Extras and Flaws.");
 }
 
