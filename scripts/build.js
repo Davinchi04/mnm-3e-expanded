@@ -73,7 +73,7 @@ async function buildPowers() {
       "system": {
         "type": systemType,
         "activate": true,
-        "special": translationMap.action[action] || 'simple',
+        "special": action,
         "action": translationMap.action[action] || 'simple',
         "portee": translationMap.range[range] || 'contact',
         "duree": translationMap.duration[duration] || 'instantane',
@@ -88,10 +88,28 @@ async function buildPowers() {
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
         "edit": false,
-        "cout": { "rang": baseRank, "parrang": baseCostPerRank, "total": baseRank * baseCostPerRank }
+        "cout": { 
+          "rang": baseRank, 
+          "parrang": baseCostPerRank, 
+          "total": baseRank * baseCostPerRank,
+          "rangDyn": 0,
+          "rangDynMax": 0,
+          "divers": 0,
+          "modrang": 0,
+          "modfixe": 0,
+          "totalTheorique": baseRank * baseCostPerRank,
+          "parrangtotal": baseCostPerRank.toString()
+        }
       },
       "effects": [],
-      "flags": {}
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "coreVersion": "12"
+      }
     };
   }).filter(Boolean);
   await savePack('powers', items);
