@@ -76,6 +76,13 @@ async function buildPowers() {
         "duree": translationMap.duration[duration] || 'instantane',
         "notes": `<p>${sanitizeText(row.Description)}</p>`,
         "effets": sanitizeText(row.Mechanics) ? `<p>${sanitizeText(row.Mechanics).toUpperCase()}</p>` : "",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
         "cout": { "rang": baseRank, "parrang": baseCostPerRank, "total": baseRank * baseCostPerRank }
       },
       "effects": [],
