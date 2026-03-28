@@ -77,6 +77,7 @@ async function buildPowers() {
         "notes": `<p>${sanitizeText(row.Description)}</p>`,
         "description": `<p>${sanitizeText(row.Description)}</p>`,
         "effets": sanitizeText(row.Mechanics) ? `<p>${sanitizeText(row.Mechanics).toUpperCase()}</p>` : "",
+        "effetsprincipaux": sanitizeText(row.Mechanics) ? `<p>${sanitizeText(row.Mechanics).toUpperCase()}</p>` : "",
         "link": "",
         "descripteurs": {},
         "extras": {},
