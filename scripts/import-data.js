@@ -103,12 +103,7 @@ async function importData() {
   for (const [key, items] of Object.entries(data)) {
     const processedItems = items.map(item => {
       if (key === 'powers') {
-        // Create a new item object that omits 'extras' and 'defauts'
         const processedItem = { ...item };
-        if (processedItem.system) {
-          delete processedItem.system.extras;
-          delete processedItem.system.defauts;
-        }
         return calculatePowerCost(processedItem);
       }
       return item;
