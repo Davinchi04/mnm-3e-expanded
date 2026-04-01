@@ -8,6 +8,9 @@
       "name": "Davinchi"
     }
   ],
+  "scripts": [
+    "scripts/sort-logic.js"
+  ],
   "compatibility": {
     "minimum": "12",
     "verified": "13"
