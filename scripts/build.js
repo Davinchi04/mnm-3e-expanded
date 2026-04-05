@@ -204,7 +204,11 @@ async function buildEquipment() {
         "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
         "system": { "description": `<p>${row.Notes || ''}</p>`, "cout": parseInt(row.Cost) || 1 },
         "effects": [],
-        "flags": {}
+        "flags": {
+          "mnm-3e-expanded": {
+            "link": row.ArrayGroup || ""
+          }
+        }
       });
     }
   }

@@ -1,4 +1,5 @@
 Name,Type,Cost,ArrayGroup,Notes
+Utility Belt,Utility,1,,"A belt containing various specialized tools and gadgets."
 Tear Gas Pellets,Utility,16,Utility Belt,"Ranged Cloud Area Affliction 4."
 Bolos,Utility,1,Utility Belt,"Ranged Cumulative Affliction 3."
 Boomerangs,Utility,1,Utility Belt,"Ranged Damage 1, Strength-based."
