@@ -1,4 +1,4 @@
-console.error("M&M 3E EXPANDED | SCRIPT LOADED (V3.3.53)");
+console.error("M&M 3E EXPANDED | SCRIPT LOADED (V3.3.54)");
 
 // Self-Healing Logic: Fixes legacy data structures and calculates PP costs
 async function healActorData(actor) {
@@ -96,7 +96,7 @@ async function healActorData(actor) {
         const m = actor.items.get(id);
         const mc = m.system.cout || {};
         const mnet = (mc.parrang || 0) + (mc.modrang || 0);
-        const m_rank = mc.rang || 0;
+        const m_rank = mc.rang || 0; // FIXED: was mc.rank
         const mf = mnet > 0 ? (mnet * m_rank + (mc.modfixe || 0) + (mc.divers || 0)) : (Math.ceil(m_rank / (2 - mnet)) + (mc.modfixe || 0) + (mc.divers || 0));
         if (mf > best) { best = mf; bearerId = id; }
       });
@@ -136,10 +136,8 @@ async function healActorData(actor) {
   if (itemUpdates.length > 0 || pp.pouvoirs !== newPowerSum || pp.total !== currentTotalSpent) {
     actor._healing = true;
     try {
-      console.group(`M&M 3E EXPANDED | SYNCING ${actor.name.toUpperCase()}`);
+      console.error(`M&M 3E EXPANDED | HEALING CALCULATION: ${actor.name} | Calculated Powers: ${newPowerSum}`);
       console.table(debugData);
-      console.log(`Current PP: ${pp.pouvoirs} -> New PP: ${newPowerSum}`);
-      console.groupEnd();
 
       if (itemUpdates.length > 0) {
         await actor.updateEmbeddedDocuments('Item', itemUpdates);
@@ -155,7 +153,7 @@ async function healActorData(actor) {
         });
         delete actor._healing;
         console.log(`M&M 3E EXPANDED | SYNC COMPLETE: ${actor.name}`);
-      }, 500);
+      }, 1000);
     } catch (err) {
       console.error("M&M 3e Expanded | Self-Healing Error:", err);
       delete actor._healing;
