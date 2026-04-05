@@ -1,13 +1,4 @@
-console.log('%c M&M 3E EXPANDED | LOADING ', 'background: #f00; color: #fff; font-size: 30px; font-weight: bold; border: 5px solid #000; padding: 10px;');
-alert("M&M 3E EXPANDED: SCRIPT EXECUTING AT ROOT");
-
-Hooks.once('init', () => {
-  console.log('%c M&M 3E EXPANDED | INIT HOOK FIRED ', 'background: #00f; color: #fff; font-size: 20px;');
-});
-
-Hooks.once('ready', () => {
-  console.log('%c M&M 3E EXPANDED | READY HOOK FIRED ', 'background: #0f0; color: #000; font-size: 20px;');
-});
+console.log('%c M&M 3E EXPANDED | SCRIPT LOADED ', 'background: #444; color: #fff; font-weight: bold; padding: 2px 5px;');
 
 // Self-Healing Logic: Fixes legacy data structures on the fly
 async function healActorData(actor) {
@@ -53,6 +44,7 @@ async function healActorData(actor) {
   const updates = [];
   const pwrUpdates = {};
   let newPowerSum = 0;
+  const debugData = [];
 
   for (let item of actor.items) {
     if (item.type === 'pouvoir') {
@@ -99,6 +91,7 @@ async function healActorData(actor) {
       }
 
       newPowerSum += targetCost;
+      debugData.push({ Name: item.name, Cost: targetCost, Theorique: theoriqueCost });
 
       if (c.total !== targetCost) { update['system.cout.total'] = targetCost; needsUpdate = true; }
       if (c.totalTheorique !== theoriqueCost) { update['system.cout.totalTheorique'] = theoriqueCost; needsUpdate = true; }
@@ -118,17 +111,25 @@ async function healActorData(actor) {
   if (updates.length > 0 || pp.pouvoirs !== newPowerSum || pp.total !== currentTotalSpent) {
     actor._healing = true;
     try {
-      console.log(`%c M&M 3E EXPANDED | HEALING ${actor.name.toUpperCase()} `, 'background: #800080; color: #fff; font-weight: bold;');
+      console.group(`M&M 3E EXPANDED | HEALING ${actor.name.toUpperCase()}`);
+      console.table(debugData);
+      console.log(`Summary | Powers: ${newPowerSum} | Total Spent: ${currentTotalSpent}`);
+      console.groupEnd();
+
       if (updates.length > 0) await actor.updateEmbeddedDocuments('Item', updates);
-      await actor.update({
-        ...pwrUpdates,
-        'system.pp.pouvoirs': newPowerSum,
-        'system.pp.total': currentTotalSpent,
-        'system.pp.used': currentTotalSpent
-      });
+      
+      // Delay actor update slightly to beat derived data recalculation
+      setTimeout(async () => {
+        await actor.update({
+          ...pwrUpdates,
+          'system.pp.pouvoirs': newPowerSum,
+          'system.pp.total': currentTotalSpent,
+          'system.pp.used': currentTotalSpent
+        });
+        delete actor._healing;
+      }, 100);
     } catch (err) {
       console.error("M&M 3e Expanded | Self-Healing Error:", err);
-    } finally {
       delete actor._healing;
     }
   }
