@@ -1,5 +1,4 @@
-console.error("M&M 3E EXPANDED | SCRIPT LOADED (V3.3.52)");
-console.log('%c M&M 3E EXPANDED | SCRIPT LOADED ', 'background: #444; color: #fff; font-weight: bold; padding: 2px 5px;');
+console.error("M&M 3E EXPANDED | SCRIPT LOADED (V3.3.53)");
 
 // Self-Healing Logic: Fixes legacy data structures and calculates PP costs
 async function healActorData(actor) {
@@ -7,6 +6,8 @@ async function healActorData(actor) {
   
   const powers = actor.items.filter(i => i.type === 'pouvoir');
   const talents = actor.items.filter(i => i.type === 'talent');
+
+  console.log(`M&M 3E EXPANDED | HEALING START: ${actor.name}`);
 
   // Group powers by array (link can be ID or Name)
   const arrays = {};
@@ -42,7 +43,7 @@ async function healActorData(actor) {
     arrayMaxCosts[parentId] = Math.max(1, max);
   }
 
-  const updates = [];
+  const itemUpdates = [];
   const pwrUpdates = {};
   let newPowerSum = 0;
   const debugData = [];
@@ -52,7 +53,7 @@ async function healActorData(actor) {
     const update = { _id: item._id };
     let needsUpdate = false;
 
-    // 1. Structural Fixes (original sort-logic.js logic)
+    // 1. Structural Fixes
     if (Array.isArray(item.system.extras)) {
       const obj = {};
       item.system.extras.forEach((e, i) => { if (e) obj[i + 1] = e; });
@@ -63,10 +64,6 @@ async function healActorData(actor) {
       const obj = {};
       item.system.defauts.forEach((f, i) => { if (f) obj[i + 1] = f; });
       update['system.defauts'] = obj;
-      needsUpdate = true;
-    }
-    if (item.system.special === 'simple') {
-      update['system.special'] = 'standard';
       needsUpdate = true;
     }
 
@@ -117,22 +114,18 @@ async function healActorData(actor) {
     if (c.parrangtotal !== displayCostPerRank) { update['system.cout.parrangtotal'] = displayCostPerRank; needsUpdate = true; }
 
     if (needsUpdate) {
-      updates.push(update);
+      itemUpdates.push(update);
       pwrUpdates[`system.pwr.${item._id}.cout.total`] = targetCost;
       pwrUpdates[`system.pwr.${item._id}.cout.totalTheorique`] = theoriqueCost;
     }
   }
 
-  // Process Talents (original sort-logic.js logic)
+  // Process Talents
   for (let item of talents) {
     if (!item.system.cout) {
-      updates.push({
+      itemUpdates.push({
         _id: item._id,
-        'system.cout': {
-          rang: item.system.rang || 1,
-          parrang: 1,
-          total: item.system.rang || 1
-        }
+        'system.cout': { rang: item.system.rang || 1, parrang: 1, total: item.system.rang || 1 }
       });
     }
   }
@@ -140,17 +133,19 @@ async function healActorData(actor) {
   const pp = actor.system.pp || {};
   const currentTotalSpent = (pp.caracteristiques || 0) + newPowerSum + (pp.talents || 0) + (pp.competences || 0) + (pp.defenses || 0) + (pp.divers || 0);
 
-  if (updates.length > 0 || pp.pouvoirs !== newPowerSum || pp.total !== currentTotalSpent) {
+  if (itemUpdates.length > 0 || pp.pouvoirs !== newPowerSum || pp.total !== currentTotalSpent) {
     actor._healing = true;
     try {
-      console.group(`M&M 3E EXPANDED | HEALING ${actor.name.toUpperCase()}`);
-      if (debugData.length > 0) console.table(debugData);
-      console.log(`Summary | Powers: ${newPowerSum} | Total Spent: ${currentTotalSpent}`);
+      console.group(`M&M 3E EXPANDED | SYNCING ${actor.name.toUpperCase()}`);
+      console.table(debugData);
+      console.log(`Current PP: ${pp.pouvoirs} -> New PP: ${newPowerSum}`);
       console.groupEnd();
 
-      if (updates.length > 0) await actor.updateEmbeddedDocuments('Item', updates);
+      if (itemUpdates.length > 0) {
+        await actor.updateEmbeddedDocuments('Item', itemUpdates);
+      }
       
-      // Delay actor update slightly to beat derived data recalculation
+      // Delay actor sync to beat internal system derived data logic
       setTimeout(async () => {
         await actor.update({
           ...pwrUpdates,
@@ -159,11 +154,14 @@ async function healActorData(actor) {
           'system.pp.used': currentTotalSpent
         });
         delete actor._healing;
-      }, 200);
+        console.log(`M&M 3E EXPANDED | SYNC COMPLETE: ${actor.name}`);
+      }, 500);
     } catch (err) {
       console.error("M&M 3e Expanded | Self-Healing Error:", err);
       delete actor._healing;
     }
+  } else {
+    console.log(`M&M 3E EXPANDED | ALREADY IN SYNC: ${actor.name}`);
   }
 }
 
@@ -171,101 +169,6 @@ async function healActorData(actor) {
 Hooks.on('renderActorSheet', (app, html, data) => {
   const actor = data.actor || app.actor;
   if (!actor || actor.type !== 'personnage') return;
-
-  // Run self-healing
+  console.log("M&M 3E EXPANDED | RENDER ACTOR:", actor.name);
   healActorData(actor);
-
-  // --- Drag and Drop Sorting for Powers ---
-  const powerList = html.find('.pouvoir-list, .item-list');
-  const powers = powerList.find('.item.pouvoir, .pouvoir-item');
-
-  if (powers.length > 0) {
-    powers.attr('draggable', true);
-
-    powers.on('dragstart', (ev) => {
-      const li = ev.currentTarget;
-      ev.originalEvent.dataTransfer.setData('text/plain', JSON.stringify({
-        type: 'Item',
-        uuid: actor.items.get(li.dataset.itemId).uuid,
-        sort: parseInt(li.dataset.sort || 0)
-      }));
-    });
-
-    powerList.on('drop', async (ev) => {
-      const dragData = JSON.parse(ev.originalEvent.dataTransfer.getData('text/plain'));
-      if (dragData.type !== 'Item') return;
-
-      const targetLi = $(ev.target).closest('.item');
-      if (!targetLi.length) return;
-
-      const targetId = targetLi.data('itemId');
-      const sourceId = dragData.uuid.split('.').pop();
-      if (targetId === sourceId) return;
-
-      const siblings = actor.items.filter(i => i.type === 'pouvoir');
-      const sourceItem = actor.items.get(sourceId);
-      const targetItem = actor.items.get(targetId);
-
-      if (!sourceItem || !targetItem) return;
-
-      const updates = SortingHelpers.performIntegerSort(sourceItem, {
-        target: targetItem,
-        siblings: siblings,
-        sortKey: 'sort'
-      });
-
-      const updateData = updates.map(u => ({
-        _id: u.target._id,
-        sort: u.update.sort
-      }));
-
-      await actor.updateEmbeddedDocuments('Item', updateData);
-    });
-  }
-});
-
-Hooks.on('renderItemSheet', (app, html, data) => {
-  const item = data.item || app.item;
-  if (!item || item.type !== 'pouvoir') return;
-
-  // --- Drag and Drop Sorting for Modifiers ---
-  const modifiers = html.find('.extras-list .item, .flaws-list .item, .modifier-item');
-  if (modifiers.length > 0) {
-    modifiers.attr('draggable', true);
-
-    modifiers.on('dragstart', (ev) => {
-      const li = ev.currentTarget;
-      ev.originalEvent.dataTransfer.setData('text/plain', JSON.stringify({
-        index: li.dataset.index,
-        type: li.closest('.extras-list').length ? 'extras' : 'defauts'
-      }));
-    });
-
-    html.find('.extras-list, .flaws-list').on('drop', async (ev) => {
-      const dragData = JSON.parse(ev.originalEvent.dataTransfer.getData('text/plain'));
-      const dropType = ev.currentTarget.classList.contains('extras-list') ? 'extras' : 'defauts';
-      
-      if (dragData.type !== dropType) return;
-
-      const targetLi = $(ev.target).closest('.item, .modifier-item');
-      if (!targetLi.length) return;
-
-      const oldIndex = parseInt(dragData.index);
-      const newIndex = parseInt(targetLi.data('index'));
-      if (oldIndex === newIndex) return;
-
-      const list = duplicate(item.system[dropType]);
-      const entries = Object.entries(list).sort((a, b) => parseInt(a[0]) - parseInt(b[0]));
-      
-      const [moved] = entries.splice(oldIndex - 1, 1);
-      entries.splice(newIndex - 1, 0, moved);
-
-      const newList = {};
-      entries.forEach((entry, i) => {
-        newList[i + 1] = entry[1];
-      });
-
-      await item.update({ [`system.${dropType}`]: newList });
-    });
-  }
 });
