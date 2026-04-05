@@ -74,50 +74,77 @@ async function healActorData(actor) {
         needsUpdate = true;
       }
 
-      // 3. Array Cost Logic
+      // 3. Power Cost Logic
+      const c = item.system.cout || {};
+      const baseRank = c.rang || 0;
+      const baseCostPerRank = c.parrang || 0;
+      const modCostPerRank = c.modrang || 0;
+      const flatCost = c.modfixe || 0;
+      const divers = c.divers || 0;
+
+      let netCostPerRank = baseCostPerRank + modCostPerRank;
+      let totalRankCost = 0;
+      let displayCostPerRank = "";
+
+      if (netCostPerRank > 0) {
+        totalRankCost = netCostPerRank * baseRank;
+        displayCostPerRank = netCostPerRank.toString();
+      } else {
+        let ranksPerPoint = 2 - netCostPerRank;
+        totalRankCost = Math.ceil(baseRank / ranksPerPoint);
+        displayCostPerRank = `1/${ranksPerPoint}`;
+      }
+      
+      const fullCost = Math.max(1, totalRankCost + flatCost + divers);
+
+      // Array logic
       const link = item.system.link;
       const isParent = arrays[item._id];
       const isChild = !!link;
+
+      let targetCost = fullCost;
 
       if (isParent || isChild) {
         const parentId = isParent ? item._id : link;
         const maxCost = arrayCosts[parentId];
         
-        // If it's the parent, it gets the max cost. 
-        // (Wait, in standard M&M any power could be the primary, but we'll assign to parent for simplicity or if it is the max)
-        // The user said "The Array costs only the most expensive power... The remaining powers do not cost anything"
-        
-        let targetCost = 0;
-        // We need to decide which one gets the max cost. Let's pick the one that IS the max cost.
-        // If multiple have the same max cost, the parent or the first one found gets it.
-        
-        const members = arrays[parentId];
         // Find which member should bear the cost
+        const members = arrays[parentId];
         let costBearerId = parentId;
         let highestFound = -1;
         members.forEach(id => {
           const p = actor.items.get(id);
           if (!p) return;
-          const c = p.system.cout;
-          const bc = c.parrang || 0;
-          const mr = c.modrang || 0;
-          const r = c.rang || 0;
-          const fc = c.modfixe || 0;
-          const d = c.divers || 0;
-          const net = bc + mr;
-          const full = net > 0 ? (net * r + fc + d) : (Math.ceil(r / (2 - net)) + fc + d);
-          if (full > highestFound) {
-            highestFound = full;
+          const pc = p.system.cout;
+          if (!pc) return;
+          const pbc = pc.parrang || 0;
+          const pmr = pc.modrang || 0;
+          const pr = pc.rang || 0;
+          const pfc = pc.modfixe || 0;
+          const pd = pc.divers || 0;
+          const pnet = pbc + pmr;
+          const pfull = pnet > 0 ? (pnet * pr + pfc + pd) : (Math.ceil(pr / (2 - pnet)) + pfc + pd);
+          if (pfull > highestFound) {
+            highestFound = pfull;
             costBearerId = id;
           }
         });
 
         targetCost = (item._id === costBearerId) ? maxCost : 0;
+        if (targetCost === 0) displayCostPerRank = "0";
+      }
 
-        if (item.system.cout.total !== targetCost) {
-          update['system.cout.total'] = targetCost;
-          needsUpdate = true;
-        }
+      if (item.system.cout.total !== targetCost) {
+        update['system.cout.total'] = targetCost;
+        needsUpdate = true;
+      }
+      if (item.system.cout.totalTheorique !== fullCost) {
+        update['system.cout.totalTheorique'] = fullCost;
+        needsUpdate = true;
+      }
+      if (item.system.cout.parrangtotal !== displayCostPerRank) {
+        update['system.cout.parrangtotal'] = displayCostPerRank;
+        needsUpdate = true;
       }
     }
 
