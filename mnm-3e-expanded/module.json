@@ -2,7 +2,7 @@
   "id": "mnm-3e-expanded",
   "title": "M&M 3e Expanded",
   "description": "A Comprehensive Library of Advantages, Powers, Effects, Flaws, and Items for Mutants & Masterminds 3e.",
-  "version": "3.3.61",
+  "version": "3.3.62",
   "authors": [
     {
       "name": "Davinchi"
@@ -20,7 +20,7 @@
   },
   "url": "https://github.com/alexsaintc-dotcom/mnm-3e-expanded",
   "manifest": "https://raw.githubusercontent.com/alexsaintc-dotcom/mnm-3e-expanded/main/module.json",
-  "download": "https://github.tcom/alexsaintc-dotcom/mnm-3e-expanded/archive/refs/heads/main.zip",
+  "download": "https://github.com/alexsaintc-dotcom/mnm-3e-expanded/archive/refs/heads/main.zip",
   "relationships": {
     "systems": [
       {
