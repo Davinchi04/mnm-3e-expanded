@@ -19,8 +19,8 @@
     "verified": "13"
   },
   "url": "https://github.com/alexsaintc-dotcom/mnm-3e-expanded",
-  "manifest": "https://raw.githubusercontent.com/alexsaintc-dotcom/mnm-3e-expanded/main/mnm-3e-expanded/module.json",
-  "download": "https://github.com/alexsaintc-dotcom/mnm-3e-expanded/archive/refs/heads/main.zip",
+  "manifest": "https://raw.githubusercontent.com/alexsaintc-dotcom/mnm-3e-expanded/main/module.json",
+  "download": "https://github.tcom/alexsaintc-dotcom/mnm-3e-expanded/archive/refs/heads/main.zip",
   "relationships": {
     "systems": [
       {
@@ -65,7 +65,7 @@
       "type": "Item",
       "system": "mutants-and-masterminds-3e"
     },
-2    {
+    {
       "name": "expanded-vehicles",
       "label": "Vehicles - M&M 3e Exp",
       "path": "packs/vehicles.db",
