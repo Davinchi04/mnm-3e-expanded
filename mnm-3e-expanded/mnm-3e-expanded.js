@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.3.65) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.3.66) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -56,23 +56,14 @@ function applyExpandedLogic(actor) {
   let totalPowerPP = 0;
   let totalEquipmentEP = 0;
 
-  // Process Equipment first to establish base EP
-  equipment.forEach(e => {
-    totalEquipmentEP += (parseInt(e.system.cout) || 0);
-  });
-
   powers.forEach(item => {
     const flags = item.flags['mnm-3e-expanded'] || {};
     const full = calculatePowerCost(item);
     let target = full;
 
-    // Check if it's an EP Power (on equipment)
     if (flags.costAsEP && flags.parentEquipmentId) {
-      // This power contributes to EP, not PP
-      totalEquipmentEP += full;
-      target = 0; // Does not cost PP
+      target = 0; 
     } else {
-      // Standard Power Array Logic
       const link = item.system.link;
       const parent = link ? (actor.items.get(link) || powers.find(i => i.name === link)) : null;
       const parentId = pArrays[item._id] ? item._id : (parent ? parent._id : null);
@@ -84,13 +75,12 @@ function applyExpandedLogic(actor) {
       totalPowerPP += target;
     }
 
-    // Override the value in the actor's current data structure
     item.system.cout.total = target;
     item.system.cout.totalTheorique = target;
     if (target === 0) item.system.cout.parrangtotal = "0";
   });
 
-  // --- 2. EQUIPMENT ARRAY LOGIC (Utility Belts etc) ---
+  // --- 2. EQUIPMENT ARRAY LOGIC ---
   const eArrays = {};
   equipment.forEach(e => {
     const link = e.flags['mnm-3e-expanded']?.link;
@@ -117,7 +107,6 @@ function applyExpandedLogic(actor) {
     eArrayMetadata[pId] = { max: maxCost, bearer: bearerId };
   }
 
-  // Recalculate totalEquipmentEP with array discounts
   totalEquipmentEP = 0;
   equipment.forEach(item => {
     const baseCost = parseInt(item.system.cout) || 0;
@@ -134,7 +123,6 @@ function applyExpandedLogic(actor) {
     totalEquipmentEP += target;
   });
 
-  // Add the costs of powers marked as EP
   powers.forEach(p => {
     const flags = p.flags['mnm-3e-expanded'] || {};
     if (flags.costAsEP && flags.parentEquipmentId) {
@@ -142,7 +130,6 @@ function applyExpandedLogic(actor) {
     }
   });
 
-  // 4. Update top-level pools
   if (actor.system?.pp) {
     actor.system.pp.pouvoirs = totalPowerPP;
     const pp = actor.system.pp;
@@ -154,7 +141,7 @@ function applyExpandedLogic(actor) {
   }
 }
 
-// HIJACK: Inject our logic into the Actor's calculation process
+// HIJACK
 Hooks.once('init', () => {
   const originalPrepareDerivedData = CONFIG.Actor.documentClass.prototype.prepareDerivedData;
   CONFIG.Actor.documentClass.prototype.prepareDerivedData = function() {
@@ -192,7 +179,6 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     </div>
   `;
 
-  // Try to find a good injection point, fallback to end of sheet-body
   const injectionPoint = html.find('.sheet-body');
   if (injectionPoint.length) {
     injectionPoint.append(powersHtml);
@@ -200,10 +186,8 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     html.append(powersHtml);
   }
 
-  // --- ENABLE DROP ---
   const dropZone = html.find('.power-drop-zone');
   
-  // Necessary for drop to fire
   dropZone.on('dragover', (ev) => {
     ev.preventDefault();
     dropZone.css('background', 'rgba(0,0,0,0.15)');
@@ -220,28 +204,28 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     
     try {
       const dragData = JSON.parse(ev.originalEvent.dataTransfer.getData('text/plain'));
-      if (dragData.type !== 'Item') return;
+      // Handle both raw item drops and our custom dragstart
+      const itemUuid = dragData.uuid;
+      if (!itemUuid) return;
+
+      const droppedItem = await fromUuid(itemUuid);
       
-      const powerId = dragData.uuid.split('.').pop();
-      const power = actor.items.get(powerId);
-      
-      if (!power || power.type !== 'pouvoir') {
+      if (!droppedItem || droppedItem.type !== 'pouvoir') {
         ui.notifications.warn("Only Powers can be added to Equipment.");
         return;
       }
 
-      await power.update({
+      await droppedItem.update({
         'flags.mnm-3e-expanded.costAsEP': true,
         'flags.mnm-3e-expanded.parentEquipmentId': item._id
       });
       
-      ui.notifications.info(`Added ${power.name} to ${item.name}`);
+      ui.notifications.info(`Added ${droppedItem.name} to ${item.name}`);
     } catch (err) {
       console.error(err);
     }
   });
 
-  // Handle Removal
   html.find('.remove-power').on('click', async (ev) => {
     const pId = ev.currentTarget.dataset.powerId;
     const power = actor.items.get(pId);
@@ -255,20 +239,21 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   });
 });
 
-// Actor Sheet Dragstart Logic
+// Enable Dragging from Actor Sheet
 Hooks.on('renderActorSheet', (app, html, data) => {
   const actor = data.actor || app.actor;
   if (!actor || actor.type !== 'personnage') return;
 
-  const powerItems = html.find('.item.pouvoir, .pouvoir-item');
-  powerItems.each((i, li) => {
+  html.find('.item.pouvoir, .pouvoir-item').each((i, li) => {
     li.setAttribute('draggable', true);
     li.addEventListener('dragstart', (ev) => {
       const item = actor.items.get(li.dataset.itemId);
-      ev.dataTransfer.setData('text/plain', JSON.stringify({
-        type: 'Item',
-        uuid: item.uuid
-      }));
+      if (item) {
+        ev.dataTransfer.setData('text/plain', JSON.stringify({
+          type: 'Item',
+          uuid: item.uuid
+        }));
+      }
     });
   });
 });
