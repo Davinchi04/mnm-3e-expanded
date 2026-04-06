@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.3.64) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.3.65) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -168,7 +168,6 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   const item = app.item;
   if (item.type !== 'equipement') return;
 
-  // Create the "Linked Powers" section
   const actor = item.actor;
   if (!actor) return;
 
@@ -177,36 +176,69 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   );
 
   let powersHtml = `
-    <div class="mnm-expanded-powers-section">
-      <h3>Powers on Equipment</h3>
-      <div class="power-drop-zone" style="border: 2px dashed #ccc; padding: 10px; margin-bottom: 10px; text-align: center;">
-        Drop Powers Here to add to Equipment
+    <div class="mnm-expanded-powers-section" style="margin-top: 10px; border-top: 1px solid #7a7971; padding-top: 10px;">
+      <h3 style="border: none;">Powers on Equipment</h3>
+      <div class="power-drop-zone" style="border: 2px dashed #7a7971; border-radius: 5px; padding: 15px; margin-bottom: 10px; text-align: center; background: rgba(0,0,0,0.05);">
+        <i class="fas fa-plus"></i> Drop Powers Here
       </div>
-      <ul class="linked-powers-list" style="list-style: none; padding: 0;">
+      <ul class="linked-powers-list" style="list-style: none; padding: 0; margin: 0;">
         ${linkedPowers.map(p => `
-          <li style="display: flex; justify-content: space-between; padding: 5px; border-bottom: 1px solid #eee;">
-            <span>${p.name} (${calculatePowerCost(p)} EP)</span>
-            <a class="remove-power" data-power-id="${p._id}"><i class="fas fa-trash"></i></a>
+          <li style="display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; border: 1px solid #ccc; border-radius: 3px; margin-bottom: 5px; background: #eee;">
+            <span style="font-weight: bold;">${p.name} <span style="font-weight: normal; font-style: italic;">(${calculatePowerCost(p)} EP)</span></span>
+            <a class="remove-power" title="Unlink Power" data-power-id="${p._id}" style="color: #800;"><i class="fas fa-trash"></i></a>
           </li>
         `).join('')}
       </ul>
     </div>
   `;
 
-  html.find('.sheet-body').prepend(powersHtml);
+  // Try to find a good injection point, fallback to end of sheet-body
+  const injectionPoint = html.find('.sheet-body');
+  if (injectionPoint.length) {
+    injectionPoint.append(powersHtml);
+  } else {
+    html.append(powersHtml);
+  }
 
-  // Handle Drag & Drop
-  html.find('.power-drop-zone').on('drop', async (ev) => {
-    const dragData = JSON.parse(ev.originalEvent.dataTransfer.getData('text/plain'));
-    if (dragData.type !== 'Item') return;
-    const power = actor.items.get(dragData.uuid.split('.').pop());
-    if (!power || power.type !== 'pouvoir') return;
+  // --- ENABLE DROP ---
+  const dropZone = html.find('.power-drop-zone');
+  
+  // Necessary for drop to fire
+  dropZone.on('dragover', (ev) => {
+    ev.preventDefault();
+    dropZone.css('background', 'rgba(0,0,0,0.15)');
+  });
 
-    await power.update({
-      'flags.mnm-3e-expanded.costAsEP': true,
-      'flags.mnm-3e-expanded.parentEquipmentId': item._id
-    });
-    ui.notifications.info(`Linked ${power.name} to ${item.name}`);
+  dropZone.on('dragleave', (ev) => {
+    ev.preventDefault();
+    dropZone.css('background', 'rgba(0,0,0,0.05)');
+  });
+
+  dropZone.on('drop', async (ev) => {
+    ev.preventDefault();
+    dropZone.css('background', 'rgba(0,0,0,0.05)');
+    
+    try {
+      const dragData = JSON.parse(ev.originalEvent.dataTransfer.getData('text/plain'));
+      if (dragData.type !== 'Item') return;
+      
+      const powerId = dragData.uuid.split('.').pop();
+      const power = actor.items.get(powerId);
+      
+      if (!power || power.type !== 'pouvoir') {
+        ui.notifications.warn("Only Powers can be added to Equipment.");
+        return;
+      }
+
+      await power.update({
+        'flags.mnm-3e-expanded.costAsEP': true,
+        'flags.mnm-3e-expanded.parentEquipmentId': item._id
+      });
+      
+      ui.notifications.info(`Added ${power.name} to ${item.name}`);
+    } catch (err) {
+      console.error(err);
+    }
   });
 
   // Handle Removal
@@ -218,27 +250,25 @@ Hooks.on('renderItemSheet', (app, html, data) => {
         'flags.mnm-3e-expanded.costAsEP': false,
         'flags.mnm-3e-expanded.parentEquipmentId': null
       });
+      ui.notifications.info(`Unlinked ${power.name} from equipment.`);
     }
   });
 });
 
-// Drag and Drop Logic for Powers on Actor Sheet
+// Actor Sheet Dragstart Logic
 Hooks.on('renderActorSheet', (app, html, data) => {
   const actor = data.actor || app.actor;
   if (!actor || actor.type !== 'personnage') return;
 
-  const powerList = html.find('.pouvoir-list, .item-list');
-  const powers = powerList.find('.item.pouvoir, .pouvoir-item');
-
-  if (powers.length > 0) {
-    powers.attr('draggable', true);
-    powers.on('dragstart', (ev) => {
-      const li = ev.currentTarget;
-      ev.originalEvent.dataTransfer.setData('text/plain', JSON.stringify({
+  const powerItems = html.find('.item.pouvoir, .pouvoir-item');
+  powerItems.each((i, li) => {
+    li.setAttribute('draggable', true);
+    li.addEventListener('dragstart', (ev) => {
+      const item = actor.items.get(li.dataset.itemId);
+      ev.dataTransfer.setData('text/plain', JSON.stringify({
         type: 'Item',
-        uuid: actor.items.get(li.dataset.itemId).uuid,
-        sort: parseInt(li.dataset.sort || 0)
+        uuid: item.uuid
       }));
     });
-  }
+  });
 });
