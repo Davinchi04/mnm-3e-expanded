@@ -219,7 +219,6 @@ Hooks.on('renderItemSheet', (app, html, data) => {
       }
       
       const droppedItem = await fromUuid(itemUuid);
-      // Ensure we are working with the document directly
       const doc = droppedItem.document ?? droppedItem;
       const validTypes = ['pouvoir', 'extra', 'defaut'];
       
@@ -228,11 +227,14 @@ Hooks.on('renderItemSheet', (app, html, data) => {
         return;
       }
 
-      // If the item is already embedded in the actor, use the embedded update path
+      console.log("Linking:", doc.name, "ID:", doc.id, "Embedded:", doc.isEmbedded);
+      
       const updateData = {
         "flags.mnm-3e-expanded.costAsEP": true,
         "flags.mnm-3e-expanded.parentEquipmentId": item.id
       };
+      
+      console.log("Update Data:", updateData);
 
       if (doc.isEmbedded) {
         await doc.actor.updateEmbeddedDocuments("Item", [{_id: doc.id, ...updateData}]);
