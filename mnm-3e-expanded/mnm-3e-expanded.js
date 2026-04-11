@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.6) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.7) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -33,9 +33,9 @@ function applyExpandedLogic(actor) {
     if (link) {
       const parent = actor.items.get(link) || powers.find(i => i.name === link);
       if (parent) {
-        const pId = parent._id;
+        const pId = parent.id;
         if (!pArrays[pId]) pArrays[pId] = [pId];
-        if (!pArrays[pId].includes(p._id)) pArrays[pId].push(p._id);
+        if (!pArrays[pId].includes(p.id)) pArrays[pId].push(p.id);
       }
     }
   });
@@ -66,11 +66,11 @@ function applyExpandedLogic(actor) {
     } else {
       const link = item.system.link;
       const parent = link ? (actor.items.get(link) || powers.find(i => i.name === link)) : null;
-      const parentId = pArrays[item._id] ? item._id : (parent ? parent._id : null);
+      const parentId = pArrays[item.id] ? item.id : (parent ? parent.id : null);
 
       if (parentId && pArrayMetadata[parentId]) {
         const meta = pArrayMetadata[parentId];
-        target = (item._id === meta.bearer) ? meta.max : Math.max(1, 0);
+        target = (item.id === meta.bearer) ? meta.max : Math.max(1, 0);
       }
       totalPowerPP += target;
     }
@@ -87,9 +87,9 @@ function applyExpandedLogic(actor) {
     if (link) {
       const parent = actor.items.get(link) || equipment.find(i => i.name === link);
       if (parent) {
-        const pId = parent._id;
+        const pId = parent.id;
         if (!eArrays[pId]) eArrays[pId] = [pId];
-        if (!eArrays[pId].includes(e._id)) eArrays[pId].push(e._id);
+        if (!eArrays[pId].includes(e.id)) eArrays[pId].push(e.id);
       }
     }
   });
@@ -113,11 +113,11 @@ function applyExpandedLogic(actor) {
     let target = baseCost;
     const link = item.flags['mnm-3e-expanded']?.link;
     const parent = link ? (actor.items.get(link) || equipment.find(i => i.name === link)) : null;
-    const parentId = eArrays[item._id] ? item._id : (parent ? parent._id : null);
+    const parentId = eArrays[item.id] ? item.id : (parent ? parent.id : null);
 
     if (parentId && eArrayMetadata[parentId]) {
       const meta = eArrayMetadata[parentId];
-      target = (item._id === meta.bearer) ? meta.max : 1;
+      target = (item.id === meta.bearer) ? meta.max : 1;
     }
     item.system.derivedCout = target;
     totalEquipmentEP += target;
@@ -159,7 +159,7 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   if (!actor) return;
 
   const linkedPowers = actor.items.filter(i => 
-    i.type === 'pouvoir' && i.flags['mnm-3e-expanded']?.parentEquipmentId === item._id
+    i.type === 'pouvoir' && i.flags['mnm-3e-expanded']?.parentEquipmentId === item.id
   );
 
   let powersHtml = `
@@ -172,7 +172,7 @@ Hooks.on('renderItemSheet', (app, html, data) => {
         ${linkedPowers.map(p => `
           <li style="display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; border: 1px solid #ccc; border-radius: 3px; margin-bottom: 5px; background: #eee;">
             <span style="font-weight: bold;">${p.name} <span style="font-weight: normal; font-style: italic;">(${calculatePowerCost(p)} EP)</span></span>
-            <a class="remove-power" title="Unlink Power" data-power-id="${p._id}" style="color: #800;"><i class="fas fa-trash"></i></a>
+            <a class="remove-power" title="Unlink Power" data-power-id="${p.id}" style="color: #800;"><i class="fas fa-trash"></i></a>
           </li>
         `).join('')}
       </ul>
@@ -204,6 +204,7 @@ Hooks.on('renderItemSheet', (app, html, data) => {
 
   dropZone.addEventListener('drop', async (ev) => {
     ev.preventDefault();
+    ev.stopPropagation();
     ev.currentTarget.style.background = 'rgba(0,0,0,0.05)';
     
     try {
@@ -250,6 +251,7 @@ Hooks.on('renderItemSheet', (app, html, data) => {
       }
       
       ui.notifications.info(`Linked ${doc.name} to ${item.name}`);
+      app.render();
     } catch (err) {
       console.error("M&M 3e Expanded | Drop Error:", err);
       ui.notifications.error("Failed to link item. See console.");
