@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.19) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.20) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -153,8 +153,9 @@ function applyExpandedLogic(actor) {
   }
 }
 
-// Rename Equipment Tab on Character Sheet
+// Rename Equipment Tab on Character Sheet and Update Array Labels
 Hooks.on('renderActorSheet', (app, html, data) => {
+  const actor = app.actor;
   const eqTab = html.find('.tabs .item[data-tab="equipement"]');
   if (eqTab.length) {
     eqTab.text("Equipement & Arrays");
@@ -165,12 +166,10 @@ Hooks.on('renderActorSheet', (app, html, data) => {
   }
 
   // Find all Power Array headers and rename to EQ Array if they belong to equipment
-  const actor = app.actor;
   html.find('.item-name.item-header, .item-name, h4, h3').each((i, el) => {
     const text = $(el).text().trim();
     if (text.startsWith("Array:")) {
       const arrayName = text.replace("Array:", "").trim();
-      // Look for any power that belongs to this array and check its EQ status
       const isEqArray = actor.items.some(item => 
         item.type === 'pouvoir' && 
         (item.name === arrayName || item.system.link === arrayName || 
@@ -180,16 +179,15 @@ Hooks.on('renderActorSheet', (app, html, data) => {
       );
 
       if (isEqArray) {
-        // Use a more flexible replacement to avoid losing other elements inside the header if any
         const currentHtml = $(el).html();
         $(el).html(currentHtml.replace("Array:", "EQ Array:"));
       }
     }
   });
 
-  // Rename "Total" label to "EP Cost" for specific powers on the character sheet
-  html.find('.item.type-pouvoir').each((i, el) => {
-    const itemId = $(el).data('item-id');
+  // Aggressive replacement of "Total" with "EP Cost" for equipment powers
+  html.find('.item.type-pouvoir, .item.pouvoir').each((i, el) => {
+    const itemId = $(el).data('item-id') || $(el).attr('data-item-id');
     const item = actor.items.get(itemId);
     if (item) {
       const costAsEP = item.getFlag('mnm-3e-expanded', 'costAsEP');
@@ -198,9 +196,10 @@ Hooks.on('renderActorSheet', (app, html, data) => {
       const isOnEquipment = (costAsEP && item.getFlag('mnm-3e-expanded', 'parentEquipmentId')) || (parent && parent.type === 'equipement');
       
       if (isOnEquipment) {
-        // Renaming labels in the detail/cout section
-        $(el).find('.item-detail.item-cout-total label, .item-cout label').each((j, lbl) => {
-           if ($(lbl).text().trim() === "Total") $(lbl).text("EP Cost");
+        $(el).find('*').contents().filter(function() {
+          return this.nodeType === 3 && (this.nodeValue.trim() === "Total" || this.nodeValue.trim() === "Total:");
+        }).each(function() {
+          this.nodeValue = this.nodeValue.replace("Total", "EP Cost");
         });
       }
     }
@@ -220,7 +219,6 @@ Hooks.once('init', () => {
 Hooks.on('renderItemSheet', (app, html, data) => {
   const item = app.item;
   if (item.type === 'pouvoir' && item.actor) {
-    // If it is on equipment, make sure total calculation is visible
     const costAsEP = item.getFlag('mnm-3e-expanded', 'costAsEP');
     const link = item.system.link;
     const parent = link ? (item.actor.items.get(link) || item.actor.items.find(i => i.name === link)) : null;
@@ -231,9 +229,11 @@ Hooks.on('renderItemSheet', (app, html, data) => {
       const totalBox = html.find('input[name="system.cout.total"]');
       if (totalBox.length) totalBox.val(item.system.cout.total);
 
-      // Rename Label
-      html.find('label').each((i, el) => {
-        if ($(el).text().trim() === "Total") $(el).text("EP Cost");
+      // Aggressive Label Rename
+      html.find('*').contents().filter(function() {
+        return this.nodeType === 3 && (this.nodeValue.trim() === "Total" || this.nodeValue.trim() === "Total:");
+      }).each(function() {
+        this.nodeValue = this.nodeValue.replace("Total", "EP Cost");
       });
     }
   }
