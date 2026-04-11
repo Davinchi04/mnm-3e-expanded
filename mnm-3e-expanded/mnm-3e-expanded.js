@@ -139,9 +139,10 @@ function applyExpandedLogic(actor) {
 
   equipment.forEach(e => {
     if (!processedEqIds.has(e.id)) {
-      const baseCost = parseInt(e.getFlag('mnm-3e-expanded', 'baseCost') || e.system.cout) || 0;
-      
-      if (!e.getFlag('mnm-3e-expanded', 'baseCost')) {
+      // Use the flag as the source of truth if it exists, otherwise store it
+      let baseCost = e.getFlag('mnm-3e-expanded', 'baseCost');
+      if (baseCost === undefined) {
+         baseCost = parseInt(e.system.cout) || 0;
          e.update({'flags.mnm-3e-expanded.baseCost': baseCost});
       }
 
