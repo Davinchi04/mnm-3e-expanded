@@ -219,20 +219,26 @@ Hooks.on('renderItemSheet', (app, html, data) => {
       }
       
       const droppedItem = await fromUuid(itemUuid);
+      // Ensure we are working with the document directly
+      const doc = droppedItem.document ?? droppedItem;
       const validTypes = ['pouvoir', 'extra', 'defaut'];
       
-      if (!droppedItem || !validTypes.includes(droppedItem.type)) {
+      if (!doc || !validTypes.includes(doc.type)) {
         ui.notifications.warn("Only Powers, Extras, or Flaws can be added to Equipment.");
         return;
       }
 
-      // Ensure we are working with the document directly
-      const doc = droppedItem.document ?? droppedItem;
-      
-      await doc.update({
-        ["flags.mnm-3e-expanded.costAsEP"]: true,
-        ["flags.mnm-3e-expanded.parentEquipmentId"]: item.id
-      });
+      // If the item is already embedded in the actor, use the embedded update path
+      const updateData = {
+        "flags.mnm-3e-expanded.costAsEP": true,
+        "flags.mnm-3e-expanded.parentEquipmentId": item.id
+      };
+
+      if (doc.isEmbedded) {
+        await doc.actor.updateEmbeddedDocuments("Item", [{_id: doc.id, ...updateData}]);
+      } else {
+        await doc.update(updateData);
+      }
       
       ui.notifications.info(`Linked ${doc.name} to ${item.name}`);
     } catch (err) {
