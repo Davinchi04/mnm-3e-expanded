@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.21) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.22) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -106,7 +106,6 @@ function applyExpandedLogic(actor) {
   for (const eqId in epArrays) {
     const sum = processArray(epArrays[eqId], true);
     powerContributions[eqId] = sum;
-    totalEquipmentEP += sum;
   }
 
   // --- 3. EQUIPMENT COST LOGIC ---
@@ -133,7 +132,7 @@ function applyExpandedLogic(actor) {
       const t = (d.id === bId) ? maxC : 1;
       const finalCout = t + (powerContributions[d.id] || 0);
       d.system.derivedCout = finalCout;
-      totalEquipmentEP += t;
+      totalEquipmentEP += finalCout; // Use finalCout here
       processedEqIds.add(d.id);
     });
   }
@@ -143,7 +142,7 @@ function applyExpandedLogic(actor) {
       const c = parseInt(e.system.cout) || 0;
       const finalCout = c + (powerContributions[e.id] || 0);
       e.system.derivedCout = finalCout;
-      totalEquipmentEP += c;
+      totalEquipmentEP += finalCout; // Use finalCout here
     }
   });
 
@@ -206,6 +205,23 @@ Hooks.on('renderActorSheet', (app, html, data) => {
           return this.nodeType === 3 && (this.nodeValue.trim() === "Total" || this.nodeValue.trim() === "Total:");
         }).each(function() {
           this.nodeValue = this.nodeValue.replace("Total", "EP Cost");
+        });
+      }
+    }
+  });
+
+  // Force equipment costs to reflect derivedCout in UI
+  html.find('.item.type-equipement, .item.equipement').each((i, el) => {
+    const itemId = $(el).data('item-id') || $(el).attr('data-item-id');
+    const item = actor.items.get(itemId);
+    if (item && item.system.derivedCout !== undefined) {
+      const costBox = $(el).find('.item-detail.item-cout, .item-cout');
+      if (costBox.length) {
+        // Try to update the text that is not a label
+        costBox.contents().filter(function() {
+          return this.nodeType === 3 && this.nodeValue.trim() !== "";
+        }).each(function() {
+          this.nodeValue = item.system.derivedCout;
         });
       }
     }
