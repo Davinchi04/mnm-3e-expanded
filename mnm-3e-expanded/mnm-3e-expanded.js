@@ -227,13 +227,8 @@ Hooks.on('renderItemSheet', (app, html, data) => {
       }
 
       await droppedItem.update({
-        _id: droppedItem.id,
-        flags: {
-          'mnm-3e-expanded': {
-            costAsEP: true,
-            parentEquipmentId: item.id
-          }
-        }
+        "flags.mnm-3e-expanded.costAsEP": true,
+        "flags.mnm-3e-expanded.parentEquipmentId": item.id
       });
       
       ui.notifications.info(`Linked ${droppedItem.name} to ${item.name}`);
