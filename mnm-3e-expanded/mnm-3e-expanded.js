@@ -219,20 +219,27 @@ Hooks.on('renderItemSheet', (app, html, data) => {
       }
       
       const droppedItem = await fromUuid(itemUuid);
-      if (!droppedItem || droppedItem.type !== 'pouvoir') {
-        ui.notifications.warn("Only Powers can be added to Equipment.");
+      const validTypes = ['pouvoir', 'extra', 'defaut'];
+      
+      if (!droppedItem || !validTypes.includes(droppedItem.type)) {
+        ui.notifications.warn("Only Powers, Extras, or Flaws can be added to Equipment.");
         return;
       }
 
       await droppedItem.update({
-        'flags.mnm-3e-expanded.costAsEP': true,
-        'flags.mnm-3e-expanded.parentEquipmentId': item._id
+        _id: droppedItem.id,
+        flags: {
+          'mnm-3e-expanded': {
+            costAsEP: true,
+            parentEquipmentId: item.id
+          }
+        }
       });
       
       ui.notifications.info(`Linked ${droppedItem.name} to ${item.name}`);
     } catch (err) {
       console.error("M&M 3e Expanded | Drop Error:", err);
-      ui.notifications.error("Failed to link power. See console.");
+      ui.notifications.error("Failed to link item. See console.");
     }
   });
 
