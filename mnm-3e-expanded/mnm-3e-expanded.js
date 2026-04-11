@@ -132,7 +132,7 @@ function applyExpandedLogic(actor) {
       const t = (d.id === bId) ? maxC : 1;
       const finalCout = t + (powerContributions[d.id] || 0);
       d.system.derivedCout = finalCout;
-      totalEquipmentEP += finalCout;
+      totalEquipmentEP += t;
       processedEqIds.add(d.id);
     });
   }
@@ -143,7 +143,7 @@ function applyExpandedLogic(actor) {
       const finalCout = c + (powerContributions[e.id] || 0);
       e.system.derivedCout = finalCout;
       e.system.cout = finalCout;
-      totalEquipmentEP += finalCout;
+      totalEquipmentEP += c;
     }
   });
 
