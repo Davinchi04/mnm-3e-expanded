@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.23) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.24) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -160,17 +160,23 @@ function applyExpandedLogic(actor) {
 
 // Rename Equipment Tab on Character Sheet and Update Array Labels
 Hooks.on('renderActorSheet', (app, html, data) => {
+  console.log("M&M 3e Expanded | Rendering Actor Sheet:", app.actor.name);
   const actor = app.actor;
+  
+  // 1. Rename Navigation Tab
   const eqTab = html.find('.tabs .item[data-tab="equipement"]');
   if (eqTab.length) {
     eqTab.text("Equipement & Arrays");
   }
-  const eqHeader = html.find('.tab[data-tab="equipement"] .items-header .item-name');
-  if (eqHeader.length && eqHeader.first().text().trim() === "Equipement") {
-    eqHeader.first().text("Equipement & Arrays");
-  }
+  
+  // 2. Rename Section Headers
+  html.find('.tab[data-tab="equipement"] .items-header .item-name, .tab[data-tab="equipement"] h3, .tab[data-tab="equipement"] h4').each((i, el) => {
+    if ($(el).text().trim() === "Equipement") {
+      $(el).text("Equipement & Arrays");
+    }
+  });
 
-  // Find all Power Array headers and rename to EQ Array if they belong to equipment
+  // 3. Rename Array Headers
   html.find('.item-name.item-header, .item-name, h4, h3').each((i, el) => {
     const text = $(el).text().trim();
     if (text.startsWith("Array:")) {
@@ -190,36 +196,33 @@ Hooks.on('renderActorSheet', (app, html, data) => {
     }
   });
 
-  // Aggressive replacement of "Total" with "EP Cost" for equipment powers
-  html.find('.item.type-pouvoir, .item.pouvoir').each((i, el) => {
+  // 4. Update individual power/equipment costs and labels
+  html.find('.item').each((i, el) => {
     const itemId = $(el).data('item-id') || $(el).attr('data-item-id');
     const item = actor.items.get(itemId);
-    if (item) {
+    if (!item) return;
+
+    if (item.type === 'pouvoir') {
       const costAsEP = item.getFlag('mnm-3e-expanded', 'costAsEP');
       const link = item.system.link;
       const parent = link ? (actor.items.get(link) || actor.items.find(it => it.name === link)) : null;
       const isOnEquipment = (costAsEP && item.getFlag('mnm-3e-expanded', 'parentEquipmentId')) || (parent && parent.type === 'equipement');
       
       if (isOnEquipment) {
+        // Change "Total" text anywhere in this item row to "EP Cost"
         $(el).find('*').contents().filter(function() {
-          return this.nodeType === 3 && (this.nodeValue.trim() === "Total" || this.nodeValue.trim() === "Total:");
+          return this.nodeType === 3 && /Total:?/i.test(this.nodeValue);
         }).each(function() {
-          this.nodeValue = this.nodeValue.replace("Total", "EP Cost");
+          this.nodeValue = this.nodeValue.replace(/Total/i, "EP Cost");
         });
       }
-    }
-  });
-
-  // Force equipment costs to reflect derivedCout in UI
-  html.find('.item.type-equipement, .item.equipement').each((i, el) => {
-    const itemId = $(el).data('item-id') || $(el).attr('data-item-id');
-    const item = actor.items.get(itemId);
-    if (item && item.system.derivedCout !== undefined) {
-      const costBox = $(el).find('.item-detail.item-cout, .item-cout');
+    } else if (item.type === 'equipement' && item.system.derivedCout !== undefined) {
+      // Force equipment display cost
+      const costBox = $(el).find('.item-detail.item-cout, .item-cout, [data-property="system.cout"]');
       if (costBox.length) {
         costBox.contents().filter(function() {
           return this.nodeType === 3 && this.nodeValue.trim() !== "";
-        }).each(function() {
+        }).first().each(function() {
           this.nodeValue = item.system.derivedCout;
         });
       }
@@ -238,7 +241,9 @@ Hooks.once('init', () => {
 
 // Item Sheet Refresh Hijack
 Hooks.on('renderItemSheet', (app, html, data) => {
+  console.log("M&M 3e Expanded | Rendering Item Sheet:", app.item.name, "Type:", app.item.type);
   const item = app.item;
+  
   if (item.type === 'pouvoir' && item.actor) {
     const costAsEP = item.getFlag('mnm-3e-expanded', 'costAsEP');
     const link = item.system.link;
@@ -246,13 +251,18 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     const isOnEquipment = (costAsEP && item.getFlag('mnm-3e-expanded', 'parentEquipmentId')) || (parent && parent.type === 'equipement');
     
     if (isOnEquipment) {
-      const totalBox = html.find('input[name="system.cout.total"]');
-      if (totalBox.length) totalBox.val(item.system.cout.total);
+      // Force UI to show total points from our logic
+      const totalBox = html.find('input[name="system.cout.total"], [data-property="system.cout.total"]');
+      if (totalBox.length) {
+        if (totalBox.is('input')) totalBox.val(item.system.cout.total);
+        else totalBox.text(item.system.cout.total);
+      }
 
-      html.find('*').contents().filter(function() {
-        return this.nodeType === 3 && (this.nodeValue.trim() === "Total" || this.nodeValue.trim() === "Total:");
-      }).each(function() {
-        this.nodeValue = this.nodeValue.replace("Total", "EP Cost");
+      // Aggressive Label Rename
+      html.find('label, .label, .item-label').each((i, el) => {
+        if (/Total:?/i.test($(el).text())) {
+          $(el).text($(el).text().replace(/Total/i, "EP Cost"));
+        }
       });
     }
   }
@@ -276,22 +286,24 @@ Hooks.on('renderItemSheet', (app, html, data) => {
         const arrayEP = maxC + (linkedPowers.length - 1);
         const totalEP = (parseInt(item.system.cout) || 0) + arrayEP;
 
-        const costInput = html.find('input[name="system.cout"]');
+        const costInput = html.find('input[name="system.cout"], [data-property="system.cout"]');
         if (costInput.length) {
-          const group = costInput.closest('.form-group');
+          const group = costInput.closest('.form-group, .item-prop');
           group.find('label').text("Base Cost");
           
-          const arrayHtml = `
-            <div class="form-group">
-              <label>Power Array EP</label>
-              <span style="flex: 1; text-align: right; padding-right: 5px;">${arrayEP}</span>
-            </div>
-            <div class="form-group" style="font-weight: bold; border-top: 1px solid #7a7971; padding-top: 5px;">
-              <label>Total EP Cost</label>
-              <span style="flex: 1; text-align: right; padding-right: 5px;">${totalEP}</span>
-            </div>
-          `;
-          group.after(arrayHtml);
+          if (!html.find('.mnm-injected-cost').length) {
+            const arrayHtml = `
+              <div class="form-group mnm-injected-cost">
+                <label>Power Array EP</label>
+                <span style="flex: 1; text-align: right; padding-right: 5px;">${arrayEP}</span>
+              </div>
+              <div class="form-group mnm-injected-cost" style="font-weight: bold; border-top: 1px solid #7a7971; padding-top: 5px;">
+                <label>Total EP Cost</label>
+                <span style="flex: 1; text-align: right; padding-right: 5px;">${totalEP}</span>
+              </div>
+            `;
+            group.after(arrayHtml);
+          }
         }
       }
     }
