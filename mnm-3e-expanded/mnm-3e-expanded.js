@@ -180,6 +180,8 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   `;
 
   const injectionPoint = html.find('.sheet-body');
+  if (injectionPoint.find('.mnm-expanded-powers-section').length) return;
+
   if (injectionPoint.length) {
     injectionPoint.append(powersHtml);
   } else {
