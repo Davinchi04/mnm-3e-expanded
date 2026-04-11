@@ -226,12 +226,15 @@ Hooks.on('renderItemSheet', (app, html, data) => {
         return;
       }
 
-      await droppedItem.update({
-        "flags.mnm-3e-expanded.costAsEP": true,
-        "flags.mnm-3e-expanded.parentEquipmentId": item.id
+      // Ensure we are working with the document directly
+      const doc = droppedItem.document ?? droppedItem;
+      
+      await doc.update({
+        ["flags.mnm-3e-expanded.costAsEP"]: true,
+        ["flags.mnm-3e-expanded.parentEquipmentId"]: item.id
       });
       
-      ui.notifications.info(`Linked ${droppedItem.name} to ${item.name}`);
+      ui.notifications.info(`Linked ${doc.name} to ${item.name}`);
     } catch (err) {
       console.error("M&M 3e Expanded | Drop Error:", err);
       ui.notifications.error("Failed to link item. See console.");
