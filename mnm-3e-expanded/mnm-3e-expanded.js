@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.7) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.8) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -57,11 +57,12 @@ function applyExpandedLogic(actor) {
   let totalEquipmentEP = 0;
 
   powers.forEach(item => {
-    const flags = item.flags['mnm-3e-expanded'] || {};
+    const costAsEP = item.getFlag('mnm-3e-expanded', 'costAsEP');
+    const parentEquipmentId = item.getFlag('mnm-3e-expanded', 'parentEquipmentId');
     const full = calculatePowerCost(item);
     let target = full;
 
-    if (flags.costAsEP && flags.parentEquipmentId) {
+    if (costAsEP && parentEquipmentId) {
       target = 0; 
     } else {
       const link = item.system.link;
@@ -83,7 +84,7 @@ function applyExpandedLogic(actor) {
   // --- 2. EQUIPMENT ARRAY LOGIC ---
   const eArrays = {};
   equipment.forEach(e => {
-    const link = e.flags['mnm-3e-expanded']?.link;
+    const link = e.getFlag('mnm-3e-expanded', 'link');
     if (link) {
       const parent = actor.items.get(link) || equipment.find(i => i.name === link);
       if (parent) {
@@ -111,7 +112,7 @@ function applyExpandedLogic(actor) {
   equipment.forEach(item => {
     const baseCost = parseInt(item.system.cout) || 0;
     let target = baseCost;
-    const link = item.flags['mnm-3e-expanded']?.link;
+    const link = item.getFlag('mnm-3e-expanded', 'link');
     const parent = link ? (actor.items.get(link) || equipment.find(i => i.name === link)) : null;
     const parentId = eArrays[item.id] ? item.id : (parent ? parent.id : null);
 
@@ -124,8 +125,9 @@ function applyExpandedLogic(actor) {
   });
 
   powers.forEach(p => {
-    const flags = p.flags['mnm-3e-expanded'] || {};
-    if (flags.costAsEP && flags.parentEquipmentId) {
+    const costAsEP = p.getFlag('mnm-3e-expanded', 'costAsEP');
+    const parentEquipmentId = p.getFlag('mnm-3e-expanded', 'parentEquipmentId');
+    if (costAsEP && parentEquipmentId) {
       totalEquipmentEP += calculatePowerCost(p);
     }
   });
@@ -159,7 +161,7 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   if (!actor) return;
 
   const linkedPowers = actor.items.filter(i => 
-    i.type === 'pouvoir' && i.flags['mnm-3e-expanded']?.parentEquipmentId === item.id
+    i.type === 'pouvoir' && i.getFlag('mnm-3e-expanded', 'parentEquipmentId') === item.id
   );
 
   let powersHtml = `
@@ -205,6 +207,7 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   dropZone.addEventListener('drop', async (ev) => {
     ev.preventDefault();
     ev.stopPropagation();
+    ev.stopImmediatePropagation();
     ev.currentTarget.style.background = 'rgba(0,0,0,0.05)';
     
     try {
