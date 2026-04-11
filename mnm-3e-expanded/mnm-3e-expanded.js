@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.8) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.9) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -32,7 +32,8 @@ function applyExpandedLogic(actor) {
     const link = p.system.link;
     if (link) {
       const parent = actor.items.get(link) || powers.find(i => i.name === link);
-      if (parent) {
+      // ONLY powers form arrays with other powers. Equipment links are handled separately.
+      if (parent && parent.type === 'pouvoir') {
         const pId = parent.id;
         if (!pArrays[pId]) pArrays[pId] = [pId];
         if (!pArrays[pId].includes(p.id)) pArrays[pId].push(p.id);
@@ -58,11 +59,14 @@ function applyExpandedLogic(actor) {
 
   powers.forEach(item => {
     const costAsEP = item.getFlag('mnm-3e-expanded', 'costAsEP');
-    const parentEquipmentId = item.getFlag('mnm-3e-expanded', 'parentEquipmentId');
+    const link = item.system.link;
+    const parent = link ? (actor.items.get(link) || actor.items.find(i => i.name === link)) : null;
+    const isOnEquipment = (costAsEP && item.getFlag('mnm-3e-expanded', 'parentEquipmentId')) || (parent && parent.type === 'equipement');
+
     const full = calculatePowerCost(item);
     let target = full;
 
-    if (costAsEP && parentEquipmentId) {
+    if (isOnEquipment) {
       target = 0; 
     } else {
       const link = item.system.link;
@@ -126,8 +130,11 @@ function applyExpandedLogic(actor) {
 
   powers.forEach(p => {
     const costAsEP = p.getFlag('mnm-3e-expanded', 'costAsEP');
-    const parentEquipmentId = p.getFlag('mnm-3e-expanded', 'parentEquipmentId');
-    if (costAsEP && parentEquipmentId) {
+    const link = p.system.link;
+    const parent = link ? (actor.items.get(link) || actor.items.find(i => i.name === link)) : null;
+    const isOnEquipment = (costAsEP && p.getFlag('mnm-3e-expanded', 'parentEquipmentId')) || (parent && parent.type === 'equipement');
+
+    if (isOnEquipment) {
       totalEquipmentEP += calculatePowerCost(p);
     }
   });
@@ -160,9 +167,12 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   const actor = item.actor;
   if (!actor) return;
 
-  const linkedPowers = actor.items.filter(i => 
-    i.type === 'pouvoir' && i.getFlag('mnm-3e-expanded', 'parentEquipmentId') === item.id
-  );
+  const linkedPowers = actor.items.filter(i => {
+    if (i.type !== 'pouvoir') return false;
+    const parentFlag = i.getFlag('mnm-3e-expanded', 'parentEquipmentId');
+    const link = i.system.link;
+    return parentFlag === item.id || link === item.id || link === item.name;
+  });
 
   let powersHtml = `
     <div class="mnm-expanded-powers-section" style="margin-top: 10px; border-top: 1px solid #7a7971; padding-top: 10px;">
@@ -196,11 +206,14 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   // Native Listeners for better reliability
   dropZone.addEventListener('dragover', (ev) => {
     ev.preventDefault();
+    ev.stopPropagation();
     ev.dataTransfer.dropEffect = "link";
     ev.currentTarget.style.background = 'rgba(0,0,0,0.15)';
   });
 
   dropZone.addEventListener('dragleave', (ev) => {
+    ev.preventDefault();
+    ev.stopPropagation();
     ev.currentTarget.style.background = 'rgba(0,0,0,0.05)';
   });
 
@@ -231,20 +244,20 @@ Hooks.on('renderItemSheet', (app, html, data) => {
         return;
       }
 
-      console.log("Linking:", doc.name, "ID:", doc.id, "Embedded:", doc.isEmbedded);
+      console.log("Linking:", doc.name, "to Equipment:", item.name, "ID:", item.id);
       
       const updateData = {
+        "system.link": item.id,
         "flags.mnm-3e-expanded.costAsEP": true,
         "flags.mnm-3e-expanded.parentEquipmentId": item.id
       };
-      
-      console.log("Update Data:", updateData);
 
       if (doc.isEmbedded && doc.actor === actor) {
         await doc.update(updateData);
       } else {
         // If not on the same actor, create a copy
         const itemData = doc.toObject();
+        itemData.system.link = item.id;
         itemData.flags = itemData.flags || {};
         itemData.flags['mnm-3e-expanded'] = {
           costAsEP: true,
@@ -266,10 +279,12 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     const power = actor.items.get(pId);
     if (power) {
       await power.update({
+        'system.link': null,
         'flags.mnm-3e-expanded.costAsEP': false,
         'flags.mnm-3e-expanded.parentEquipmentId': null
       });
       ui.notifications.info(`Unlinked ${power.name} from equipment.`);
+      app.render();
     }
   });
 });
