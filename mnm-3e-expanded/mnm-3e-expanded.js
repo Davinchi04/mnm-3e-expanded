@@ -142,6 +142,7 @@ function applyExpandedLogic(actor) {
       const c = parseInt(e.system.cout) || 0;
       const finalCout = c + (powerContributions[e.id] || 0);
       e.system.derivedCout = finalCout;
+      e.system.cout = finalCout;
       totalEquipmentEP += finalCout;
     }
   });
