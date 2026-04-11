@@ -205,10 +205,18 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     ev.currentTarget.style.background = 'rgba(0,0,0,0.05)';
     
     try {
-      const dragData = JSON.parse(ev.dataTransfer.getData('text/plain'));
-      if (dragData.type !== 'Item') return;
+      const rawData = ev.dataTransfer.getData('text/plain');
+      if (!rawData) return;
+
+      const dragData = JSON.parse(rawData);
       
-      const droppedItem = await fromUuid(dragData.uuid);
+      const itemUuid = dragData.uuid;
+      if (!itemUuid) {
+        ui.notifications.warn("Could not identify dragged item.");
+        return;
+      }
+      
+      const droppedItem = await fromUuid(itemUuid);
       if (!droppedItem || droppedItem.type !== 'pouvoir') {
         ui.notifications.warn("Only Powers can be added to Equipment.");
         return;
@@ -222,6 +230,7 @@ Hooks.on('renderItemSheet', (app, html, data) => {
       ui.notifications.info(`Linked ${droppedItem.name} to ${item.name}`);
     } catch (err) {
       console.error("M&M 3e Expanded | Drop Error:", err);
+      ui.notifications.error("Failed to link power. See console.");
     }
   });
 
