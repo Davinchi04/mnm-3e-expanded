@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.22) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.23) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -132,7 +132,7 @@ function applyExpandedLogic(actor) {
       const t = (d.id === bId) ? maxC : 1;
       const finalCout = t + (powerContributions[d.id] || 0);
       d.system.derivedCout = finalCout;
-      totalEquipmentEP += finalCout; // Use finalCout here
+      totalEquipmentEP += finalCout;
       processedEqIds.add(d.id);
     });
   }
@@ -142,7 +142,7 @@ function applyExpandedLogic(actor) {
       const c = parseInt(e.system.cout) || 0;
       const finalCout = c + (powerContributions[e.id] || 0);
       e.system.derivedCout = finalCout;
-      totalEquipmentEP += finalCout; // Use finalCout here
+      totalEquipmentEP += finalCout;
     }
   });
 
@@ -217,7 +217,6 @@ Hooks.on('renderActorSheet', (app, html, data) => {
     if (item && item.system.derivedCout !== undefined) {
       const costBox = $(el).find('.item-detail.item-cout, .item-cout');
       if (costBox.length) {
-        // Try to update the text that is not a label
         costBox.contents().filter(function() {
           return this.nodeType === 3 && this.nodeValue.trim() !== "";
         }).each(function() {
@@ -247,16 +246,54 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     const isOnEquipment = (costAsEP && item.getFlag('mnm-3e-expanded', 'parentEquipmentId')) || (parent && parent.type === 'equipement');
     
     if (isOnEquipment) {
-      // Force UI to show total points from our logic
       const totalBox = html.find('input[name="system.cout.total"]');
       if (totalBox.length) totalBox.val(item.system.cout.total);
 
-      // Aggressive Label Rename
       html.find('*').contents().filter(function() {
         return this.nodeType === 3 && (this.nodeValue.trim() === "Total" || this.nodeValue.trim() === "Total:");
       }).each(function() {
         this.nodeValue = this.nodeValue.replace("Total", "EP Cost");
       });
+    }
+  }
+
+  if (item.type === 'equipement') {
+    const actor = item.actor;
+    if (actor) {
+      const linkedPowers = actor.items.filter(i => {
+        if (i.type !== 'pouvoir') return false;
+        const parentFlag = i.getFlag('mnm-3e-expanded', 'parentEquipmentId');
+        const link = i.system.link;
+        return parentFlag === item.id || link === item.id || link === item.name;
+      });
+
+      if (linkedPowers.length > 0) {
+        let maxC = 0;
+        linkedPowers.forEach(p => {
+          const c = calculatePowerCost(p);
+          if (c > maxC) maxC = c;
+        });
+        const arrayEP = maxC + (linkedPowers.length - 1);
+        const totalEP = (parseInt(item.system.cout) || 0) + arrayEP;
+
+        const costInput = html.find('input[name="system.cout"]');
+        if (costInput.length) {
+          const group = costInput.closest('.form-group');
+          group.find('label').text("Base Cost");
+          
+          const arrayHtml = `
+            <div class="form-group">
+              <label>Power Array EP</label>
+              <span style="flex: 1; text-align: right; padding-right: 5px;">${arrayEP}</span>
+            </div>
+            <div class="form-group" style="font-weight: bold; border-top: 1px solid #7a7971; padding-top: 5px;">
+              <label>Total EP Cost</label>
+              <span style="flex: 1; text-align: right; padding-right: 5px;">${totalEP}</span>
+            </div>
+          `;
+          group.after(arrayHtml);
+        }
+      }
     }
   }
 
@@ -353,7 +390,6 @@ Hooks.on('renderItemSheet', (app, html, data) => {
       if (doc.isEmbedded && doc.actor === actor) {
         await doc.update(updateData);
       } else {
-        // If not on the same actor, create a copy
         const itemData = doc.toObject();
         itemData.system.link = item.id;
         itemData.flags = itemData.flags || {};
