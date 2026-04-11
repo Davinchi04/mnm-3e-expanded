@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.20) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.4.21) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Calculates the theoretical full cost of a power based on M&M 3e rules.
@@ -101,8 +101,12 @@ function applyExpandedLogic(actor) {
     }
   });
 
+  // Create a map to store EP contributions from powers per equipment
+  const powerContributions = {};
   for (const eqId in epArrays) {
-    totalEquipmentEP += processArray(epArrays[eqId], true);
+    const sum = processArray(epArrays[eqId], true);
+    powerContributions[eqId] = sum;
+    totalEquipmentEP += sum;
   }
 
   // --- 3. EQUIPMENT COST LOGIC ---
@@ -127,7 +131,8 @@ function applyExpandedLogic(actor) {
     });
     docs.forEach(d => {
       const t = (d.id === bId) ? maxC : 1;
-      d.system.derivedCout = t;
+      const finalCout = t + (powerContributions[d.id] || 0);
+      d.system.derivedCout = finalCout;
       totalEquipmentEP += t;
       processedEqIds.add(d.id);
     });
@@ -136,7 +141,8 @@ function applyExpandedLogic(actor) {
   equipment.forEach(e => {
     if (!processedEqIds.has(e.id)) {
       const c = parseInt(e.system.cout) || 0;
-      e.system.derivedCout = c;
+      const finalCout = c + (powerContributions[e.id] || 0);
+      e.system.derivedCout = finalCout;
       totalEquipmentEP += c;
     }
   });
