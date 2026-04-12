@@ -153,7 +153,9 @@ function applyExpandedLogic(actor) {
       const finalCout = baseCost + (powerContributions[e.id] || 0);
       e.system.derivedCout = finalCout;
       e.system.cout = finalCout;
-      totalEquipmentEP += finalCout;
+      
+      // Update totalEquipmentEP only once per equipment
+      totalEquipmentEP += finalCout; 
     }
   });
 
