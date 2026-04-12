@@ -132,15 +132,13 @@ function applyExpandedLogic(actor) {
       const t = (d.id === bId) ? maxC : 1;
       const finalCout = t + (powerContributions[d.id] || 0);
       d.system.derivedCout = finalCout;
-      totalEquipmentEP += t;
+      totalEquipmentEP += finalCout; // Add the fully calculated total to the global EP total here, NOT in the individual loop
       processedEqIds.add(d.id);
     });
   }
 
   equipment.forEach(e => {
     if (!processedEqIds.has(e.id)) {
-      // Correctly identify base cost: if we've already modified system.cout, 
-      // we must rely on the stored flag or a reliable source, not the potentially modified system.cout
       let baseCost = e.getFlag('mnm-3e-expanded', 'baseCost');
       if (baseCost === undefined) {
          baseCost = parseInt(e.system.cout) || 0;
@@ -150,7 +148,7 @@ function applyExpandedLogic(actor) {
       const finalCout = baseCost + (powerContributions[e.id] || 0);
       e.system.derivedCout = finalCout;
       e.system.cout = finalCout;
-      totalEquipmentEP += baseCost; 
+      totalEquipmentEP += finalCout; // Add the fully calculated total here
     }
   });
 
