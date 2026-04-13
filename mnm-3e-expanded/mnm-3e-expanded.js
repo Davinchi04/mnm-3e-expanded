@@ -228,14 +228,16 @@ Hooks.on('renderActorSheet', (app, html, data) => {
       const displayCost = item.system.derivedCout ?? item.system.cout ?? 0;
       const costBox = $(el).find('.item-detail.item-cout, .item-cout, [data-property="system.cout"]');
       if (costBox.length) {
-        costBox.text(String(displayCost));
-      } else {
-        // System doesn't render a cost element for equipment rows — inject one.
-        if (!$(el).find('.mnm-eq-cost').length) {
-          $(el).find('.item-name').after(
-            `<span class="mnm-eq-cost item-detail" style="flex: 0 0 2rem; text-align: center;">${displayCost}</span>`
-          );
+        if (costBox.is('input')) {
+          costBox.val(displayCost);
+        } else {
+          costBox.text(String(displayCost));
         }
+      } else if (!$(el).find('.mnm-eq-cost').length) {
+        // System doesn't render a cost element for equipment rows — inject one.
+        $(el).find('.item-name').after(
+          `<span class="mnm-eq-cost item-detail" style="flex: 0 0 2rem; text-align: center;">${displayCost}</span>`
+        );
       }
     }
   });
