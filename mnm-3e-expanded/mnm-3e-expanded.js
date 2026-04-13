@@ -63,7 +63,7 @@ function applyExpandedLogic(actor) {
   let totalPowerPP = 0;
   let totalEquipmentEP = 0;
 
-  const processArray = (itemIdsOrDocs, isEP) => {
+  const processArray = (itemIdsOrDocs) => {
     let maxCost = 0;
     let bearerId = null;
     const docs = itemIdsOrDocs.map(idOrDoc => (typeof idOrDoc === 'string') ? actor.items.get(idOrDoc) : idOrDoc).filter(d => !!d);
@@ -89,7 +89,7 @@ function applyExpandedLogic(actor) {
 
   const processedPpIds = new Set();
   for (const rootId in ppArrays) {
-    totalPowerPP += processArray(ppArrays[rootId], false);
+    totalPowerPP += processArray(ppArrays[rootId]);
     ppArrays[rootId].forEach(id => processedPpIds.add(id));
   }
   ppPowers.forEach(p => {
@@ -104,7 +104,7 @@ function applyExpandedLogic(actor) {
   // Create a map to store EP contributions from powers per equipment
   const powerContributions = {};
   for (const eqId in epArrays) {
-    const sum = processArray(epArrays[eqId], true);
+    const sum = processArray(epArrays[eqId]);
     powerContributions[eqId] = sum;
   }
 
@@ -125,34 +125,31 @@ function applyExpandedLogic(actor) {
     let bId = null;
     const docs = equipmentArrays[rootId].map(id => actor.items.get(id)).filter(d => !!d);
     docs.forEach(d => {
-      const c = parseInt(d.getFlag('mnm-3e-expanded', 'baseCost') || d.system.cout) || 0;
+      // Equipment with a power array has zero base cost; otherwise use the stored cout.
+      const hasPowerArray = (powerContributions[d.id] || 0) > 0;
+      const c = hasPowerArray ? 0 : (parseInt(d._source?.system?.cout) || 0);
       if (c > maxC) { maxC = c; bId = d.id; }
     });
-    
+
     docs.forEach(d => {
-      const baseCost = parseInt(d.getFlag('mnm-3e-expanded', 'baseCost') || d.system.cout) || 0;
-      if (!d.getFlag('mnm-3e-expanded', 'baseCost')) d.update({'flags.mnm-3e-expanded.baseCost': baseCost});
-      
+      const hasPowerArray = (powerContributions[d.id] || 0) > 0;
+      const baseCost = hasPowerArray ? 0 : (parseInt(d._source?.system?.cout) || 0);
+
       const arrayContribution = (d.id === bId) ? maxC : 1;
       const finalCout = baseCost + (powerContributions[d.id] || 0);
       d.system.derivedCout = finalCout;
-      d.system.cout = finalCout;
-      totalEquipmentEP += baseCost + arrayContribution;
+      totalEquipmentEP += arrayContribution + (powerContributions[d.id] || 0);
       processedEqIds.add(d.id);
     });
   }
 
   equipment.forEach(e => {
     if (!processedEqIds.has(e.id)) {
-      let baseCost = e.getFlag('mnm-3e-expanded', 'baseCost');
-      if (baseCost === undefined) {
-         baseCost = parseInt(e.system.cout) || 0;
-         e.update({'flags.mnm-3e-expanded.baseCost': baseCost});
-      }
+      const hasPowerArray = (powerContributions[e.id] || 0) > 0;
+      const baseCost = hasPowerArray ? 0 : (parseInt(e._source?.system?.cout) || 0);
 
       const finalCout = baseCost + (powerContributions[e.id] || 0);
       e.system.derivedCout = finalCout;
-      e.system.cout = finalCout;
       totalEquipmentEP += finalCout;
     }
   });
@@ -278,48 +275,6 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     }
   }
 
-  if (item.type === 'equipement') {
-    const actor = item.actor;
-    if (actor) {
-      const linkedPowers = actor.items.filter(i => {
-        if (i.type !== 'pouvoir') return false;
-        const parentFlag = i.getFlag('mnm-3e-expanded', 'parentEquipmentId');
-        const link = i.system.link;
-        return parentFlag === item.id || link === item.id || link === item.name;
-      });
-
-      if (linkedPowers.length > 0) {
-        let maxC = 0;
-        linkedPowers.forEach(p => {
-          const c = calculatePowerCost(p);
-          if (c > maxC) maxC = c;
-        });
-        const arrayEP = maxC + (linkedPowers.length - 1);
-        const totalEP = (parseInt(item.system.cout) || 0) + arrayEP;
-
-        const costInput = html.find('input[name="system.cout"], [data-property="system.cout"]');
-        if (costInput.length) {
-          const group = costInput.closest('.form-group, .item-prop');
-          group.find('label').text("Base Cost");
-          
-          if (!html.find('.mnm-injected-cost').length) {
-            const arrayHtml = `
-              <div class="form-group mnm-injected-cost">
-                <label>Power Array EP</label>
-                <span style="flex: 1; text-align: right; padding-right: 5px;">${arrayEP}</span>
-              </div>
-              <div class="form-group mnm-injected-cost" style="font-weight: bold; border-top: 1px solid #7a7971; padding-top: 5px;">
-                <label>Total EP Cost</label>
-                <span style="flex: 1; text-align: right; padding-right: 5px;">${totalEP}</span>
-              </div>
-            `;
-            group.after(arrayHtml);
-          }
-        }
-      }
-    }
-  }
-
   if (item.type !== 'equipement') return;
 
   const actor = item.actor;
@@ -331,6 +286,31 @@ Hooks.on('renderItemSheet', (app, html, data) => {
     const link = i.system.link;
     return parentFlag === item.id || link === item.id || link === item.name;
   });
+
+  if (linkedPowers.length > 0 && !html.find('.mnm-injected-cost').length) {
+    let maxC = 0;
+    linkedPowers.forEach(p => {
+      const c = calculatePowerCost(p);
+      if (c > maxC) maxC = c;
+    });
+    const arrayEP = maxC + (linkedPowers.length - 1);
+
+    const costInput = html.find('input[name="system.cout"], [data-property="system.cout"]');
+    if (costInput.length) {
+      const costGroup = costInput.closest('.form-group, .item-prop');
+      costGroup.hide();
+      costGroup.after(`
+        <div class="form-group mnm-injected-cost">
+          <label>Power Array EP</label>
+          <span style="flex: 1; text-align: right; padding-right: 5px;">${arrayEP}</span>
+        </div>
+        <div class="form-group mnm-injected-cost" style="font-weight: bold; border-top: 1px solid #7a7971; padding-top: 5px;">
+          <label>Total EP Cost</label>
+          <span style="flex: 1; text-align: right; padding-right: 5px;">${arrayEP}</span>
+        </div>
+      `);
+    }
+  }
 
   let powersHtml = `
     <div class="mnm-expanded-powers-section" style="margin-top: 10px; border-top: 1px solid #7a7971; padding-top: 10px;">
