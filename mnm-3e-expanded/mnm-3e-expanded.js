@@ -224,15 +224,18 @@ Hooks.on('renderActorSheet', (app, html, data) => {
           this.nodeValue = this.nodeValue.replace(/Total/i, "EP Cost");
         });
       }
-    } else if (item.type === 'equipement' && item.system.derivedCout !== undefined) {
-      // Force equipment display cost
+    } else if (item.type === 'equipement') {
+      const displayCost = item.system.derivedCout ?? item.system.cout ?? 0;
       const costBox = $(el).find('.item-detail.item-cout, .item-cout, [data-property="system.cout"]');
       if (costBox.length) {
-        costBox.contents().filter(function() {
-          return this.nodeType === 3 && this.nodeValue.trim() !== "";
-        }).first().each(function() {
-          this.nodeValue = item.system.derivedCout;
-        });
+        costBox.text(String(displayCost));
+      } else {
+        // System doesn't render a cost element for equipment rows — inject one.
+        if (!$(el).find('.mnm-eq-cost').length) {
+          $(el).find('.item-name').after(
+            `<span class="mnm-eq-cost item-detail" style="flex: 0 0 2rem; text-align: center;">${displayCost}</span>`
+          );
+        }
       }
     }
   });
