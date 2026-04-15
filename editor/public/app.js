@@ -30,9 +30,18 @@ const fEditCheck = document.getElementById('f-edit');
 const fPRank = document.getElementById('f-p-rank');
 const fPCost = document.getElementById('f-p-cost');
 const fPSpecial = document.getElementById('f-p-special');
+const fPTotal = document.getElementById('f-p-total');
+const fPTotalTheorique = document.getElementById('f-p-total-theorique');
+const fPParRangTotal = document.getElementById('f-p-par-rang-total');
+const fPModRang = document.getElementById('f-p-mod-rang');
+const fPModFixe = document.getElementById('f-p-mod-fixe');
 const fPAction = document.getElementById('f-p-action');
 const fPRange = document.getElementById('f-p-range');
 const fPDuration = document.getElementById('f-p-duration');
+const fPActivate = document.getElementById('f-p-activate');
+const fPLink = document.getElementById('f-p-link');
+const fPCarac = document.getElementById('f-p-carac');
+const fPCheck = document.getElementById('f-p-check');
 const fPMechanics = document.getElementById('f-p-mechanics');
 const fPEffetsPrincipaux = document.getElementById('f-p-effets-principaux');
 
@@ -52,6 +61,17 @@ const saveStatus = document.getElementById('save-status');
 
 // Quill WYSIWYG
 const quill = new Quill('#f-description', {
+  theme: 'snow',
+  modules: {
+    toolbar: [
+      ['bold', 'italic', 'underline'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['clean'],
+    ],
+  },
+});
+
+const quillNotes = new Quill('#f-p-notes', {
   theme: 'snow',
   modules: {
     toolbar: [
@@ -96,10 +116,21 @@ async function selectPack(pack) {
   const isModifier = ['extras', 'flaws'].includes(pack);
   const isAdv = pack === 'advantages';
 
-  document.querySelectorAll('.power-only').forEach(el => el.style.display = isPower ? '' : 'none');
-  document.querySelectorAll('.eq-only').forEach(el => el.style.display = isEq ? '' : 'none');
-  document.querySelectorAll('.modifier-only').forEach(el => el.style.display = isModifier ? '' : 'none');
-  document.querySelectorAll('.json-only').forEach(el => el.style.display = (isAdv || isModifier) ? '' : 'none');
+  // Visibility logic
+  document.querySelectorAll('[class*="-only"]').forEach(el => {
+    const classes = el.className.split(' ');
+    let visible = false;
+    let hasOnlyClass = false;
+
+    if (classes.includes('power-only')) { hasOnlyClass = true; if (isPower) visible = true; }
+    if (classes.includes('eq-only')) { hasOnlyClass = true; if (isEq) visible = true; }
+    if (classes.includes('modifier-only')) { hasOnlyClass = true; if (isModifier) visible = true; }
+    if (classes.includes('json-only')) { hasOnlyClass = true; if (isAdv || isModifier) visible = true; }
+
+    if (hasOnlyClass) {
+      el.style.display = visible ? '' : 'none';
+    }
+  });
 
   document.getElementById('desc-label').textContent = isAdv ? 'Notes' : 'Description';
 
@@ -162,9 +193,18 @@ function selectEntry(entry) {
   fPRank.value = cout.rang || '';
   fPCost.value = cout.parrang || '';
   fPSpecial.value = sys.special || '';
+  fPTotal.value = cout.total || 0;
+  fPTotalTheorique.value = cout.totalTheorique || 0;
+  fPParRangTotal.value = cout.parrangtotal || '';
+  fPModRang.value = cout.modrang || 0;
+  fPModFixe.value = cout.modfixe || 0;
   fPAction.value = sys.action || '';
   fPRange.value = sys.portee || '';
   fPDuration.value = sys.duree || '';
+  fPActivate.checked = !!sys.activate;
+  fPLink.value = sys.link || '';
+  fPCarac.value = sys.carac || 0;
+  fPCheck.value = sys.check || '';
   fPMechanics.value = sys.effets || '';
   fPEffetsPrincipaux.value = sys.effetsprincipaux || '';
   
@@ -179,6 +219,7 @@ function selectEntry(entry) {
   fCoutValue.value = cout.value || 0;
 
   quill.clipboard.dangerouslyPasteHTML((state.pack === 'advantages' ? sys.notes : sys.description) || '');
+  quillNotes.clipboard.dangerouslyPasteHTML(sys.notes || '');
 
   editForm.style.display = '';
   editPlaceholder.style.display = 'none';
@@ -203,11 +244,22 @@ async function saveEntry() {
     sys.action = fPAction.value.trim();
     sys.portee = fPRange.value.trim();
     sys.duree = fPDuration.value.trim();
+    sys.activate = fPActivate.checked;
+    sys.link = fPLink.value.trim();
+    sys.carac = parseInt(fPCarac.value) || 0;
+    sys.check = fPCheck.value.trim();
     sys.effets = fPMechanics.value.trim();
     sys.effetsprincipaux = fPEffetsPrincipaux.value.trim();
     sys.cout.rang = parseInt(fPRank.value) || 1;
     sys.cout.parrang = parseInt(fPCost.value) || 1;
+    sys.cout.total = parseInt(fPTotal.value) || 0;
+    sys.cout.totalTheorique = parseInt(fPTotalTheorique.value) || 0;
+    sys.cout.parrangtotal = fPParRangTotal.value.trim();
+    sys.cout.modrang = parseInt(fPModRang.value) || 0;
+    sys.cout.modfixe = parseInt(fPModFixe.value) || 0;
     sys.description = quill.root.innerHTML;
+    sys.notes = quillNotes.root.innerHTML;
+    sys.edit = fEditCheck.checked;
   } else if (['extras', 'flaws'].includes(state.pack)) {
     sys.rang = parseInt(fRang.value) || 1;
     sys.edit = fEditCheck.checked;

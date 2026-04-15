@@ -259,7 +259,7 @@ body {
 }
 
 /* Quill editor */
-#f-description {
+#f-description, #f-p-notes {
   border: 1px solid #ccc;
   border-radius: 0 0 4px 4px;
   background: #fff;

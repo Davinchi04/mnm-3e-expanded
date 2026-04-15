@@ -54,7 +54,7 @@
           <label for="f-rang">Base Rank</label>
           <input id="f-rang" type="number" min="0">
         </div>
-        <div class="field field-row modifier-only">
+        <div class="field field-row modifier-only power-only">
           <label>
             <input id="f-edit" type="checkbox">
             Edit Enabled
@@ -81,6 +81,30 @@
         </div>
         <div class="field-row-group">
           <div class="field">
+            <label for="f-p-total">Total Cost</label>
+            <input id="f-p-total" type="number" min="0">
+          </div>
+          <div class="field">
+            <label for="f-p-total-theorique">Theoretical Total</label>
+            <input id="f-p-total-theorique" type="number" min="0">
+          </div>
+          <div class="field">
+            <label for="f-p-par-rang-total">Total per Rank (String)</label>
+            <input id="f-p-par-rang-total" type="text">
+          </div>
+        </div>
+        <div class="field-row-group">
+          <div class="field">
+            <label for="f-p-mod-rang">Modifier per Rank</label>
+            <input id="f-p-mod-rang" type="number">
+          </div>
+          <div class="field">
+            <label for="f-p-mod-fixe">Modifier Flat</label>
+            <input id="f-p-mod-fixe" type="number">
+          </div>
+        </div>
+        <div class="field-row-group">
+          <div class="field">
             <label for="f-p-action">Action</label>
             <input id="f-p-action" type="text">
           </div>
@@ -93,13 +117,37 @@
             <input id="f-p-duration" type="text">
           </div>
         </div>
+        <div class="field-row-group">
+          <div class="field field-row">
+            <label>
+              <input id="f-p-activate" type="checkbox">
+              Activate
+            </label>
+          </div>
+          <div class="field">
+            <label for="f-p-link">Link</label>
+            <input id="f-p-link" type="text">
+          </div>
+          <div class="field">
+            <label for="f-p-carac">Ability (Carac)</label>
+            <input id="f-p-carac" type="number">
+          </div>
+          <div class="field">
+            <label for="f-p-check">Check</label>
+            <input id="f-p-check" type="text">
+          </div>
+        </div>
         <div class="field">
-          <label for="f-p-mechanics">Mechanics (Effets)</label>
+          <label for="f-p-mechanics">Details (Mechanics / Effets)</label>
           <textarea id="f-p-mechanics" rows="2"></textarea>
         </div>
         <div class="field">
-          <label for="f-p-effets-principaux">Main Effects (Effets Principaux)</label>
+          <label for="f-p-effets-principaux">Main Effect Summary (Effets Principaux)</label>
           <textarea id="f-p-effets-principaux" rows="2"></textarea>
+        </div>
+        <div class="field">
+          <label for="f-p-notes">Power Reference (Notes)</label>
+          <div id="f-p-notes"></div>
         </div>
       </div>
 

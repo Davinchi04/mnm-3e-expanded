@@ -12,10 +12,10 @@
         "action": "simple",
         "portee": "personal",
         "duree": "instantane",
-        "notes": "<p>You take the energy from a particular type of attack, chosen when you take this power, and use it to enhance one of your traits. Typically this is either Strength or a Ranged Damage effect of the same energy type as the initial attack...</p>",
-        "description": "<p>You take the energy from a particular type of attack, chosen when you take this power, and use it to enhance one of your traits. Typically this is either Strength or a Ranged Damage effect of the same energy type as the initial attack...</p>",
-        "effets": "<p>The enhancement to your trait is equal to your power rank or the attack’s rank, whichever is less.</p>",
-        "effetsprincipaux": "<p>The enhancement to your trait is equal to your power rank or the attack’s rank, whichever is less.</p>",
+        "notes": "<p>Notes You take the energy from a particular type of attack, chosen when you take this power, and use it to enhance one of your traits. Typically this is either Strength or a Ranged Damage effect of the same energy type as the initial attack...</p>",
+        "description": "<p>Desc You take the energy from a particular type of attack, chosen when you take this power, and use it to enhance one of your traits. Typically this is either Strength or a Ranged Damage effect of the same energy type as the initial attack...</p>",
+        "effets": "Details?",
+        "effetsprincipaux": "Subtitle?",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -27,7 +27,12 @@
         "check": "",
         "cout": {
           "rang": 1,
-          "parrang": 1
+          "parrang": 1,
+          "total": 0,
+          "totalTheorique": 0,
+          "parrangtotal": "",
+          "modrang": 0,
+          "modfixe": 0
         }
       },
       "effects": [],
