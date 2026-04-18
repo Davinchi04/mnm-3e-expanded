@@ -4,6 +4,8 @@ const state = {
   pack: null,
   entries: [],
   selected: null,
+  allExtras: [],
+  allFlaws: [],
 };
 
 // DOM refs
@@ -18,32 +20,24 @@ const editTitle = document.getElementById('edit-title');
 
 // Metadata
 const fName = document.getElementById('f-name');
-const fType = document.getElementById('f-type');
-const fImg = document.getElementById('f-img');
-
-// System Core
-const fSysType = document.getElementById('f-sys-type');
-const fRang = document.getElementById('f-rang');
-const fEditCheck = document.getElementById('f-edit');
+const fPType = document.getElementById('f-p-type');
 
 // Power Specifics
 const fPRank = document.getElementById('f-p-rank');
 const fPCost = document.getElementById('f-p-cost');
 const fPSpecial = document.getElementById('f-p-special');
-const fPTotal = document.getElementById('f-p-total');
-const fPTotalTheorique = document.getElementById('f-p-total-theorique');
-const fPParRangTotal = document.getElementById('f-p-par-rang-total');
-const fPModRang = document.getElementById('f-p-mod-rang');
-const fPModFixe = document.getElementById('f-p-mod-fixe');
 const fPAction = document.getElementById('f-p-action');
 const fPRange = document.getElementById('f-p-range');
 const fPDuration = document.getElementById('f-p-duration');
 const fPActivate = document.getElementById('f-p-activate');
-const fPLink = document.getElementById('f-p-link');
-const fPCarac = document.getElementById('f-p-carac');
-const fPCheck = document.getElementById('f-p-check');
 const fPMechanics = document.getElementById('f-p-mechanics');
 const fPEffetsPrincipaux = document.getElementById('f-p-effets-principaux');
+
+// Modifiers UI
+const extrasList = document.getElementById('extras-list');
+const flawsList = document.getElementById('flaws-list');
+const addExtraSelect = document.getElementById('add-extra-select');
+const addFlawSelect = document.getElementById('add-flaw-select');
 
 // Equipment Specifics
 const fECost = document.getElementById('f-e-cost');
@@ -71,7 +65,29 @@ const quill = new Quill('#f-description', {
   },
 });
 
+const quillCommon = new Quill('#f-description-common', {
+  theme: 'snow',
+  modules: {
+    toolbar: [
+      ['bold', 'italic', 'underline'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['clean'],
+    ],
+  },
+});
+
 const quillNotes = new Quill('#f-p-notes', {
+  theme: 'snow',
+  modules: {
+    toolbar: [
+      ['bold', 'italic', 'underline'],
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      ['clean'],
+    ],
+  },
+});
+
+const quillMechanics = new Quill('#f-p-mechanics', {
   theme: 'snow',
   modules: {
     toolbar: [
@@ -95,8 +111,95 @@ async function loadPacks() {
       btn.addEventListener('click', () => selectPack(pack));
       packList.appendChild(btn);
     }
+
+    // Pre-load all extras and flaws for the dropdowns
+    const extrasRes = await fetch(`${API}/packs/extras`);
+    state.allExtras = await extrasRes.json();
+    const flawsRes = await fetch(`${API}/packs/flaws`);
+    state.allFlaws = await flawsRes.json();
+
+    populateModifierSelects();
   } catch (e) {
     console.error('Connection failed');
+  }
+}
+
+function populateModifierSelects() {
+  addExtraSelect.innerHTML = '<option value="">+ Add Extra...</option>';
+  state.allExtras.sort((a, b) => a.name.localeCompare(b.name)).forEach(ex => {
+    const opt = document.createElement('option');
+    opt.value = ex._id;
+    opt.textContent = ex.name;
+    addExtraSelect.appendChild(opt);
+  });
+
+  addFlawSelect.innerHTML = '<option value="">+ Add Flaw...</option>';
+  state.allFlaws.sort((a, b) => a.name.localeCompare(b.name)).forEach(fl => {
+    const opt = document.createElement('option');
+    opt.value = fl._id;
+    opt.textContent = fl.name;
+    addFlawSelect.appendChild(opt);
+  });
+}
+
+function renderModifiers() {
+  if (!state.selected || state.pack !== 'powers') return;
+  const sys = state.selected.system || {};
+  const extras = sys.extras || {};
+  const flaws = sys.defauts || {};
+
+  extrasList.innerHTML = '';
+  Object.entries(extras).forEach(([id, data]) => {
+    const li = document.createElement('li');
+    li.className = 'item-tag';
+    li.innerHTML = `<span>${data.name || id}</span><span class="remove-btn" data-id="${id}" data-type="extra">&times;</span>`;
+    extrasList.appendChild(li);
+  });
+
+  flawsList.innerHTML = '';
+  Object.entries(flaws).forEach(([id, data]) => {
+    const li = document.createElement('li');
+    li.className = 'item-tag';
+    li.innerHTML = `<span>${data.name || id}</span><span class="remove-btn" data-id="${id}" data-type="flaw">&times;</span>`;
+    flawsList.appendChild(li);
+  });
+
+  // Add event listeners for remove buttons
+  document.querySelectorAll('.remove-btn').forEach(btn => {
+    btn.onclick = (e) => {
+      const id = e.target.dataset.id;
+      const type = e.target.dataset.type;
+      removeModifier(type, id);
+    };
+  });
+}
+
+function addModifier(type, id) {
+  if (!state.selected) return;
+  const list = type === 'extra' ? state.allExtras : state.allFlaws;
+  const mod = list.find(m => m._id === id);
+  if (!mod) return;
+
+  const sys = state.selected.system;
+  const targetKey = type === 'extra' ? 'extras' : 'defauts';
+  if (!sys[targetKey]) sys[targetKey] = {};
+  
+  // Clone the modifier's system data into the power
+  sys[targetKey][id] = {
+    name: mod.name,
+    ...JSON.parse(JSON.stringify(mod.system))
+  };
+
+  renderModifiers();
+}
+
+function removeModifier(type, id) {
+  if (!state.selected) return;
+  const sys = state.selected.system;
+  const targetKey = type === 'extra' ? 'extras' : 'defauts';
+  if (sys[targetKey]) {
+    delete sys[targetKey][id];
+    renderModifiers();
   }
 }
 
@@ -131,8 +234,6 @@ async function selectPack(pack) {
       el.style.display = visible ? '' : 'none';
     }
   });
-
-  document.getElementById('desc-label').textContent = isAdv ? 'Notes' : 'Description';
 
   try {
     const res = await fetch(`${API}/packs/${pack}`);
@@ -182,30 +283,16 @@ function selectEntry(entry) {
 
   editTitle.textContent = entry.name;
   fName.value = entry.name || '';
-  fType.value = entry.type || '';
-  fImg.value = entry.img || '';
-
-  fSysType.value = sys.type || '';
-  fRang.value = sys.rang || (typeof sys.rang === 'number' ? sys.rang : '');
-  fEditCheck.checked = !!sys.edit;
+  fPType.value = sys.type || '';
 
   // Power mapping
   fPRank.value = cout.rang || '';
   fPCost.value = cout.parrang || '';
   fPSpecial.value = sys.special || '';
-  fPTotal.value = cout.total || 0;
-  fPTotalTheorique.value = cout.totalTheorique || 0;
-  fPParRangTotal.value = cout.parrangtotal || '';
-  fPModRang.value = cout.modrang || 0;
-  fPModFixe.value = cout.modfixe || 0;
   fPAction.value = sys.action || '';
   fPRange.value = sys.portee || '';
   fPDuration.value = sys.duree || '';
   fPActivate.checked = !!sys.activate;
-  fPLink.value = sys.link || '';
-  fPCarac.value = sys.carac || 0;
-  fPCheck.value = sys.check || '';
-  fPMechanics.value = sys.effets || '';
   fPEffetsPrincipaux.value = sys.effetsprincipaux || '';
   
   // Equipment mapping
@@ -218,7 +305,14 @@ function selectEntry(entry) {
   fCoutRang.checked = !!cout.rang;
   fCoutValue.value = cout.value || 0;
 
-  quill.clipboard.dangerouslyPasteHTML((state.pack === 'advantages' ? sys.notes : sys.description) || '');
+  const content = (state.pack === 'advantages' ? sys.notes : sys.description) || '';
+  if (state.pack === 'powers') {
+    quill.clipboard.dangerouslyPasteHTML(content);
+    quillMechanics.clipboard.dangerouslyPasteHTML(sys.effets || '');
+    renderModifiers();
+  } else {
+    quillCommon.clipboard.dangerouslyPasteHTML(content);
+  }
   quillNotes.clipboard.dangerouslyPasteHTML(sys.notes || '');
 
   editForm.style.display = '';
@@ -230,54 +324,39 @@ async function saveEntry() {
 
   const updated = JSON.parse(JSON.stringify(state.selected));
   updated.name = fName.value.trim();
-  updated.type = fType.value.trim();
-  updated.img = fImg.value.trim();
 
   if (!updated.system) updated.system = {};
   const sys = updated.system;
 
-  sys.type = fSysType.value.trim();
-
   if (state.pack === 'powers') {
+    sys.type = fPType.value;
     if (!sys.cout) sys.cout = {};
     sys.special = fPSpecial.value.trim();
     sys.action = fPAction.value.trim();
     sys.portee = fPRange.value.trim();
     sys.duree = fPDuration.value.trim();
     sys.activate = fPActivate.checked;
-    sys.link = fPLink.value.trim();
-    sys.carac = parseInt(fPCarac.value) || 0;
-    sys.check = fPCheck.value.trim();
-    sys.effets = fPMechanics.value.trim();
+    sys.effets = quillMechanics.root.innerHTML;
     sys.effetsprincipaux = fPEffetsPrincipaux.value.trim();
     sys.cout.rang = parseInt(fPRank.value) || 1;
     sys.cout.parrang = parseInt(fPCost.value) || 1;
-    sys.cout.total = parseInt(fPTotal.value) || 0;
-    sys.cout.totalTheorique = parseInt(fPTotalTheorique.value) || 0;
-    sys.cout.parrangtotal = fPParRangTotal.value.trim();
-    sys.cout.modrang = parseInt(fPModRang.value) || 0;
-    sys.cout.modfixe = parseInt(fPModFixe.value) || 0;
     sys.description = quill.root.innerHTML;
     sys.notes = quillNotes.root.innerHTML;
-    sys.edit = fEditCheck.checked;
   } else if (['extras', 'flaws'].includes(state.pack)) {
-    sys.rang = parseInt(fRang.value) || 1;
-    sys.edit = fEditCheck.checked;
     sys.cout = {
       fixe: fCoutFixe.checked,
       rang: fCoutRang.checked,
       value: parseInt(fCoutValue.value) || 0
     };
-    sys.description = quill.root.innerHTML;
+    sys.description = quillCommon.root.innerHTML;
   } else if (state.pack === 'advantages') {
-    sys.notes = quill.root.innerHTML;
-    sys.description = quill.root.innerHTML;
-    sys.rang = parseInt(fRang.value) || 1;
+    sys.notes = quillCommon.root.innerHTML;
+    sys.description = quillCommon.root.innerHTML;
   } else {
     // Equipment, Vehicles, Headquarters
     sys.cout = parseInt(fECost.value) || 0;
     sys.protection = parseInt(fEProtection.value) || 0;
-    sys.description = quill.root.innerHTML;
+    sys.description = quillCommon.root.innerHTML;
     if (!updated.flags) updated.flags = {};
     if (!updated.flags['mnm-3e-expanded']) updated.flags['mnm-3e-expanded'] = {};
     updated.flags['mnm-3e-expanded'].link = fEGroup.value.trim();
@@ -346,6 +425,20 @@ async function deleteEntry() {
     alert('Delete failed');
   }
 }
+
+addExtraSelect.addEventListener('change', (e) => {
+  if (e.target.value) {
+    addModifier('extra', e.target.value);
+    e.target.value = '';
+  }
+});
+
+addFlawSelect.addEventListener('change', (e) => {
+  if (e.target.value) {
+    addModifier('flaw', e.target.value);
+    e.target.value = '';
+  }
+});
 
 searchInput.addEventListener('input', renderList);
 btnNew.addEventListener('click', newEntry);

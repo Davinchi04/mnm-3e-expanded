@@ -969,7 +969,7 @@
     }
   },
   {
-    "_id": "ei2msp7l31p",
+    "_id": "ei2msp7l31p-id",
     "name": "Increased Duration",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
@@ -986,7 +986,7 @@
     }
   },
   {
-    "_id": "h46f3b30jvu",
+    "_id": "h46f3b30jvu-ir",
     "name": "Increased Range",
     "type": "modificateur",
     "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",

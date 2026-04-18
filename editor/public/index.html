@@ -27,6 +27,9 @@
     <div id="edit-form" style="display:none">
       <h2 id="edit-title"></h2>
 
+      <!-- Main Content Fields -->
+      <!-- (Empty at top now) -->
+
       <!-- Common Fields -->
       <div class="section-divider">Metadata</div>
       <div class="field-row-group">
@@ -34,31 +37,17 @@
           <label for="f-name">Name</label>
           <input id="f-name" type="text">
         </div>
-        <div class="field">
-          <label for="f-type">Entry Type (Foundry)</label>
-          <input id="f-type" type="text">
-        </div>
-        <div class="field">
-          <label for="f-img">Image Path</label>
-          <input id="f-img" type="text">
-        </div>
-      </div>
-
-      <div class="section-divider">System Core</div>
-      <div class="field-row-group">
-        <div class="field">
-          <label for="f-sys-type">System Category</label>
-          <input id="f-sys-type" type="text">
-        </div>
-        <div class="field json-only">
-          <label for="f-rang">Base Rank</label>
-          <input id="f-rang" type="number" min="0">
-        </div>
-        <div class="field field-row modifier-only power-only">
-          <label>
-            <input id="f-edit" type="checkbox">
-            Edit Enabled
-          </label>
+        <div class="field power-only">
+          <label for="f-p-type">Effect Type</label>
+          <select id="f-p-type">
+            <option value="">(None)</option>
+            <option value="attack">Attack</option>
+            <option value="control">Control</option>
+            <option value="defense">Defense</option>
+            <option value="general">General</option>
+            <option value="movement">Movement</option>
+            <option value="sensory">Sensory</option>
+          </select>
         </div>
       </div>
 
@@ -76,45 +65,42 @@
           </div>
           <div class="field">
             <label for="f-p-special">Special</label>
-            <input id="f-p-special" type="text">
-          </div>
-        </div>
-        <div class="field-row-group">
-          <div class="field">
-            <label for="f-p-total">Total Cost</label>
-            <input id="f-p-total" type="number" min="0">
-          </div>
-          <div class="field">
-            <label for="f-p-total-theorique">Theoretical Total</label>
-            <input id="f-p-total-theorique" type="number" min="0">
-          </div>
-          <div class="field">
-            <label for="f-p-par-rang-total">Total per Rank (String)</label>
-            <input id="f-p-par-rang-total" type="text">
-          </div>
-        </div>
-        <div class="field-row-group">
-          <div class="field">
-            <label for="f-p-mod-rang">Modifier per Rank</label>
-            <input id="f-p-mod-rang" type="number">
-          </div>
-          <div class="field">
-            <label for="f-p-mod-fixe">Modifier Flat</label>
-            <input id="f-p-mod-fixe" type="number">
+            <select id="f-p-special">
+              <option value="standard">Standard</option>
+              <option value="movement">Movement</option>
+            </select>
           </div>
         </div>
         <div class="field-row-group">
           <div class="field">
             <label for="f-p-action">Action</label>
-            <input id="f-p-action" type="text">
+            <select id="f-p-action">
+              <option value="simple">Standard (Simple)</option>
+              <option value="move">Move</option>
+              <option value="free">Free</option>
+              <option value="reaction">Reaction</option>
+              <option value="none">None</option>
+            </select>
           </div>
           <div class="field">
             <label for="f-p-range">Range</label>
-            <input id="f-p-range" type="text">
+            <select id="f-p-range">
+              <option value="personal">Personal</option>
+              <option value="close">Close</option>
+              <option value="distance">Ranged (Distance)</option>
+              <option value="perception">Perception</option>
+              <option value="rank">Rank</option>
+            </select>
           </div>
           <div class="field">
             <label for="f-p-duration">Duration</label>
-            <input id="f-p-duration" type="text">
+            <select id="f-p-duration">
+              <option value="instantane">Instant (Instantané)</option>
+              <option value="sustained">Sustained</option>
+              <option value="continuous">Continuous</option>
+              <option value="permanent">Permanent</option>
+              <option value="concentration">Concentration</option>
+            </select>
           </div>
         </div>
         <div class="field-row-group">
@@ -124,30 +110,52 @@
               Activate
             </label>
           </div>
-          <div class="field">
-            <label for="f-p-link">Link</label>
-            <input id="f-p-link" type="text">
-          </div>
-          <div class="field">
-            <label for="f-p-carac">Ability (Carac)</label>
-            <input id="f-p-carac" type="number">
-          </div>
-          <div class="field">
-            <label for="f-p-check">Check</label>
-            <input id="f-p-check" type="text">
-          </div>
         </div>
         <div class="field">
-          <label for="f-p-mechanics">Details (Mechanics / Effets)</label>
-          <textarea id="f-p-mechanics" rows="2"></textarea>
-        </div>
-        <div class="field">
-          <label for="f-p-effets-principaux">Main Effect Summary (Effets Principaux)</label>
+          <label for="f-p-effets-principaux">Subtitle</label>
           <textarea id="f-p-effets-principaux" rows="2"></textarea>
         </div>
         <div class="field">
-          <label for="f-p-notes">Power Reference (Notes)</label>
+          <label id="desc-label">Description - Mechanics</label>
+          <div id="f-description"></div>
+        </div>
+        <div class="field">
+          <label for="f-p-mechanics">Details - Flavor</label>
+          <div id="f-p-mechanics"></div>
+        </div>
+        <div class="field">
+          <label for="f-p-notes">Notes - Undisplayed</label>
           <div id="f-p-notes"></div>
+        </div>
+
+        <div class="section-divider">Modifiers (Extras & Flaws)</div>
+        <div class="modifiers-container">
+          <div class="modifier-column">
+            <h3>Extras</h3>
+            <ul id="extras-list" class="item-tag-list"></ul>
+            <div class="add-modifier">
+              <select id="add-extra-select">
+                <option value="">+ Add Extra...</option>
+              </select>
+            </div>
+          </div>
+          <div class="modifier-column">
+            <h3>Flaws</h3>
+            <ul id="flaws-list" class="item-tag-list"></ul>
+            <div class="add-modifier">
+              <select id="add-flaw-select">
+                <option value="">+ Add Flaw...</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Common Description (Hidden for Powers since it's now inside power-only) -->
+      <div class="eq-only modifier-only json-only" style="display:none">
+        <div class="field">
+          <label id="desc-label-common">Description - Mechanics</label>
+          <div id="f-description-common"></div>
         </div>
       </div>
 
@@ -191,11 +199,6 @@
             </label>
           </div>
         </div>
-      </div>
-
-      <div class="field">
-        <label id="desc-label">Description / Notes</label>
-        <div id="f-description"></div>
       </div>
 
       <div class="actions">
