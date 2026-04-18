@@ -29,16 +29,16 @@ function calculatePowerCost(power) {
   // 1. Calculate per-rank modifiers from Extras
   if (power.system.extras) {
     for (let extra of Object.values(power.system.extras)) {
-      if (extra.data && extra.data.cout) {
-        if (extra.data.cout.rang && !extra.data.cout.fixe) {
-          // Per Rank of Power (+1 per rank)
-          modCostPerRank += extra.data.cout.value;
-        } else if (extra.data.cout.fixe) {
-          // Flat cost (Simple Flat OR Flat per Modifier Rank)
-          if (extra.data.cout.rang) {
-            flatModTotal += (extra.rang || 1) * extra.data.cout.value;
+      // Modifiers in powers might have their data nested or flat depending on how they were added
+      const extraData = extra.cout ? extra : (extra.system?.cout ? extra.system : extra);
+      if (extraData.cout) {
+        if (extraData.cout.rang && !extraData.cout.fixe) {
+          modCostPerRank += extraData.cout.value || 0;
+        } else if (extraData.cout.fixe) {
+          if (extraData.cout.rang) {
+            flatModTotal += (extra.rang || 1) * (extraData.cout.value || 0);
           } else {
-            flatModTotal += extra.data.cout.value;
+            flatModTotal += (extraData.cout.value || 0);
           }
         }
       }
@@ -48,18 +48,16 @@ function calculatePowerCost(power) {
   // 2. Calculate per-rank modifiers from Flaws
   if (power.system.defauts) {
     for (let flaw of Object.values(power.system.defauts)) {
-      if (flaw.data && flaw.data.cout) {
-        if (flaw.data.cout.rang && !flaw.data.cout.fixe) {
-          // Per Rank of Power (-1 per rank)
-          modCostPerRank -= flaw.data.cout.value;
-        } else if (flaw.data.cout.fixe) {
+      const flawData = flaw.cout ? flaw : (flaw.system?.cout ? flaw.system : flaw);
+      if (flawData.cout) {
+        if (flawData.cout.rang && !flawData.cout.fixe) {
+          modCostPerRank -= (flawData.cout.value || 0);
+        } else if (flawData.cout.fixe) {
           if (flaw.name !== 'Removable' && flaw.name !== 'Easily Removable') {
-             if (flaw.data.cout.rang) {
-               // Flat per rank of the modifier (Check Required, etc.)
-               flatModTotal -= (flaw.rang || 1) * flaw.data.cout.value;
+             if (flawData.cout.rang) {
+               flatModTotal -= (flaw.rang || 1) * (flawData.cout.value || 0);
              } else {
-               // Simple flat cost
-               flatModTotal -= flaw.data.cout.value;
+               flatModTotal -= (flawData.cout.value || 0);
              }
           }
         }
@@ -118,10 +116,9 @@ async function importData() {
     const processedItems = items.map(item => {
       if (key === 'powers') {
         const processedItem = { ...item };
-        // Clear Extras and Flaws
-        if (processedItem.system) {
-          processedItem.system.extras = {};
-          processedItem.system.defauts = {};
+        // Map Description to Effets (Mechanics) if available
+        if (processedItem.system && processedItem.system.effets) {
+           processedItem.system.description = processedItem.system.effets;
         }
         return calculatePowerCost(processedItem);
       }
