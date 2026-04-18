@@ -307,8 +307,10 @@ function selectEntry(entry) {
 
   const content = (state.pack === 'advantages' ? sys.notes : sys.description) || '';
   if (state.pack === 'powers') {
-    quill.clipboard.dangerouslyPasteHTML(content);
-    quillMechanics.clipboard.dangerouslyPasteHTML(sys.effets || '');
+    // SWAP: f-description (Mechanics) maps to sys.effets, 
+    //       f-p-mechanics (Flavor) maps to sys.description
+    quill.clipboard.dangerouslyPasteHTML(sys.effets || '');
+    quillMechanics.clipboard.dangerouslyPasteHTML(sys.description || '');
     renderModifiers();
   } else {
     quillCommon.clipboard.dangerouslyPasteHTML(content);
@@ -336,11 +338,11 @@ async function saveEntry() {
     sys.portee = fPRange.value.trim();
     sys.duree = fPDuration.value.trim();
     sys.activate = fPActivate.checked;
-    sys.effets = quillMechanics.root.innerHTML;
+    sys.effets = quill.root.innerHTML;
     sys.effetsprincipaux = fPEffetsPrincipaux.value.trim();
     sys.cout.rang = parseInt(fPRank.value) || 1;
     sys.cout.parrang = parseInt(fPCost.value) || 1;
-    sys.description = quill.root.innerHTML;
+    sys.description = quillMechanics.root.innerHTML;
     sys.notes = quillNotes.root.innerHTML;
   } else if (['extras', 'flaws'].includes(state.pack)) {
     sys.cout = {
