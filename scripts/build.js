@@ -6,36 +6,67 @@ const compendiumPath = path.join(__dirname, '../compendium.json');
 
 // Corrected Cost Calculation Logic (Standard M&M 3e)
 function calculatePowerCost(power) {
-  if (!power.system || !power.system.cout) return power;
-  if (power.type === 'talent') return power;
+  if (!power.system) return power;
+
+  // Handle Talents (Advantages) - Default to 1 per rank if cout is missing
+  if (power.type === 'talent') {
+    if (!power.system.cout) {
+      power.system.cout = {
+        rang: power.system.rang || 1,
+        parrang: 1,
+        total: power.system.rang || 1
+      };
+    }
+    return power;
+  }
+
+  if (!power.system.cout) return power;
 
   let baseRank = power.system.cout.rang || 1;
   let baseCostPerRank = power.system.cout.parrang || 1;
   let modCostPerRank = 0;
   let flatModTotal = 0;
   
+  // 1. Calculate per-rank modifiers from Extras
   if (power.system.extras) {
     for (let extra of Object.values(power.system.extras)) {
-      if (extra.data && extra.data.cout) {
-        if (extra.data.cout.rang && !extra.data.cout.fixe) modCostPerRank += extra.data.cout.value;
-        else if (extra.data.cout.fixe) flatModTotal += (extra.data.cout.rang ? (extra.rang || 1) : 1) * extra.data.cout.value;
-      }
-    }
-  }
-
-  if (power.system.defauts) {
-    for (let flaw of Object.values(power.system.defauts)) {
-      if (flaw.data && flaw.data.cout) {
-        if (flaw.data.cout.rang && !flaw.data.cout.fixe) modCostPerRank -= flaw.data.cout.value;
-        else if (flaw.data.cout.fixe) {
-          if (flaw.name !== 'Removable' && flaw.name !== 'Easily Removable') {
-            flatModTotal -= (flaw.data.cout.rang ? (flaw.rang || 1) : 1) * flaw.data.cout.value;
+      // Modifiers in powers might have their data nested or flat depending on how they were added
+      const extraData = extra.cout ? extra : (extra.system?.cout ? extra.system : extra);
+      if (extraData.cout) {
+        if (extraData.cout.rang && !extraData.cout.fixe) {
+          modCostPerRank += extraData.cout.value || 0;
+        } else if (extraData.cout.fixe) {
+          if (extraData.cout.rang) {
+            flatModTotal += (extra.rang || 1) * (extraData.cout.value || 0);
+          } else {
+            flatModTotal += (extraData.cout.value || 0);
           }
         }
       }
     }
   }
 
+  // 2. Calculate per-rank modifiers from Flaws
+  if (power.system.defauts) {
+    for (let flaw of Object.values(power.system.defauts)) {
+      const flawData = flaw.cout ? flaw : (flaw.system?.cout ? flaw.system : flaw);
+      if (flawData.cout) {
+        if (flawData.cout.rang && !flawData.cout.fixe) {
+          modCostPerRank -= (flawData.cout.value || 0);
+        } else if (flawData.cout.fixe) {
+          if (flaw.name !== 'Removable' && flaw.name !== 'Easily Removable') {
+             if (flawData.cout.rang) {
+               flatModTotal -= (flaw.rang || 1) * (flawData.cout.value || 0);
+             } else {
+               flatModTotal -= (flawData.cout.value || 0);
+             }
+          }
+        }
+      }
+    }
+  }
+
+  // 3. Determine Cost Per Rank (Fractional Logic)
   let netCostPerRank = baseCostPerRank + modCostPerRank;
   let totalRankCost = 0;
   let displayCostPerRank = "";
@@ -44,18 +75,25 @@ function calculatePowerCost(power) {
     totalRankCost = netCostPerRank * baseRank;
     displayCostPerRank = netCostPerRank.toString();
   } else {
+    // Fractional cost logic: 0 -> 1/2, -1 -> 1/3, -2 -> 1/4, etc.
     let ranksPerPoint = 2 - netCostPerRank;
     totalRankCost = Math.ceil(baseRank / ranksPerPoint);
     displayCostPerRank = `1/${ranksPerPoint}`;
   }
 
+  // 4. Apply Flat Modifiers (like Removable)
   let finalTotal = totalRankCost;
+  
   if (power.system.defauts) {
     for (let flaw of Object.values(power.system.defauts)) {
-      if (flaw.name === 'Removable') finalTotal -= Math.floor(finalTotal / 5) * 1;
-      else if (flaw.name === 'Easily Removable') finalTotal -= Math.floor(finalTotal / 5) * 2;
+      if (flaw.name === 'Removable') {
+        finalTotal -= Math.floor(finalTotal / 5) * 1;
+      } else if (flaw.name === 'Easily Removable') {
+        finalTotal -= Math.floor(finalTotal / 5) * 2;
+      }
     }
   }
+  
   finalTotal += flatModTotal;
 
   power.system.cout.total = Math.max(1, finalTotal);
@@ -79,12 +117,9 @@ async function build() {
   for (const [key, items] of Object.entries(data)) {
     const processedItems = items.map(item => {
       if (key === 'powers') {
-        // Clear Extras and Flaws as requested
-        if (item.system) {
-          item.system.extras = {};
-          item.system.defauts = {};
-        }
-        return calculatePowerCost(item);
+        const processedItem = { ...item };
+        // The Editor already saves the correct content to sys.description
+        return calculatePowerCost(processedItem);
       }
       return item;
     });

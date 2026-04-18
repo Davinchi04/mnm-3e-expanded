@@ -116,10 +116,8 @@ async function importData() {
     const processedItems = items.map(item => {
       if (key === 'powers') {
         const processedItem = { ...item };
-        // Map Description to Effets (Mechanics) if available
-        if (processedItem.system && processedItem.system.effets) {
-           processedItem.system.description = processedItem.system.effets;
-        }
+        // Do NOT map Description to Effets here, 
+        // as the Editor already puts the correct content in sys.description
         return calculatePowerCost(processedItem);
       }
       return item;
