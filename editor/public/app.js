@@ -307,10 +307,10 @@ function selectEntry(entry) {
 
   const content = (state.pack === 'advantages' ? sys.notes : sys.description) || '';
   if (state.pack === 'powers') {
-    // SWAP: f-description (Mechanics) maps to sys.effets, 
-    //       f-p-mechanics (Flavor) maps to sys.description
-    quill.clipboard.dangerouslyPasteHTML(sys.effets || '');
-    quillMechanics.clipboard.dangerouslyPasteHTML(sys.description || '');
+    // RESTORE: f-description (Mechanics) maps to sys.description
+    //          f-p-mechanics (Flavor) maps to sys.effets
+    quill.clipboard.dangerouslyPasteHTML(sys.description || '');
+    quillMechanics.clipboard.dangerouslyPasteHTML(sys.effets || '');
     renderModifiers();
   } else {
     quillCommon.clipboard.dangerouslyPasteHTML(content);
@@ -338,11 +338,11 @@ async function saveEntry() {
     sys.portee = fPRange.value.trim();
     sys.duree = fPDuration.value.trim();
     sys.activate = fPActivate.checked;
-    sys.effets = quill.root.innerHTML;
+    sys.effets = quillMechanics.root.innerHTML;
     sys.effetsprincipaux = fPEffetsPrincipaux.value.trim();
     sys.cout.rang = parseInt(fPRank.value) || 1;
     sys.cout.parrang = parseInt(fPCost.value) || 1;
-    sys.description = quillMechanics.root.innerHTML;
+    sys.description = quill.root.innerHTML;
     sys.notes = quillNotes.root.innerHTML;
   } else if (['extras', 'flaws'].includes(state.pack)) {
     sys.cout = {
