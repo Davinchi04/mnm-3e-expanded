@@ -118,7 +118,12 @@ async function build() {
     const processedItems = items.map(item => {
       if (key === 'powers') {
         const processedItem = { ...item };
-        // The Editor already saves the correct content to sys.description
+        // Synchronize Mechanics fields: Ensure description and notes match
+        if (processedItem.system) {
+          const mech = processedItem.system.description || processedItem.system.notes || '';
+          processedItem.system.description = mech;
+          processedItem.system.notes = mech;
+        }
         return calculatePowerCost(processedItem);
       }
       return item;

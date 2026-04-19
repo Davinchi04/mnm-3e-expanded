@@ -307,9 +307,9 @@ function selectEntry(entry) {
 
   const content = (state.pack === 'advantages' ? sys.notes : sys.description) || '';
   if (state.pack === 'powers') {
-    // RESTORE: f-description (Mechanics) maps to sys.description
-    //          f-p-mechanics (Flavor) maps to sys.effets
-    quill.clipboard.dangerouslyPasteHTML(sys.description || '');
+    // Mechanics (Top) -> sys.notes & sys.description
+    // Flavor -> sys.effets
+    quill.clipboard.dangerouslyPasteHTML(sys.notes || sys.description || '');
     quillMechanics.clipboard.dangerouslyPasteHTML(sys.effets || '');
     renderModifiers();
   } else {
@@ -343,7 +343,7 @@ async function saveEntry() {
     sys.cout.rang = parseInt(fPRank.value) || 1;
     sys.cout.parrang = parseInt(fPCost.value) || 1;
     sys.description = quill.root.innerHTML;
-    sys.notes = quillNotes.root.innerHTML;
+    sys.notes = quill.root.innerHTML;
   } else if (['extras', 'flaws'].includes(state.pack)) {
     sys.cout = {
       fixe: fCoutFixe.checked,
