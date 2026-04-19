@@ -60,6 +60,7 @@ const quill = new Quill('#f-description', {
     toolbar: [
       ['bold', 'italic', 'underline'],
       [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
       ['clean'],
     ],
   },
@@ -71,6 +72,7 @@ const quillCommon = new Quill('#f-description-common', {
     toolbar: [
       ['bold', 'italic', 'underline'],
       [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
       ['clean'],
     ],
   },
@@ -82,6 +84,7 @@ const quillNotes = new Quill('#f-p-notes', {
     toolbar: [
       ['bold', 'italic', 'underline'],
       [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
       ['clean'],
     ],
   },
@@ -93,6 +96,7 @@ const quillMechanics = new Quill('#f-p-mechanics', {
     toolbar: [
       ['bold', 'italic', 'underline'],
       [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
       ['clean'],
     ],
   },
