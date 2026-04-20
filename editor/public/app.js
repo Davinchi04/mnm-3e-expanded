@@ -346,6 +346,7 @@ async function saveEntry() {
   const sys = updated.system;
 
   if (state.pack === 'powers') {
+    updated.type = 'pouvoir'; // Force correct Foundry type
     sys.type = fPType.value;
     if (!sys.cout) sys.cout = {};
     sys.special = fPSpecial.value.trim();
@@ -360,6 +361,8 @@ async function saveEntry() {
     sys.description = quill.root.innerHTML;
     sys.notes = quill.root.innerHTML;
   } else if (['extras', 'flaws'].includes(state.pack)) {
+    updated.type = 'modificateur'; // Force correct Foundry type
+    sys.type = state.pack === 'extras' ? 'extra' : 'defaut';
     sys.cout = {
       fixe: fCoutFixe.checked,
       rang: fCoutRang.checked,
@@ -367,16 +370,25 @@ async function saveEntry() {
     };
     sys.description = quillCommon.root.innerHTML;
   } else if (state.pack === 'advantages') {
+    updated.type = 'talent';
     sys.notes = quillCommon.root.innerHTML;
     sys.description = quillCommon.root.innerHTML;
   } else {
     // Equipment, Vehicles, Headquarters
+    updated.type = 'equipement';
     sys.cout = parseInt(fECost.value) || 0;
     sys.protection = parseInt(fEProtection.value) || 0;
     sys.description = quillCommon.root.innerHTML;
     if (!updated.flags) updated.flags = {};
     if (!updated.flags['mnm-3e-expanded']) updated.flags['mnm-3e-expanded'] = {};
     updated.flags['mnm-3e-expanded'].link = fEGroup.value.trim();
+  }
+
+  // Ensure an image exists if it was lost or wrong
+  if (!updated.img || updated.img.includes('equipement') && state.pack === 'powers') {
+    updated.img = ['powers', 'extras', 'flaws', 'advantages'].includes(state.pack) 
+      ? 'systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg'
+      : 'systems/mutants-and-masterminds-3e/assets/icons/equipement.svg';
   }
 
   try {

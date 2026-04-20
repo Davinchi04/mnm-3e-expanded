@@ -2226,27 +2226,20 @@
       "_id": "p31de8afbk",
       "name": "Element Control",
       "type": "pouvoir",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
         "type": "control",
+        "activate": true,
+        "special": "standard",
+        "action": "simple",
+        "portee": "distance",
+        "duree": "sustained",
+        "notes": "<p>You can control and move a mass of an element like air, earth, or water. Your power’s effective Strength equals its rank, which is also the mass rank of the element you can move at once. So Earth Control 11 lets you move up to 50 tons of earth and stone, for example.</p>",
         "description": "<p>You can control and move a mass of an element like air, earth, or water. Your power’s effective Strength equals its rank, which is also the mass rank of the element you can move at once. So Earth Control 11 lets you move up to 50 tons of earth and stone, for example.</p>",
-        "cout": {
-          "rang": 1,
-          "parrang": 1
-        },
-        "defauts": {
-          "pmbnrwpoemq": {
-            "name": "Limited",
-            "type": "defaut",
-            "description": "<p>An effect with this flaw only works under certain circumstances, or has a significant restriction on its use.</p><p>–1 cost per rank.</p>",
-            "rang": 1,
-            "edit": true,
-            "cout": {
-              "fixe": false,
-              "rang": true,
-              "value": 1
-            }
-          }
-        },
+        "effets": "<p>Varies by element. Typically allows moving and shaping the element.</p>",
+        "effetsprincipaux": "Move Element",
+        "link": "",
+        "descripteurs": {},
         "extras": {
           "h46f3b30jvu-ir": {
             "name": "Increased Range",
@@ -2273,14 +2266,29 @@
             }
           }
         },
-        "special": "",
-        "action": "simple",
-        "portee": "distance",
-        "duree": "",
-        "activate": false,
-        "effets": "<p>Element Control is further refined with various Alternate Effects (see Alternate Effects, page 188), expanding what you can do with your control. So Earth Control might let you kick up clouds of dust (Area Visual Concealment Attack), build walls and other structures of rock (Continuous or Permanent Create), tunnel through the ground (Burrowing), or fly standing on a chunk of rock (Platform Flight), to name a few. Alternate Effects you do not add to your power as full-fledged modifiers are still available to you as power stunts using extra effort (see Powers Stunts, page 20).</p>",
-        "effetsprincipaux": "Affect a mass of an element like air, earth, or water.",
-        "notes": "<p><br></p>"
+        "defauts": {
+          "pmbnrwpoemq": {
+            "name": "Limited",
+            "type": "defaut",
+            "description": "<p>An effect with this flaw only works under certain circumstances, or has a significant restriction on its use.</p><p>–1 cost per rank.</p>",
+            "rang": 1,
+            "edit": true,
+            "cout": {
+              "fixe": false,
+              "rang": true,
+              "value": 1
+            }
+          }
+        },
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "carac": 0,
+        "check": "",
+        "cout": {
+          "rang": 1,
+          "parrang": 1
+        }
       },
       "flags": {}
     }
@@ -4940,13 +4948,10 @@
     {
       "_id": "klrlbm4lmdl",
       "name": "Heroic  (Summoning)",
-      "type": "modificateur",
-      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "type": "equipement",
       "system": {
-        "type": "extra",
-        "description": "<ul><li><strong>No \"One-Hit Wonder\" Rule:</strong>&nbsp;Standard minions are incapacitated the moment they fail a single resistance check, regardless of the degree of failure. A Heroic duplicate has a full health track and can take multiple bruises or injuries just like you.</li><li><strong>Action Economy:</strong>&nbsp;Heroic duplicates do not have the&nbsp;<strong>Dazed</strong>&nbsp;condition when summoned. This means they get a full set of actions (Standard, Move, and Free) every round without you needing to apply the \"Active\" modifier separately, as Heroic already includes it.</li><li><strong>Critical Hits:</strong>&nbsp;Minions cannot score critical hits against non-minions, but&nbsp;<strong>Heroic</strong>&nbsp;duplicates can, making them much more dangerous in a fight.</li><li><strong>No Routine Attacks:</strong>&nbsp;Enemies can normally take a \"routine check\" (treating their d20 roll as a 10) to automatically hit a minion. They cannot do this against a Heroic duplicate; they must roll to hit.</li></ul><p><br></p>",
-        "rang": 1,
-        "edit": true,
+        "type": "",
+        "description": "<ul><li><strong>No \"One-Hit Wonder\" Rule:</strong>&nbsp;Standard minions are incapacitated the moment they fail a single resistance check, regardless of the degree of failure. A Heroic duplicate has a full health track and can take multiple bruises or injuries just like you.</li><li><strong>Action Economy:</strong>&nbsp;Heroic duplicates do not have the&nbsp;<strong>Dazed</strong>&nbsp;condition when summoned. This means they get a full set of actions (Standard, Move, and Free) every round without you needing to apply the \"Active\" modifier separately, as Heroic already includes it.</li><li><strong>Critical Hits:</strong>&nbsp;Minions cannot score critical hits against non-minions, but&nbsp;<strong>Heroic</strong>&nbsp;duplicates can, making them much more dangerous in a fight.</li><li><strong>No Routine Attacks:</strong>&nbsp;Enemies can normally take a \"routine check\" (treating their d20 roll as a 10) to automatically hit a minion. They cannot do this against a Heroic duplicate; they must roll to hit.</li></ul>",
         "cout": {
           "fixe": false,
           "rang": true,
