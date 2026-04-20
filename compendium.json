@@ -998,7 +998,7 @@
         "notes": "<p>The cost of Concealment is&nbsp;<strong>2 points per rank</strong>.&nbsp;</p><ul><li><strong>Rank 1:</strong>&nbsp;One specific sense (e.g., Normal Sight).</li><li><strong>Rank 2:</strong>&nbsp;An entire sense&nbsp;<strong>Type</strong>&nbsp;(e.g., All Visual Senses).&nbsp;</li></ul><p><strong>Important Rule:</strong>&nbsp;Visual senses cost&nbsp;<strong>double</strong>.&nbsp;</p><ul><li><strong>Standard Invisibility (4 points):</strong>&nbsp;Concealment 2 (Normal Sight). You are invisible to the human eye, but cameras using infrared or ultraviolet can still see you.</li><li><strong>True Invisibility (8 points):</strong>&nbsp;Concealment 4 (All Visual Senses). You are invisible to normal sight, infrared, ultraviolet, etc.</li></ul>",
         "description": "<p>The cost of Concealment is&nbsp;<strong>2 points per rank</strong>.&nbsp;</p><ul><li><strong>Rank 1:</strong>&nbsp;One specific sense (e.g., Normal Sight).</li><li><strong>Rank 2:</strong>&nbsp;An entire sense&nbsp;<strong>Type</strong>&nbsp;(e.g., All Visual Senses).&nbsp;</li></ul><p><strong>Important Rule:</strong>&nbsp;Visual senses cost&nbsp;<strong>double</strong>.&nbsp;</p><ul><li><strong>Standard Invisibility (4 points):</strong>&nbsp;Concealment 2 (Normal Sight). You are invisible to the human eye, but cameras using infrared or ultraviolet can still see you.</li><li><strong>True Invisibility (8 points):</strong>&nbsp;Concealment 4 (All Visual Senses). You are invisible to normal sight, infrared, ultraviolet, etc.</li></ul>",
         "effets": "<p>Based on Concealment Power</p><p><br></p><p>You can vanish from sight at will, gaining total visual concealment, although other senses can still detect you.</p><ul><li>This power costs 4 points if you are only invisible to normal vision, 8 points if you cannot be detected by any visual sense (including infrared and ultraviolet).</li></ul>",
-        "effetsprincipaux": "",
+        "effetsprincipaux": "Conceal from Vision",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -1029,16 +1029,16 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
-        "activate": true,
+        "type": "movement",
+        "activate": false,
         "special": "standard",
         "action": "free",
-        "portee": "perception",
+        "portee": "personal",
         "duree": "instantane",
-        "notes": "<p>LEAPING MOVEMENT Action: Free • Range: Personal Duration: Instant • Cost: 1 point per rank You can make prodigious leaps, far more than even a skilled athlete. Your Leaping rank, minus 2, is the distance rank you cover in a single standing jump: so 15 feet at rank 1, 30 feet at rank 2, up to 1,000 miles at rank 20! You do not suffer any damage from landing after a jump, so long as it is within your maximum distance. The speed rank of your leap maxes out at 7 (around 250 miles per hour), so leaps of greater than distance rank 7 take time equal to the distance rank minus 7. For example, a massive leap of 500 miles (distance rank 17) takes time rank 10 (17 – 7, or two hours) of time in the air! Because of this, leapers may choose to make shorter “hops” of just a couple miles, leaving them airborne for only a minute or so, to better control their direction. EXTRAS Affects Others: You can give someone you are touching the ability to leap like you do while the effect lasts. You do not need t</p>",
-        "description": "<p>LEAPING MOVEMENT Action: Free • Range: Personal Duration: Instant • Cost: 1 point per rank You can make prodigious leaps, far more than even a skilled athlete. Your Leaping rank, minus 2, is the distance rank you cover in a single standing jump: so 15 feet at rank 1, 30 feet at rank 2, up to 1,000 miles at rank 20! You do not suffer any damage from landing after a jump, so long as it is within your maximum distance. The speed rank of your leap maxes out at 7 (around 250 miles per hour), so leaps of greater than distance rank 7 take time equal to the distance rank minus 7. For example, a massive leap of 500 miles (distance rank 17) takes time rank 10 (17 – 7, or two hours) of time in the air! Because of this, leapers may choose to make shorter “hops” of just a couple miles, leaving them airborne for only a minute or so, to better control their direction. EXTRAS Affects Others: You can give someone you are touching the ability to leap like you do while the effect lasts. You do not need t</p>",
-        "effets": "<p>his extra to simply carry someone while you leap; you can carry what your Strength normally allows. +0 or +1 cost per rank. FLAWS Acrobatics Check Required: In order to use Leaping, you must make an Acrobatics skill check (DC 10). Each point your check total exceeds the DC allows you to use 1 rank of Leaping, up to your total rank. –1 cost per rank. Full Power: With this flaw, you can only leap your maxi- mum distance; you can make shorter leaps only by not using your Leaping effect at all, just the normal jumping distance for your Strength. This may suit uncontrollable “leaping” effects like rocket boosters and the like. Flat –1 point. LUCK CONTROL CONTROL Action: Reaction • Range: Perception Duration: Instant • Cost: 3 points per rank You can use hero points or ranks of Luck to affect others in various ways (see Hero Points, page 20). For each rank you have in this effect, choose one of the following capa- bilities: • You can spend a hero point or use Luck on another character’s behalf, with the normal benefits. • You can bestow your hero point or use of Luck on others. You can use this only once on any given char- acter in a round, but the recipient may use the be- stowed point(s) normally. • You can spend one of your hero point or uses of the Luck advantage to negate someone else’s use of a hero point, use of their Luck advantage, or a Game- master-imposed complication (at the GM’s discre- tion). The latter also eliminates the complication, however, so no hero points are awarded for it. • You can spend a hero point or use Luck to force some- one else to re-roll a die roll and take the worse of the two rolls. The target of this last effect may spend a hero point or use Luck to avoid having to re-roll. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS &</p>",
-        "effetsprincipaux": "<p>his extra to simply carry someone while you leap; you can carry what your Strength normally allows. +0 or +1 cost per rank. FLAWS Acrobatics Check Required: In order to use Leaping, you must make an Acrobatics skill check (DC 10). Each point your check total exceeds the DC allows you to use 1 rank of Leaping, up to your total rank. –1 cost per rank. Full Power: With this flaw, you can only leap your maxi- mum distance; you can make shorter leaps only by not using your Leaping effect at all, just the normal jumping distance for your Strength. This may suit uncontrollable “leaping” effects like rocket boosters and the like. Flat –1 point. LUCK CONTROL CONTROL Action: Reaction • Range: Perception Duration: Instant • Cost: 3 points per rank You can use hero points or ranks of Luck to affect others in various ways (see Hero Points, page 20). For each rank you have in this effect, choose one of the following capa- bilities: • You can spend a hero point or use Luck on another character’s behalf, with the normal benefits. • You can bestow your hero point or use of Luck on others. You can use this only once on any given char- acter in a round, but the recipient may use the be- stowed point(s) normally. • You can spend one of your hero point or uses of the Luck advantage to negate someone else’s use of a hero point, use of their Luck advantage, or a Game- master-imposed complication (at the GM’s discre- tion). The latter also eliminates the complication, however, so no hero points are awarded for it. • You can spend a hero point or use Luck to force some- one else to re-roll a die roll and take the worse of the two rolls. The target of this last effect may spend a hero point or use Luck to avoid having to re-roll. MUTANTS & MASTERMINDS DELUXE HERO’S HANDBOOKMUTANTS &</p>",
+        "notes": "<ul><li>You can make prodigious leaps, far more than even a skilled athlete. </li><li>Your Leaping rank, minus 2, is the distance rank you cover in a single standing jump: so 15 feet at rank 1, 30 feet at rank 2, up to 1,000 miles at rank 20! </li><li>You do not suffer any damage from landing after a jump, so long as it is within your maximum distance. </li><li>The speed rank of your leap maxes out at 7 (around 250 miles per hour), so leaps of greater than distance rank 7 take time equal to the distance rank minus 7. </li><li class=\"ql-indent-1\">For example, a massive leap of 500 miles (distance rank 17) takes time rank 10 (17 – 7, or two hours) of time in the air! Because of this, leapers may choose to make shorter “hops” of just a couple miles, leaving them airborne for only a minute or so, to better control their direction. </li></ul>",
+        "description": "<ul><li>You can make prodigious leaps, far more than even a skilled athlete. </li><li>Your Leaping rank, minus 2, is the distance rank you cover in a single standing jump: so 15 feet at rank 1, 30 feet at rank 2, up to 1,000 miles at rank 20! </li><li>You do not suffer any damage from landing after a jump, so long as it is within your maximum distance. </li><li>The speed rank of your leap maxes out at 7 (around 250 miles per hour), so leaps of greater than distance rank 7 take time equal to the distance rank minus 7. </li><li class=\"ql-indent-1\">For example, a massive leap of 500 miles (distance rank 17) takes time rank 10 (17 – 7, or two hours) of time in the air! Because of this, leapers may choose to make shorter “hops” of just a couple miles, leaving them airborne for only a minute or so, to better control their direction. </li></ul>",
+        "effets": "<p>EXTRAS </p><p>Affects Others: You can give someone you are touching the ability to leap like you do while the effect lasts. You do not need this extra to simply carry someone while you leap; you can carry what your Strength normally allows. +0 or +1 cost per rank. </p><p>FLAWS </p><p>Acrobatics Check Required: In order to use Leaping, you must make an Acrobatics skill check (DC 10). Each point your check total exceeds the DC allows you to use 1 rank of Leaping, up to your total rank. –1 cost per rank. </p><p>Full Power: With this flaw, you can only leap your maximum distance; you can make shorter leaps only by not using your Leaping effect at all, just the normal jumping distance for your Strength. This may suit uncontrollable “leaping” effects like rocket boosters and the like. Flat –1 point. </p>",
+        "effetsprincipaux": "Jumpin",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -1075,13 +1075,38 @@
         "action": "simple",
         "portee": "perception",
         "duree": "instantane",
-        "notes": "<p>You can impose your will on others forcing them to obey your commands.</p>",
-        "description": "<p>You can impose your will on others forcing them to obey your commands.</p>",
-        "effets": "<p>Will vs DC [Rank + 10]. Degrees: Dazed, Compelled, Controlled.</p>",
-        "effetsprincipaux": "<p>Will vs DC [Rank + 10]. Degrees: Dazed, Compelled, Controlled.</p>",
+        "notes": "<p>EDIT COST OF RANGE EXTRA by upping to 2 cost per rank</p><p><br></p><p>Will vs DC [Rank + 10]. </p><p>Degrees: Dazed, Compelled, Controlled.</p><p><br></p>",
+        "description": "<p>EDIT COST OF RANGE EXTRA by upping to 2 cost per rank</p><p><br></p><p>Will vs DC [Rank + 10]. </p><p>Degrees: Dazed, Compelled, Controlled.</p><p><br></p>",
+        "effets": "<p>EDIT COST OF RANGE EXTRA by upping to 2 cost per rank</p><p><br></p><p>Will vs DC [Rank + 10]. Degrees: Dazed, Compelled, Controlled.</p><p><br></p><ul><li><strong>Effect:</strong>&nbsp;Affliction (Resisted and Overcome by Will).</li><li><strong>Conditions:</strong></li><li class=\"ql-indent-1\"><strong>1st Degree:</strong>&nbsp;Dazed (Target is distracted and limited to a single action).</li><li class=\"ql-indent-1\"><strong>2nd Degree:</strong>&nbsp;Compelled (Target follows your commands but can struggle against them).</li><li class=\"ql-indent-1\"><strong>3rd Degree:</strong>&nbsp;Controlled (Target is completely under your control).</li><li><strong>Required Extras:</strong></li><li class=\"ql-indent-1\"><strong>Perception Ranged (+2 cost/rank):</strong>&nbsp;You don't need to roll to hit; if you can perceive the target, the effect occurs automatically, and they only get their Will resistance check.</li><li class=\"ql-indent-1\"><strong>Cumulative (+1 cost/rank):</strong>&nbsp;Degrees of failure add up over multiple rounds, making it easier to eventually reach the \"Controlled\" state.</li></ul><p><br></p><p><br></p><p><br></p>",
+        "effetsprincipaux": "Impose Your Will on Others",
         "link": "",
         "descripteurs": {},
-        "extras": {},
+        "extras": {
+          "h46f3b30jvu-ir": {
+            "name": "Increased Range",
+            "type": "extra",
+            "description": "<p>Moves the power one step up the range scale: Close (Touch) -> Ranged (Requires an attack roll; has short/medium/long range). Ranged -> Perception (No attack roll needed; works as long as you can accurately sense the target). +1 cost per rank.</p>",
+            "rang": 1,
+            "edit": true,
+            "cout": {
+              "fixe": false,
+              "rang": true,
+              "value": 1
+            }
+          },
+          "k5ednp9hz1j": {
+            "name": "Cumulative (Affliction)",
+            "type": "extra",
+            "description": "<p>A Cumulative Affliction adds any further degrees to the existing degrees on the target. </p><p><br></p><p>+1 cost per Power rank.</p>",
+            "rang": 1,
+            "edit": true,
+            "cout": {
+              "fixe": false,
+              "rang": true,
+              "value": 1
+            }
+          }
+        },
         "defauts": {},
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
@@ -1090,7 +1115,7 @@
         "check": "",
         "cout": {
           "rang": 1,
-          "parrang": 4
+          "parrang": 1
         }
       },
       "effects": [],
@@ -1109,50 +1134,20 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "sensory",
         "activate": true,
         "special": "standard",
         "action": "simple",
         "portee": "perception",
         "duree": "sustained",
-        "notes": "<p>You can read another's thoughts and memories.</p>",
-        "description": "<p>You can read another's thoughts and memories.</p>",
-        "effets": "<p>Will vs DC [Rank + 10]. Degrees: Surface Thoughts, Personal, Private, Deep.</p>",
-        "effetsprincipaux": "<p>Will vs DC [Rank + 10]. Degrees: Surface Thoughts, Personal, Private, Deep.</p>",
+        "notes": "<p>Will vs DC [Rank + 10]. </p><p><br></p><p>Degrees: Surface Thoughts, Personal, Private, Deep</p><p><br></p><ul><li>If you lose the opposed check, you cannot read the target’s mind. </li><li>With two or more degrees of failure, any renewed attempt in that scene requires extra effort (see Extra Effort). </li><li>If you desire a greater degree of contact, you must take another standard action and make a new opposed check. </li><li>The target gets a new Will check (DC 10 + Mind Reading rank) at the end of each turn to shut you out; success ends the effect.</li></ul>",
+        "description": "<p>Will vs DC [Rank + 10]. </p><p><br></p><p>Degrees: Surface Thoughts, Personal, Private, Deep</p><p><br></p><ul><li>If you lose the opposed check, you cannot read the target’s mind. </li><li>With two or more degrees of failure, any renewed attempt in that scene requires extra effort (see Extra Effort). </li><li>If you desire a greater degree of contact, you must take another standard action and make a new opposed check. </li><li>The target gets a new Will check (DC 10 + Mind Reading rank) at the end of each turn to shut you out; success ends the effect.</li></ul>",
+        "effets": "<p>Will vs DC [Rank + 10]. </p><p><br></p><p>Degrees: Surface Thoughts, Personal, Private, Deep.</p><ol><li>Surface thoughts: You can read what the target is presently thinking. Mind Reading transcends language; you comprehend the target’s thoughts whether or not you share a common language. </li><li>Personal thoughts: You can probe deeper into the target’s mind for information. You can essentially ask any one question and receive the answer from the target’s mind. If the target doesn’t know the answer, then you know that as well. </li><li>Memory: You can read the subject’s memories and recollections. This allows you to perceive them exactly as the target recalls them, one memory per round. </li><li>Subconscious: You can read memories from the target’s subconscious, things even the target does not consciously know. This might mean repressed or hidden memories, deep-seated psychological traumas, or even other personalities.</li></ol>",
+        "effetsprincipaux": "You can read another's thoughts and memories.",
         "link": "",
         "descripteurs": {},
-        "extras": {
-          "1": {
-            "name": "Subtle",
-            "data": {
-              "type": "extra",
-              "description": "<p>Subtle effects are not as noticeable. Rank 1 is difficult to notice, Rank 2 is undetectable.</p><p><br></p><p>Flat 1-2 points.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          }
-        },
-        "defauts": {
-          "1": {
-            "name": "Feedback",
-            "data": {
-              "type": "defaut",
-              "description": "<p>You suffer damage when a manifestation of your effect is damaged.</p><p>–1 cost per rank.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": false,
-                "rang": true,
-                "value": 1
-              }
-            }
-          }
-        },
+        "extras": {},
+        "defauts": {},
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
         "edit": false,
@@ -1179,15 +1174,15 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "general",
         "activate": true,
         "special": "standard",
         "action": "free",
         "portee": "personal",
         "duree": "sustained",
-        "notes": "<p>You can alter your appearance. Ranks determine the breadth of forms.</p>",
-        "description": "<p>You can alter your appearance. Ranks determine the breadth of forms.</p>",
-        "effets": "<p>+20 bonus to Deception checks to disguise yourself.</p>",
+        "notes": "<ul><li>You can alter your appearance. Your traits do not change; your new form is merely a cosmetic change. </li><li>You gain a +20 bonus to Deception checks to disguise yourself as the form you assume (see the Disguise guidelines for Deception). </li><li>Your Morph rank determines what form(s) you can assume: </li><li class=\"ql-indent-1\">At rank 1 you can assume a single other appearance. </li><li class=\"ql-indent-1\">At rank 2 you can assume any of a narrow group of forms, such as people of roughly your size and gender, a type of animal like birds or reptiles, and so forth. </li><li class=\"ql-indent-1\">At rank 3 you can assume any of a broad group of forms like humanoids, animals, machines, and so forth. </li><li class=\"ql-indent-1\">At rank 4 you can assume any form of the same mass as your own. </li></ul><p><br></p>",
+        "description": "<ul><li>You can alter your appearance. Your traits do not change; your new form is merely a cosmetic change. </li><li>You gain a +20 bonus to Deception checks to disguise yourself as the form you assume (see the Disguise guidelines for Deception). </li><li>Your Morph rank determines what form(s) you can assume: </li><li class=\"ql-indent-1\">At rank 1 you can assume a single other appearance. </li><li class=\"ql-indent-1\">At rank 2 you can assume any of a narrow group of forms, such as people of roughly your size and gender, a type of animal like birds or reptiles, and so forth. </li><li class=\"ql-indent-1\">At rank 3 you can assume any of a broad group of forms like humanoids, animals, machines, and so forth. </li><li class=\"ql-indent-1\">At rank 4 you can assume any form of the same mass as your own. </li></ul><p><br></p>",
+        "effets": "<p>For the ability to change size as well as appearance see the Growth and Shrinking effects. </p><p>To take on the other traits of forms you assume, see the Metamorph extra, following, or the Variable effect, later in this chapter.</p>",
         "effetsprincipaux": "<p>+20 bonus to Deception checks to disguise yourself.</p>",
         "link": "",
         "descripteurs": {},
@@ -1240,9 +1235,9 @@
         "action": "simple",
         "portee": "distance",
         "duree": "sustained",
-        "notes": "<p>You can move objects at a distance without touching them.</p>",
-        "description": "<p>You can move objects at a distance without touching them.</p>",
-        "effets": "<p>Effective Strength equals rank. Can make disarm, grab, and trip attacks.</p>",
+        "notes": "<ul><li>You can move objects at a distance without touching them. </li><li>Your effective Strength for lifting and moving objects with this effect is equal to your rank. </li><li>By taking a move action to concentrate you can increase this by +1 Str, changing&nbsp;the effect’s duration to Concentration. This is in addition to using extra effort to further increase your rank. </li><li>This effect can move objects, but cannot perform tasks of fine manipulation (like untying knots, typing, or manipulating controls) without the Precise modifier. </li><li>Objects thrown into targets as attacks base their damage off your power rank as if it were your Strength rank. </li><li>Move Object cannot inflict damage directly; you can’t “punch” or “crush” objects with it. You can use it to make disarm, grab, and trip attacks. </li></ul>",
+        "description": "<ul><li>You can move objects at a distance without touching them. </li><li>Your effective Strength for lifting and moving objects with this effect is equal to your rank. </li><li>By taking a move action to concentrate you can increase this by +1 Str, changing&nbsp;the effect’s duration to Concentration. This is in addition to using extra effort to further increase your rank. </li><li>This effect can move objects, but cannot perform tasks of fine manipulation (like untying knots, typing, or manipulating controls) without the Precise modifier. </li><li>Objects thrown into targets as attacks base their damage off your power rank as if it were your Strength rank. </li><li>Move Object cannot inflict damage directly; you can’t “punch” or “crush” objects with it. You can use it to make disarm, grab, and trip attacks. </li></ul>",
+        "effets": "<p>Effective Strength equals rank. Can make disarm, grab, and trip attacks.</p><p><br></p><ul><li>Move Object has no action/reaction; a moving object cannot drag the character “holding on” to it, for example. </li><li>This effect is also not considered “physical contact” or “touch” for effects requiring it. </li></ul><p><br></p>",
         "effetsprincipaux": "<p>Effective Strength equals rank. Can make disarm, grab, and trip attacks.</p>",
         "link": "",
         "descripteurs": {},
@@ -1303,16 +1298,16 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "movement",
         "activate": true,
         "special": "standard",
         "action": "free",
         "portee": "personal",
         "duree": "sustained",
-        "notes": "<p>You have a special form of movement (Dimension Travel, Safe Fall, Wall-crawling, etc.).</p>",
-        "description": "<p>You have a special form of movement (Dimension Travel, Safe Fall, Wall-crawling, etc.).</p>",
-        "effets": "<p>Choose one movement option per rank.</p>",
-        "effetsprincipaux": "<p>Choose one movement option per rank.</p>",
+        "notes": "<p>You have a special form of movement per Rank (Dimension Travel, Safe Fall, Wall-crawling, etc.).</p><p><br></p><p><br></p>",
+        "description": "<p>You have a special form of movement per Rank (Dimension Travel, Safe Fall, Wall-crawling, etc.).</p><p><br></p><p><br></p>",
+        "effets": "<p>Choose one movement option per rank.</p><p><br></p><p>DIMENSION TRAVEL You can move instantly from one dimension to another as a move action. For 1 rank, you can move between your home dimension and one other. For 2 ranks you can move between any of a related group of dimensions (mystical dimensions, alien dimensions, etc). For 3 ranks you can travel to any dimension. You can carry up to 50 lbs. (mass rank 0) of additional material with you when you move. If you apply the Increased Mass modifier, you can carry additional mass up to your modifier rank. </p><p>ENVIRONMENTAL ADAPTATION You’re adapted to a particular environment, such as underwater, zero gravity, and so forth (see Environmental Hazards, pages 185-187, for details). You suffer none of the normal unfavorable circumstance or movement penalties associated with that environment, moving and acting normally. You are still affected by environmental hazards like suffocation, exposure, and so forth. You need the Immunity effect to ignore such things. </p><p>PERMEATE You can pass through solid objects as if they weren’t there. For 1 rank, you can move at speed rank –2 through any physical object. For 2 ranks, you can move at speed rank –1 and for 3 ranks, you move at your normal speed through any obstacles. You cannot breathe while completely inside a solid object, so you either need Immunity to Suffocation or have to hold your breath. You may also need Penetrates Concealment Senses to know where you’re going, since you cannot see inside solid objects, either. Permeate is often Limited to a particular substance like earth, ice, or metal, for example. Permeate provides no protection against attacks, although you do gain cover while inside an object (see Cover, page 244). For the ability to allow things (including attacks) to pass through you, see the Insubstantial effect. </p><p>SAFE FALL So long as you are capable of action, you can fall any distance without harm. You can also stop your fall at any point along a distance so long as there is a handhold or projection for you to grab (such as a ledge, flagpole, branch, etc.). If you have the Wall-crawling power (later in Movement), any surface you can climb provides you with a handhold. Safe Fall may be Limited to only when you are near a surface (such as the side of a building); you’re assumed to be using the surface to help slow your fall. </p><p>SLITHERING You can move while prone at your normal ground speed. You suffer no circumstance penalty for making attacks while prone. </p><p>SPACE TRAVEL You can travel faster than the speed of light through the vacuum of space (but not in a planetary atmosphere). At rank 1 you can travel to other planets in a solar system. At rank 2, you can travel to other star systems, while at rank 3, you can visit distant star systems, perhaps even other galaxies! This effect does not provide protection from the rigors of outer space (for that, see the Immunity effect in this chapter). </p><p>SURE-FOOTED You’re better able to deal with obstacles and obstructions to movement. Reduce the speed penalty for moving through or around such obstacles by 1 for each rank of this effect. If you reduce the speed penalty to 0 or less, you are unaffected by that obstacle and move at full normal speed. </p><p>SWINGING You can swing through the air at your normal ground speed rank, using a swing-line you provide or available lines and projections (tree limbs, flagpoles, vines, telephone- and power-lines, etc.). </p><p>TIME TRAVEL You can move through time! For 1 rank, you can move between the present and another fixed point in time (such as 100 years into the past, or 1,000 years into the future). For 2 ranks you can move to any point in the past or any point in the future (but not both). For 3 ranks, you can travel to any point in time. Reaching alternate timelines or parallel worlds requires at least 2 ranks of Dimension-Travel. You can carry up to 50 lbs. (mass rank 0) of additional material with you&nbsp;when you time-travel. If you apply the Increased Mass modifier, you can carry additional mass up to your modifier rank.</p><p>TRACKLESS You leave no trail and cannot be tracked using visual senses (although you can still be tracked using scent or other means). You can walk across the surface of soft sand or snow without leaving tracks and you have total concealment from tremorsense (see Concealment, page 244). Each additional rank renders you trackless to another sense type. </p><p>WALL-CRAWLING You can climb walls and ceilings at your ground speed rank –1 with no chance of falling and no need for an Athletics check. You are still vulnerable while climbing, however. An additional rank of this effect means you climb at your full speed rank and are not vulnerable while climbing. </p><p>WATER-WALKING You can stand or move at your normal ground speed on the surface of water, quicksand, and other liquids without sinking. If you fall prone for any reason, you sink into the liquid normally. With 2 ranks of this effect, you can also lie prone on a liquid surface without sinking; you only sink if you choose to.</p>",
+        "effetsprincipaux": "Choose one movement option per rank.",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -1343,34 +1338,19 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "attack",
         "activate": true,
         "special": "standard",
         "action": "simple",
         "portee": "distance",
         "duree": "instantane",
-        "notes": "<p>You can counter a particular descriptor or group of effects.</p>",
-        "description": "<p>You can counter a particular descriptor or group of effects.</p>",
-        "effets": "<p>Opposed check: your Nullify rank vs target's effect rank.</p>",
-        "effetsprincipaux": "<p>Opposed check: your Nullify rank vs target's effect rank.</p>",
+        "notes": "<p>Opposed check: your Nullify rank vs target's effect rank.</p><p><br></p><p>You can counter a particular descriptor or group of effects.</p><p><br></p>",
+        "description": "<p>Opposed check: your Nullify rank vs target's effect rank.</p><p><br></p><p>You can counter a particular descriptor or group of effects.</p><p><br></p>",
+        "effets": "<ul><li>Nullify can counter particular effects of a particular descriptor, such as fire effects, magical effects, mental effects, and so forth (see Countering Effects, at the start of this chapter). </li><li>You can counter one effect of your chosen descriptor per use of Nullify. </li><li>You can’t nullify innate effects (see the Innate modifier description). </li><li>Make a ranged attack check to hit the target. Then make an opposed check of your Nullify rank and the targeted effect’s rank or the target’s Will defense, whichever is higher. </li><li>If you are targeting the subject of an effect rather than the effect’s user, make an opposed check of Nullify rank vs. effect rank. If you win, the targeted effect turns off, although the user can re-activate it normally. If you lose the opposed check, you do not Nullify the effect. </li><li>With two or more degrees of failure, trying again against the same subject in the same scene requires extra effort.</li></ul><p><br></p>",
+        "effetsprincipaux": "Nullify an Effect",
         "link": "",
         "descripteurs": {},
-        "extras": {
-          "1": {
-            "name": "Area",
-            "data": {
-              "type": "extra",
-              "description": "<p>This extra allows an effect that normally works on a single target to affect an area.  Player must choose the Shape and Range from MnM 3e PHB</p><p><br></p><p>No attack check is needed; potential targets are permitted a Dodge resistance check (DC 10 + effect rank) to reduce the effect.</p><p><br></p><p>+1 cost per Power rank.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": false,
-                "rang": true,
-                "value": 1
-              }
-            }
-          }
-        },
+        "extras": {},
         "defauts": {},
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
@@ -1404,14 +1384,27 @@
         "action": "none",
         "portee": "personal",
         "duree": "permanent",
-        "notes": "<p>You have additional Strength for the purpose of lifting and carrying only.</p>",
-        "description": "<p>You have additional Strength for the purpose of lifting and carrying only.</p>",
+        "notes": "<p>Strength rank for lifting equals Power-Lifting rank + Strength.</p><p><br></p><p>You have additional Strength for the purpose of lifting and carrying only.</p>",
+        "description": "<p>Strength rank for lifting equals Power-Lifting rank + Strength.</p><p><br></p><p>You have additional Strength for the purpose of lifting and carrying only.</p>",
         "effets": "<p>Strength rank for lifting equals Power-Lifting rank.</p>",
-        "effetsprincipaux": "<p>Strength rank for lifting equals Power-Lifting rank.</p>",
+        "effetsprincipaux": "Strength rank for lifting equals Power-Lifting rank + Strength.",
         "link": "",
         "descripteurs": {},
         "extras": {},
-        "defauts": {},
+        "defauts": {
+          "pmbnrwpoemq": {
+            "name": "Limited",
+            "type": "defaut",
+            "description": "<p>An effect with this flaw only works under certain circumstances, or has a significant restriction on its use.</p><p>–1 cost per rank.</p>",
+            "rang": 1,
+            "edit": true,
+            "cout": {
+              "fixe": false,
+              "rang": true,
+              "value": 1
+            }
+          }
+        },
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
         "edit": false,
@@ -1419,7 +1412,7 @@
         "check": "",
         "cout": {
           "rang": 1,
-          "parrang": 1
+          "parrang": 2
         }
       },
       "effects": [],
@@ -4996,7 +4989,7 @@
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
         "type": "extra",
-        "description": "<p>Moves the power one step up the range scale: Close (Touch) -> Ranged (Requires an attack roll; has short/medium/long range). Ranged -> Perception (No attack roll needed; works as long as you can accurately sense the target). +1 cost per rank.</p>",
+        "description": "<p>Moves the power one step up the range scale: </p><p>Close (Touch) -&gt; Ranged (Requires an attack roll; has short/medium/long range). </p><p>Ranged -&gt; Perception (No attack roll needed; works as long as you can accurately sense the target). </p><p>+1 cost per rank.</p>",
         "rang": 1,
         "edit": true,
         "cout": {
