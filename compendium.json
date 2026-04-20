@@ -1235,42 +1235,13 @@
         "action": "simple",
         "portee": "distance",
         "duree": "sustained",
-        "notes": "<ul><li>You can move objects at a distance without touching them. </li><li>Your effective Strength for lifting and moving objects with this effect is equal to your rank. </li><li>By taking a move action to concentrate you can increase this by +1 Str, changing&nbsp;the effect’s duration to Concentration. This is in addition to using extra effort to further increase your rank. </li><li>This effect can move objects, but cannot perform tasks of fine manipulation (like untying knots, typing, or manipulating controls) without the Precise modifier. </li><li>Objects thrown into targets as attacks base their damage off your power rank as if it were your Strength rank. </li><li>Move Object cannot inflict damage directly; you can’t “punch” or “crush” objects with it. You can use it to make disarm, grab, and trip attacks. </li></ul>",
-        "description": "<ul><li>You can move objects at a distance without touching them. </li><li>Your effective Strength for lifting and moving objects with this effect is equal to your rank. </li><li>By taking a move action to concentrate you can increase this by +1 Str, changing&nbsp;the effect’s duration to Concentration. This is in addition to using extra effort to further increase your rank. </li><li>This effect can move objects, but cannot perform tasks of fine manipulation (like untying knots, typing, or manipulating controls) without the Precise modifier. </li><li>Objects thrown into targets as attacks base their damage off your power rank as if it were your Strength rank. </li><li>Move Object cannot inflict damage directly; you can’t “punch” or “crush” objects with it. You can use it to make disarm, grab, and trip attacks. </li></ul>",
-        "effets": "<p>Effective Strength equals rank. Can make disarm, grab, and trip attacks.</p><p><br></p><ul><li>Move Object has no action/reaction; a moving object cannot drag the character “holding on” to it, for example. </li><li>This effect is also not considered “physical contact” or “touch” for effects requiring it. </li></ul><p><br></p>",
+        "notes": "<ul><li>You can move objects at a distance without touching them.</li><li>Your effective Strength for lifting and moving objects with this effect is equal to your rank.</li><li>By taking a move action to concentrate you can increase this by +1 Str, changing&nbsp;the effect’s duration to Concentration. This is in addition to using extra effort to further increase your rank.</li><li>This effect can move objects, but cannot perform tasks of fine manipulation (like untying knots, typing, or manipulating controls) without the Precise modifier.</li><li>Objects thrown into targets as attacks base their damage off your power rank as if it were your Strength rank.</li><li>Move Object cannot inflict damage directly; you can’t “punch” or “crush” objects with it. You can use it to make disarm, grab, and trip attacks.</li></ul>",
+        "description": "<ul><li>You can move objects at a distance without touching them.</li><li>Your effective Strength for lifting and moving objects with this effect is equal to your rank.</li><li>By taking a move action to concentrate you can increase this by +1 Str, changing&nbsp;the effect’s duration to Concentration. This is in addition to using extra effort to further increase your rank.</li><li>This effect can move objects, but cannot perform tasks of fine manipulation (like untying knots, typing, or manipulating controls) without the Precise modifier.</li><li>Objects thrown into targets as attacks base their damage off your power rank as if it were your Strength rank.</li><li>Move Object cannot inflict damage directly; you can’t “punch” or “crush” objects with it. You can use it to make disarm, grab, and trip attacks.</li></ul>",
+        "effets": "<p>Effective Strength equals rank. Can make disarm, grab, and trip attacks.</p><p><br></p><ul><li>Move Object has no action/reaction; a moving object cannot drag the character “holding on” to it, for example.</li><li>This effect is also not considered “physical contact” or “touch” for effects requiring it.</li></ul>",
         "effetsprincipaux": "<p>Effective Strength equals rank. Can make disarm, grab, and trip attacks.</p>",
         "link": "",
         "descripteurs": {},
-        "extras": {
-          "1": {
-            "name": "Precise",
-            "data": {
-              "type": "extra",
-              "description": "<p>You can use a Precise effect to perform tasks requiring delicacy and fine control.</p><p><br></p><p><em>Flat </em>1 point.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          },
-          "2": {
-            "name": "Subtle",
-            "data": {
-              "type": "extra",
-              "description": "<p>Subtle effects are not as noticeable. Rank 1 is difficult to notice, Rank 2 is undetectable.</p><p><br></p><p>Flat 1-2 points.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          }
-        },
+        "extras": {},
         "defauts": {},
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
@@ -1471,16 +1442,16 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "general",
         "activate": true,
         "special": "standard",
         "action": "free",
         "portee": "personal",
         "duree": "sustained",
-        "notes": "<p>You can perform routine tasks much faster than normal.</p>",
-        "description": "<p>You can perform routine tasks much faster than normal.</p>",
+        "notes": "<p>You can perform routine tasks—anything that can be done as a routine check (see Routine Checks in The Basics chapter)—fast, perhaps very fast. </p><p><br></p><p>Subtract your effect rank from the normal time rank to perform a task to determine how long it takes you. </p><p class=\"ql-indent-1\">So, for example, if you have Quickness 7, a routine task normally taking an hour (time rank 9) takes you (9 – 7 = time rank 2) 30 seconds. Non-routine checks are not affected by Quickness, nor is movement speed. </p><p class=\"ql-indent-1\">If you can perform a task in less than a second (time rank –2), the GM may choose to treat that task as a free action for you (although the GM can still limit the number of free actions you can accomplish in a turn as usual).</p>",
+        "description": "<p>You can perform routine tasks—anything that can be done as a routine check (see Routine Checks in The Basics chapter)—fast, perhaps very fast. </p><p><br></p><p>Subtract your effect rank from the normal time rank to perform a task to determine how long it takes you. </p><p class=\"ql-indent-1\">So, for example, if you have Quickness 7, a routine task normally taking an hour (time rank 9) takes you (9 – 7 = time rank 2) 30 seconds. Non-routine checks are not affected by Quickness, nor is movement speed. </p><p class=\"ql-indent-1\">If you can perform a task in less than a second (time rank –2), the GM may choose to treat that task as a free action for you (although the GM can still limit the number of free actions you can accomplish in a turn as usual).</p>",
         "effets": "<p>Time rank for tasks is reduced by Quickness rank.</p>",
-        "effetsprincipaux": "<p>Time rank for tasks is reduced by Quickness rank.</p>",
+        "effetsprincipaux": "Time rank for tasks is reduced by Quickness rank.",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -1511,16 +1482,16 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "defense",
         "activate": true,
         "special": "standard",
         "action": "none",
         "portee": "personal",
         "duree": "permanent",
-        "notes": "<p>You recover from damage much faster than normal.</p>",
-        "description": "<p>You recover from damage much faster than normal.</p>",
-        "effets": "<p>Recover one Bruised condition per rank every 10 rounds.</p>",
-        "effetsprincipaux": "<p>Recover one Bruised condition per rank every 10 rounds.</p>",
+        "notes": "<p>You recover quickly from damage. Remove penalties to your Toughness checks due to damage equal to your Regeneration rank each minute. </p><p>You then recover other damage conditions equal to your Regeneration rank each minute, starting from your most severe condition. </p><p>Spread this recovery out evenly over a minute (10 action rounds). </p><p class=\"ql-indent-1\">So with Regeneration 5, you remove a –1 Toughness penalty every other round (every round with Regeneration 10, and up to a –2 penalty per round with Regeneration 20). </p><p><br></p>",
+        "description": "<p>You recover quickly from damage. Remove penalties to your Toughness checks due to damage equal to your Regeneration rank each minute. </p><p>You then recover other damage conditions equal to your Regeneration rank each minute, starting from your most severe condition. </p><p>Spread this recovery out evenly over a minute (10 action rounds). </p><p class=\"ql-indent-1\">So with Regeneration 5, you remove a –1 Toughness penalty every other round (every round with Regeneration 10, and up to a –2 penalty per round with Regeneration 20). </p><p><br></p>",
+        "effets": "<p>REGENERATION ABSENT STAMINA: Characters with no Stamina do not heal. One or more ranks of Regeneration overcome this. An absent Stamina character with Regeneration 1 recovers at a normal rate; additional Regeneration ranks speed up that rate.</p>",
+        "effetsprincipaux": "Recover quickly from damage.",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -1557,72 +1528,14 @@
         "action": "simple",
         "portee": "perception",
         "duree": "sustained",
-        "notes": "<p>You can perceive your surroundings from a distance.</p>",
-        "description": "<p>You can perceive your surroundings from a distance.</p>",
-        "effets": "<p>Rank determines distance (Rank 1 = 60ft, Rank 10 = 1000 miles).</p>",
-        "effetsprincipaux": "<p>Rank determines distance (Rank 1 = 60ft, Rank 10 = 1000 miles).</p>",
+        "notes": "<p>Senses:  &lt;here&gt;</p><p><br></p><ul><li>You can perceive your surroundings from a distance.  Rank determines distance (Rank 1 = 60ft, Rank 10 = 1000 miles).</li><li>You can displace one or more of your senses over a distance, perceiving as if you were at that location, up to rank distance away. </li><li>Each additional rank increases your range one distance rank, so rank 2 is 120 feet, rank 3 is 250 feet, and so on. </li><li>Subjects observed via Remote Sensing can “feel” it with an Insight check (DC 10 + rank). </li></ul>",
+        "description": "<p>Senses:  &lt;here&gt;</p><p><br></p><ul><li>You can perceive your surroundings from a distance.  Rank determines distance (Rank 1 = 60ft, Rank 10 = 1000 miles).</li><li>You can displace one or more of your senses over a distance, perceiving as if you were at that location, up to rank distance away. </li><li>Each additional rank increases your range one distance rank, so rank 2 is 120 feet, rank 3 is 250 feet, and so on. </li><li>Subjects observed via Remote Sensing can “feel” it with an Insight check (DC 10 + rank). </li></ul>",
+        "effets": "<p>Rank determines distance (Rank 1 = 60ft, Rank 10 = 1000 miles).</p><p><br></p><ul><li>Remote Sensing overrides your normal sense(s) while you are using it. </li><li>You can make Perception checks normally using your displaced senses, taking the normal action to do so. </li><li>To search a large area for someone or something, use the search guidelines given in the description of the Investigation skill. </li><li>Remote Sensing costs 1 point per rank for one sense type, 2 points per rank for two sense types, 3 points per rank for three, and 4 points per rank for four, and 5 points per rank for all of your senses. </li><li>Visual senses count as two sense types (so visual Remote Sensing is 2 points per rank). </li><li>You can use perception range sensory effects via Remote Sensing if your effect applies to their sense type and an accurate sense (usually sight). </li><li>Sensory effects targeted on the spot where you have displaced your senses affect you normally. </li><li>Because Remote Sensing overrides your normal senses, you are vulnerable (at half your normal active defenses) while using it, since you are less aware of your immediate surroundings.</li></ul><p><br></p>",
+        "effetsprincipaux": "Rank determines distance (Rank 1 = 60ft, Rank 10 = 1000 miles).",
         "link": "",
         "descripteurs": {},
-        "extras": {
-          "1": {
-            "name": "Dimensional",
-            "data": {
-              "type": "extra",
-              "description": "<p>This modifier allows an effect to work on targets in other dimensions. Rank 1 affects one dimension, Rank 2 a related group, Rank 3 any dimension.</p><p><br></p><p><em>Flat </em>1-3 points.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          },
-          "2": {
-            "name": "Subtle",
-            "data": {
-              "type": "extra",
-              "description": "<p>Subtle effects are not as noticeable. Rank 1 is difficult to notice, Rank 2 is undetectable.</p><p><br></p><p>Flat 1-2 points.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          }
-        },
-        "defauts": {
-          "1": {
-            "name": "Feedback",
-            "data": {
-              "type": "defaut",
-              "description": "<p>You suffer damage when a manifestation of your effect is damaged.</p><p>–1 cost per rank.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": false,
-                "rang": true,
-                "value": 1
-              }
-            }
-          },
-          "2": {
-            "name": "Noticeable",
-            "data": {
-              "type": "defaut",
-              "description": "<p>A continuous or permanent effect with this flaw is very noticeable (glows, makes a loud noise, etc.).</p><p>Flat -1 point.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          }
-        },
+        "extras": {},
+        "defauts": {},
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
         "edit": false,
@@ -1655,9 +1568,9 @@
         "action": "none",
         "portee": "personal",
         "duree": "permanent",
-        "notes": "<p>One or more of your senses are improved or you have additional sensory abilities.</p>",
-        "description": "<p>One or more of your senses are improved or you have additional sensory abilities.</p>",
-        "effets": "<p>Allocate ranks to options (Accurate, Acute, Analytical, Awareness, Darkvision, etc.).</p>",
+        "notes": "<p>Senses:  &lt;here&gt;</p><ul><li>One or more of your senses are improved, or you have additional sensory abilities beyond the normal five senses. </li><li>Allocate ranks in Senses to the following effects. </li><li>Some options require more than one rank, noted in their descriptions. So if you have Senses 5, for example, you can have darkvision (2 ranks), direction sense (1 rank), distance sense (1 rank), and ultra-hearing (1 rank), or any other combination adding up to 5 ranks. </li></ul><p><br></p>",
+        "description": "<p>Senses:  &lt;here&gt;</p><ul><li>One or more of your senses are improved, or you have additional sensory abilities beyond the normal five senses. </li><li>Allocate ranks in Senses to the following effects. </li><li>Some options require more than one rank, noted in their descriptions. So if you have Senses 5, for example, you can have darkvision (2 ranks), direction sense (1 rank), distance sense (1 rank), and ultra-hearing (1 rank), or any other combination adding up to 5 ranks. </li></ul><p><br></p>",
+        "effets": "<p>Allocate ranks to options (Accurate, Acute, Analytical, Awareness, Darkvision, etc.).</p><p><br></p><p>Like all sensory effects, Senses uses the sense types described on page 178 as descriptors. </p><ul><li>ACCURATE 2 OR 4 RANKS An accurate sense can pinpoint something’s exact location. You can use an accurate sense to target something in combat. Visual and tactile senses are normally accurate for humans. Cost is 2 ranks for one sense, 4 for an entire sense type. </li><li>ACUTE 1-2 RANKS You can sense fine details about anything you can detect with a particular sense, allowing you to distinguish between and identify different subjects. Visual and auditory senses are normally acute for humans. Cost is 1 rank for one sense, 2 for an entire sense type. </li><li>ANALYTICAL 1-2 RANKS Beyond even acute, you can perceive specific details about anything you can detect with an analytical sense, such as chemical composition, exact dimensions or mass, frequency of sounds and energy wavelengths, and so forth. You can only apply this effect to an acute sense. Normal senses are not analytical. Cost is 1 rank for one sense, 2 for an entire sense type. </li><li>AWARENESS 1 RANK You can sense the use of effects of a particular descriptor with a successful Perception check (DC 10, with –1 to your check per 10 feet range). Examples include Cosmic Awareness, Divine Awareness, Magical Awareness, Mental Awareness, and so forth. You can apply other Sense effects to your Awareness to modify it. Choose the sense type for your Awareness; it is often a mental sense, but doesn’t have to be. Awareness counts as an “exotic sense” for noticing effects with the first rank of the Subtle modifier (see Subtle under Extras for details).</li><li>COMMUNICATION LINK 1 RANK You have a link with a particular individual, chosen when you acquire this option, who must also have this ability. The two of you can communicate over any distance like a use of the Communication effect. Choose a sense type as a communication medium when you select this option; mental is common for psychic or empathic links. If you apply the Dimensional modifier to your Communication Link, it extends to other dimensions as well (see Dimensional under Power Modifiers for details). </li><li>COUNTERS CONCEALMENT 2 RANKS A sense type with this trait ignores the Concealment effect of a particular descriptor; you sense the subject of the effect normally, as if the Concealment wasn’t even there. So if you have vision that Counters Invisibility, for example,&nbsp;then invisible beings are visible to you. For 5 ranks, the sense type ignores all Concealment effects, regardless of descriptor. Concealed subjects seem slightly “off” to you, enough to know they are concealed to others. This trait does not affect concealment provided by opaque objects, for that, see Penetrates Concealment. </li><li>COUNTERS ILLUSION 2 RANKS A sense type with this trait ignores the Illusion effect; you automatically succeed on your resistance check against the illusion if it affects your sense type, realizing that it isn’t real. </li><li>DANGER SENSE 1 RANK When you would normally be surprised in combat, make a Perception check (DC 10): One degree of success means you’re not surprised, but can’t act during the surprise round (so you don’t suffer any conditions of being surprised), while two or more degrees of success means you are not surprised and may act during the surprise round (if any). Failure means you are surprised (although, if you have Uncanny Dodge, you are not vulnerable). The GM may raise the DC of the Danger Sense check in some circumstances. Choose a sense type for your Danger Sense. Sensory effects targeting that sense also affect your Danger Sense ability and may “blind” it.</li><li>DARKVISION 2 RANKS You can see in complete darkness as if it were normal daylight; darkness provides no concealment to your vision. This is essentially the same as Counters Concealment (Darkness). </li><li>DETECT 1-2 RANKS You can sense a particular item or effect by touch with a Perception check. Detect has no range and only indicates the presence or absence of something (being neither acute nor accurate). Choose what sense type your Detect falls under (often mental). For 2 ranks you can detect things at range (with the normal –1 per 10 feet modifier to your Perception check). </li><li>DIRECTION SENSE 1 RANK You always know what direction north lies in and can retrace your steps through any place you’ve been.</li><li>DISTANCE SENSE 1 RANK You can accurately and automatically judge distances. </li><li>EXTENDED 1 RANK You have a sense that operates at greater than normal range. Your range with the sense—the distance used to determine penalties to your Perception check—is increased by a factor of 10. Each additional time you apply this option, your range increases by an additional factor of 10, so 1 rank means you have a –1 to Perception checks per 100 feet, 2 ranks makes it –1 per 1,000 feet, and so on. An extended sense may be limited by conditions like the&nbsp;&nbsp;horizon and physical barriers between you and the subject, unless it also Penetrates Concealment. </li><li>INFRAVISION 1 RANK You can see in the infrared portion of the spectrum, allowing you to see heat patterns. Darkness does not provide concealment for objects differing in temperature from their surroundings. If you have the Track effect, you can track warm creatures by the faint heat trails they leave behind. The Gamemaster is the final judge on how long the trail remains visible. </li><li>LOW-LIGHT VISION 1 RANK You ignore circumstance penalties to visual Perception checks for poor lighting, so long as it is not completely dark. </li><li>MICROSCOPIC VISION 1-4 RANKS You can view extremely small things. You can make Perception checks to see tiny things nearby. Cost is 1 rank for dust-sized objects, 2 ranks for cellular-sized, 3 ranks for DNA and complex molecules, 4 ranks for atomic-sized. The GM may require an Expertise skill check to understand and interpret what you see. </li><li>PENETRATES CONCEALMENT 4 RANKS A sense with this trait is unaffected by concealment from obstacles (rather than Concealment effects). So vision that Penetrates Concealment sees right through opaque objects, for example, and hearing that Penetrates Concealment is unaffected by sound-proofing or intervening materials, and so forth.</li><li>POSTCOGNITION 4 RANKS Your senses extend into the past, allowing you to perceive events that took place previously. You can make Perception checks to pick up on past information in an area or from a subject. The Gamemaster sets the DC for these checks based on how obscure and distant in the past the information is, from DC 15 (for a vague vision that may or may not be accurate) to DC 30 (for near complete knowledge of a particular past event as if you were actually present). Your normal (present-day) senses don’t work while you’re using Postcognition; your awareness is focused on the past. Your postcognitive visions last for as long as you concentrate. Postcognition does not apply to sensory effects like Mind Reading or any other ability requiring interaction. Postcognition may be Limited to past events connected to your own “past lives” or ancestors, reducing cost to 2 ranks. </li><li>PRECOGNITION 4 RANKS Your senses extend into the future, allowing you to perceive events that may happen. Your precognitive visions represent possible futures. If circumstances change, then the vision may not come to pass. When you use this ability, the Gamemaster chooses what information to impart. Your visions may be obscure and cryptic, open to interpretation. The Gamemaster may require appropriate Perception skill checks for you to pick up on particularly detailed information, with a DC ranging from 15 to 30 or more. The GM can also activate your Precognition to impart specific information to you as an adventure hook or plot device. Your normal (present-day) senses don’t work while you’re using Precognition; your awareness is focused on the future. Your precognitive visions last as long as you concentrate. Precognition does not apply to sensory effects like Mind Reading or any other ability requiring interaction. </li><li>RADIO 1 RANK You can “hear” radio frequencies including AM, FM, television, cellular, police bands, and so forth. This allows you to pick up on Radio Communication (see the Communication effect). This is the base sense of the radio sense type. It’s ranged, radius, and acute by default. </li><li>RADIUS 1-2 RANKS You can make Perception checks with a radius sense for any point around you. Subjects behind you cannot use Stealth to hide from you without some other concealment. Auditory, olfactory, and tactile senses are normally radius for humans. Cost is 1 rank for use with one sense, 2 ranks for one sense type. </li><li>RANGED 1 RANK You can use a sense that normally has no range (taste or touch in humans) to make Perception checks at range, with the normal –1 per 10 feet modifier. This can be enhanced with the Extended Sense effect. </li><li>RAPID 1 RANK You can read or take in information from a sense faster than normal: each rank increases your perception speed by a factor of 10 (x10, x100, etc.) with a single sense, double cost for an entire sense type. You can use rapid vision to speedread, pick up on rapid flickering between frames of a film, watch video replays in fast-forward speeds, and such, rapid hearing to listen to time-compressed audio “blips,” and so forth. </li><li>TIME SENSE 1 RANK You always know what time it is and can time events as if you had an accurate stopwatch. </li><li>TRACKING 1 RANK You can follow trails and track using a particular sense. Basic DC to follow a trail is 10, modified by circumstances, as the GM sees fit. You move at your speed rank –1 while tracking. For 2 ranks, you can move at full normal speed while tracking </li><li>ULTRA-HEARING 1 RANK You can hear very high and low frequency sounds, like dog whistles or ultrasonic signals, including those used by some remote controls. </li><li>ULTRAVISION 1 RANK You can see ultraviolet light, allowing you to see normally at night by the light of the stars or other UV light sources.</li></ul>",
         "effetsprincipaux": "<p>Allocate ranks to options (Accurate, Acute, Analytical, Awareness, Darkvision, etc.).</p>",
         "link": "",
         "descripteurs": {},
@@ -1689,15 +1602,15 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "general",
         "activate": true,
         "special": "standard",
         "action": "free",
         "portee": "personal",
         "duree": "sustained",
-        "notes": "<p>You can take the form of any creature or object.</p>",
-        "description": "<p>You can take the form of any creature or object.</p>",
-        "effets": "<p>Variable 2 (traits of assumed form) plus Morph (visual appearance).</p>",
+        "notes": "<p>Choose how the Morph Power works and adjust the cost per rank.  </p><p><br></p><p>You can take the form of any creature or object.</p>",
+        "description": "<p>Choose how the Morph Power works and adjust the cost per rank.  </p><p><br></p><p>You can take the form of any creature or object.</p>",
+        "effets": "<p>Variable 2 (traits of assumed form) plus Morph (visual appearance).</p><p><br></p><p>\"Shapeshifting\" is built differently depending on how flexible you want to be. There isn't just one way to do it; you have to choose the mechanic that fits your specific concept.&nbsp;</p><p>Here are the three ways to build it:</p><p>1. The Flexible Build:&nbsp;Variable Effect&nbsp;</p><p>This is the \"standard\" Shapeshift power found in the rulebook. It is for characters like&nbsp;<a href=\"https://www.google.com/search?q=beast+boy&amp;kgmid=/m/03tjhn&amp;sa=X&amp;ved=2ahUKEwj0upbx8vyTAxXzBoYAHRcYGcYQ3egRegYIAQgGEAI\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: unset;\"><strong>Beast Boy</strong></a>&nbsp;or&nbsp;<a href=\"https://www.google.com/search?q=plastic+man&amp;kgmid=/m/01phpr&amp;sa=X&amp;ved=2ahUKEwj0upbx8vyTAxXzBoYAHRcYGcYQ3egRegYIAQgGEAQ\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: unset;\"><strong>Plastic Man</strong></a>&nbsp;who can turn into almost anything on the fly.&nbsp;</p><ul><li><strong>Cost:</strong>&nbsp;8 points per rank.</li><li><strong>Budget:</strong>&nbsp;Each rank gives you&nbsp;<strong>5 \"floating\" power points</strong>&nbsp;to spend on traits (powers, abilities, skills) that fit your new form.</li><li><strong>Limitation:</strong>&nbsp;It is usually limited to&nbsp;<strong>physical traits</strong>&nbsp;only; you don't gain new mental skills or memories of the form you take.</li><li><strong>Speed:</strong>&nbsp;It is typically a&nbsp;<strong>Move Action</strong>&nbsp;to reallocate your points.&nbsp;</li></ul><p>2. The Set Forms Build:&nbsp;Morph + Metamorph&nbsp;</p><p>Use this if you have a handful of \"standard\" forms you use, like a werewolf or a hero with three specific elemental forms.&nbsp;</p><ul><li><strong>The Power:</strong>&nbsp;Buy&nbsp;<strong>Morph</strong>&nbsp;(the cosmetic change) for 5 points per rank.</li><li><strong>The Extra:</strong>&nbsp;Add the&nbsp;<strong>Metamorph</strong>&nbsp;extra for&nbsp;<strong>+1 flat point</strong>&nbsp;per additional form.</li><li><strong>How it works:</strong>&nbsp;Each \"Metamorph\" form gives you a&nbsp;<strong>completely new character sheet</strong>. You can re-spend all your character points for that form, though all forms must still pay for the Morph/Metamorph power itself.&nbsp;</li></ul><p>3. The Cosmetic Build:&nbsp;Morph Only</p><p>This is for characters like&nbsp;<strong>Mystique</strong>, who can look like anyone but doesn't actually gain their powers (like flight or super-strength).&nbsp;</p><ul><li><strong>Cost:</strong>&nbsp;5 points per rank.</li><li><strong>Benefit:</strong>&nbsp;You get a&nbsp;<strong>+20 bonus to Deception checks</strong>&nbsp;to pass as that person or thing. Your actual stats (Strength, Toughness, etc.) stay exactly the same as your normal form.</li></ul><p><br></p>",
         "effetsprincipaux": "<p>Variable 2 (traits of assumed form) plus Morph (visual appearance).</p>",
         "link": "",
         "descripteurs": {},
@@ -1735,10 +1648,10 @@
         "action": "free",
         "portee": "personal",
         "duree": "sustained",
-        "notes": "<p>You can decrease your size.</p>",
-        "description": "<p>You can decrease your size.</p>",
-        "effets": "<p>Each rank reduces size rank by 1. Provides bonuses to Dodge/Parry and Stealth.</p>",
-        "effetsprincipaux": "<p>Each rank reduces size rank by 1. Provides bonuses to Dodge/Parry and Stealth.</p>",
+        "notes": "<p>You can temporarily decrease your size, becoming smaller, harder to see — and hit — at the cost of losing Strength and speed. </p><p><br></p>",
+        "description": "<p>You can temporarily decrease your size, becoming smaller, harder to see — and hit — at the cost of losing Strength and speed. </p><p><br></p>",
+        "effets": "<ul><li>Every 4 ranks of Shrinking reduces your size rank by 1 (normal humans are size rank –2 by default) and each reduction in size rank subtracts 1 from your Strength and every two reductions in size rank subtract 1 from your ground speed rank. </li><li>Add half your Shrinking rank (rounded down) to your active defenses. </li><li>Add your Shrinking rank as a bonus to Stealth checks, since you are harder to spot, but apply half your rank (rounded down) as a penalty to Intimidation checks (hard to be imposing when you’re tiny). </li><li>Shrinking modifiers are restricted by power level limits.</li><li class=\"ql-indent-1\">So at Shrinking 12, you are size rank –5 (about 6 inches tall), and have a +6 bonus to active defenses and +12 Stealth bonus, but –3 Strength, –1 speed, and –6 Intimidation penalties.</li></ul><p><br></p>",
+        "effetsprincipaux": "Each rank reduces size rank by 1. Provides bonuses to Dodge/Parry and Stealth.",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -1769,16 +1682,16 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "movement",
         "activate": true,
         "special": "standard",
         "action": "free",
         "portee": "personal",
         "duree": "sustained",
-        "notes": "<p>You can move faster than normal.</p>",
-        "description": "<p>You can move faster than normal.</p>",
-        "effets": "<p>Speed rank equals effect rank.</p>",
-        "effetsprincipaux": "<p>Speed rank equals effect rank.</p>",
+        "notes": "<p>You can move faster than normal. You have a ground speed rank equal to your effect rank. </p><p>This also improves all forms of movement based on ground speed.</p>",
+        "description": "<p>You can move faster than normal. You have a ground speed rank equal to your effect rank. </p><p>This also improves all forms of movement based on ground speed.</p>",
+        "effets": "<p>Speed rank equals effect rank.</p><p><br></p><p><br></p>",
+        "effetsprincipaux": "Speed rank equals effect rank.",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -1809,16 +1722,16 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "control",
         "activate": true,
         "special": "standard",
         "action": "simple",
         "portee": "close",
         "duree": "sustained",
-        "notes": "<p>You can call an independent character to your side.</p>",
-        "description": "<p>You can call an independent character to your side.</p>",
+        "notes": "<ul><li>You can call upon another creature—a minion—to aid you. This creature is created as an independent character with (effect rank x 15) power points. </li><li>A summoned minion is limited to a Power Level equal to the rank of the Summon effect used to create it, is subject to the normal power level limits, and cannot have minions of its own, either from this effect or the Minions advantage. </li><li>You can summon your minion automatically as a standard action; it appears in the nearest open space beside you. </li><li>Minions have their own initiative and act starting on the round after you summon them. </li><li>Summoned minions are dazed, taking only a standard action each round. </li><li>Directing a minion to do something is a move action for you, but minions generally do as they are told until a task is completed. </li><li>You always have the same minion unless you apply the Variable Type modifier, allowing you to summon different minions. </li><li>Your minion automatically has a helpful attitude and does its best to aid you and obey your commands. </li><li>Incapacitated minions disappear. They recover normally and you cannot summon an incapacitated minion until it has completely recovered. </li><li>Your summoned minions also vanish if your effect is not maintained, or is countered or nullified. For more information and rules regarding Minions, page 245.</li></ul>",
+        "description": "<ul><li>You can call upon another creature—a minion—to aid you. This creature is created as an independent character with (effect rank x 15) power points. </li><li>A summoned minion is limited to a Power Level equal to the rank of the Summon effect used to create it, is subject to the normal power level limits, and cannot have minions of its own, either from this effect or the Minions advantage. </li><li>You can summon your minion automatically as a standard action; it appears in the nearest open space beside you. </li><li>Minions have their own initiative and act starting on the round after you summon them. </li><li>Summoned minions are dazed, taking only a standard action each round. </li><li>Directing a minion to do something is a move action for you, but minions generally do as they are told until a task is completed. </li><li>You always have the same minion unless you apply the Variable Type modifier, allowing you to summon different minions. </li><li>Your minion automatically has a helpful attitude and does its best to aid you and obey your commands. </li><li>Incapacitated minions disappear. They recover normally and you cannot summon an incapacitated minion until it has completely recovered. </li><li>Your summoned minions also vanish if your effect is not maintained, or is countered or nullified. For more information and rules regarding Minions, page 245.</li></ul>",
         "effets": "<p>Summoned minion has (rank x 15) power points.</p>",
-        "effetsprincipaux": "<p>Summoned minion has (rank x 15) power points.</p>",
+        "effetsprincipaux": "Summoned minion has (rank x 15) power points.",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -1849,16 +1762,16 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "movement",
         "activate": true,
         "special": "standard",
         "action": "free",
         "portee": "personal",
         "duree": "sustained",
-        "notes": "<p>You can move through the water faster than normal.</p>",
-        "description": "<p>You can move through the water faster than normal.</p>",
+        "notes": "<ul><li>You have a water speed equal to your Swimming rank –2, subject to the usual rules for swimming (see the Athletics skill description for details). </li><li>You can make Athletics checks to swim as routine checks. This power does not allow you to breathe underwater (for that see Immunity, page 165).</li></ul>",
+        "description": "<ul><li>You have a water speed equal to your Swimming rank –2, subject to the usual rules for swimming (see the Athletics skill description for details). </li><li>You can make Athletics checks to swim as routine checks. This power does not allow you to breathe underwater (for that see Immunity, page 165).</li></ul>",
         "effets": "<p>Water speed rank equals effect rank.</p>",
-        "effetsprincipaux": "<p>Water speed rank equals effect rank.</p>",
+        "effetsprincipaux": "Water speed rank equals effect rank.",
         "link": "",
         "descripteurs": {},
         "extras": {},
@@ -1884,61 +1797,6 @@
       }
     },
     {
-      "_id": "wz8rblqsezh",
-      "name": "Telekinesis",
-      "type": "pouvoir",
-      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
-      "system": {
-        "type": "",
-        "activate": true,
-        "special": "standard",
-        "action": "simple",
-        "portee": "distance",
-        "duree": "sustained",
-        "notes": "<p>You can move objects at a distance with your mind.</p>",
-        "description": "<p>You can move objects at a distance with your mind.</p>",
-        "effets": "<p>Equivalent to Move Object power.</p>",
-        "effetsprincipaux": "<p>Equivalent to Move Object power.</p>",
-        "link": "",
-        "descripteurs": {},
-        "extras": {
-          "1": {
-            "name": "Precise",
-            "data": {
-              "type": "extra",
-              "description": "<p>You can use a Precise effect to perform tasks requiring delicacy and fine control.</p><p><br></p><p><em>Flat </em>1 point.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          }
-        },
-        "defauts": {},
-        "effectsVarianteSelected": "",
-        "listEffectsVariantes": {},
-        "edit": false,
-        "carac": 0,
-        "check": "",
-        "cout": {
-          "rang": 1,
-          "parrang": 2
-        }
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 0,
-      "flags": {},
-      "_stats": {
-        "systemId": "mutants-and-masterminds-3e",
-        "systemVersion": "1.39.13",
-        "coreVersion": "12"
-      }
-    },
-    {
       "_id": "54pe4qtyhhh",
       "name": "Telepathy",
       "type": "pouvoir",
@@ -1950,9 +1808,9 @@
         "action": "simple",
         "portee": "perception",
         "duree": "sustained",
-        "notes": "<p>You can communicate mentally and read minds.</p>",
-        "description": "<p>You can communicate mentally and read minds.</p>",
-        "effets": "<p>Combination of Mind Reading and Communication (Mental).</p>",
+        "notes": "<p>You can communicate mentally and read minds.</p><p><br></p><p>Telepathy is rarely bought as a single power. Instead, it is almost always built as an&nbsp;<strong>Array</strong>&nbsp;of several effects.</p>",
+        "description": "<p>You can communicate mentally and read minds.</p><p><br></p><p>Telepathy is rarely bought as a single power. Instead, it is almost always built as an&nbsp;<strong>Array</strong>&nbsp;of several effects.</p>",
+        "effets": "<p>Telepathy is rarely bought as a single power. Instead, it is almost always built as an&nbsp;<strong>Array</strong>&nbsp;of several effects. This is because \"Mind Reading\" alone doesn't let you talk back, and \"Communication\" alone doesn't let you peek at surface thoughts.&nbsp;</p><p>1. The Core Telepathy Array</p><p>To build a standard telepath (like&nbsp;<a href=\"https://www.google.com/search?q=professor+x&amp;kgmid=/m/025fh&amp;sa=X&amp;ved=2ahUKEwiVoOiU-PyTAxXzsCsGHZ2fPZUQ3egRegYIAQgFEAI\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: unset;\">Professor X</a>&nbsp;or&nbsp;<a href=\"https://www.google.com/search?q=jean+grey&amp;kgmid=/m/0470s&amp;sa=X&amp;ved=2ahUKEwiVoOiU-PyTAxXzsCsGHZ2fPZUQ3egRegYIAQgFEAQ\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: unset;\">Jean Grey</a>), you start with your most expensive power and add the others as&nbsp;<strong>Alternate Effects</strong>&nbsp;for 1 point each.</p><ul><li><strong>Main Power: Mind Reading (Rank 10)</strong></li><li class=\"ql-indent-1\"><strong>Cost:</strong>&nbsp;20 points (2 pts per rank).</li><li class=\"ql-indent-1\"><strong>Function:</strong>&nbsp;Allows you to hear thoughts and dig for memories.</li><li><strong>Alt Effect: Mental Communication (Rank 2)</strong></li><li class=\"ql-indent-1\"><strong>Cost:</strong>&nbsp;1 point (as an Alternate Effect).</li><li class=\"ql-indent-1\"><strong>Function:</strong>&nbsp;Allows you to \"broadcast\" your thoughts to others across a distance (Rank 2 is roughly 1 mile).</li><li><strong>Alt Effect: Mind Control (Affliction 10)</strong></li><li class=\"ql-indent-1\"><strong>Cost:</strong>&nbsp;1 point.</li><li class=\"ql-indent-1\"><strong>Conditions:</strong>&nbsp;Dazed, Compelled, Controlled.</li><li><strong>Modifiers:</strong>&nbsp;Cumulative (+1/rank), Perception Range (+2/rank). This usually becomes the most expensive slot, so you may need to adjust your base array points to accommodate it.&nbsp;</li></ul><p>2. Making It Two-Way</p><p>A common point of confusion is that&nbsp;<strong>Mental Communication</strong>&nbsp;is technically \"one-way\" (you talk to them). To make it a true telepathic conversation, players typically use one of two methods:&nbsp;</p><ul><li><strong>The \"Link\" Method:</strong>&nbsp;You&nbsp;<strong>Link</strong>&nbsp;Mind Reading 1 to your Communication. Since you are reading their surface thoughts while talking, it functions as a conversation.</li><li><strong>The Feature Method:</strong>&nbsp;Many GMs allow a&nbsp;<strong>1-point Feature</strong>&nbsp;added to Communication that explicitly allows the recipient to \"think back\" to you for the duration of the contact.&nbsp;</li></ul><p>3. Essential \"Psychic\" Extras</p><ul><li><strong>Subtle 2 (Flat 2 points):</strong>&nbsp;Essential for telepaths. Without this, your mental intrusion might be visible as a \"psychic glow\" or a noticeable \"mental pressure.\" At Rank 2, even the target doesn't know their mind is being read.</li><li><strong>Effortless (+1 cost per rank):</strong>&nbsp;Normally, if someone resists your Mind Reading, you are locked out for the scene. Effortless lets you keep trying every round.</li><li><strong>Selective (+1 cost per rank):</strong>&nbsp;Crucial if you use&nbsp;<strong>Area</strong>&nbsp;communication, so you don't accidentally broadcast your private thoughts to everyone in the building.&nbsp;</li></ul><p>4. Common Flaws</p><ul><li><strong>Language Dependent (-1 cost per rank):</strong>&nbsp;You can hear their thoughts, but if they think in Mandarin and you only speak English, you can't understand them.</li><li><strong>Feedback (-1 cost per rank):</strong>&nbsp;If the target takes mental damage or has a \"psychic scream\" reaction, you take a hit to your own defenses.&nbsp;</li></ul><p><strong>Pro Tip:</strong>&nbsp;If you want to be able to \"find\" people with your mind, don't forget to add&nbsp;<strong>Senses (Mental Awareness)</strong>&nbsp;for 1 or 2 points so you can actually \"see\" minds in the area.</p>",
         "effetsprincipaux": "<p>Combination of Mind Reading and Communication (Mental).</p>",
         "link": "",
         "descripteurs": {},
@@ -1984,34 +1842,19 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "movement",
         "activate": true,
         "special": "standard",
         "action": "move",
-        "portee": "personal",
+        "portee": "distance",
         "duree": "instantane",
-        "notes": "<p>You can move instantly from one point to another.</p>",
-        "description": "<p>You can move instantly from one point to another.</p>",
-        "effets": "<p>Rank 1 = 60ft, Rank 10 = 1000 miles.</p>",
-        "effetsprincipaux": "<p>Rank 1 = 60ft, Rank 10 = 1000 miles.</p>",
+        "notes": "<p>You can move instantly from one point to another.</p><p><br></p><p>Rank 1 = 60ft, Rank 10 = 1000 miles.&lt;/p&gt;</p>",
+        "description": "<p>You can move instantly from one point to another.</p><p><br></p><p>Rank 1 = 60ft, Rank 10 = 1000 miles.&lt;/p&gt;</p>",
+        "effets": "<ul><li>You can move instantly from place to place without crossing the distance in between. </li><li>You can teleport yourself and up to 50 lbs. (mass rank 0) of additional mass a distance rank equal to your effect rank as a move action. </li><li>Unwilling passengers get a Dodge resistance check to avoid being taken along. </li><li>You can only teleport to places you can accurately sense or know especially well (in the GM’s judgment). </li><li>You retain your position and relative velocity when you teleport. </li><li>So if you are falling when you teleport, you are still falling at the same speed when you arrive at your destination. </li><li>Teleport is meant for use on or around a planet. </li><li>For things like traveling to distant planets or stars, apply the Space Travel effect of Movement as a “hyperjump” or similar power.</li></ul>",
+        "effetsprincipaux": "Move instantly from one point to another.",
         "link": "",
         "descripteurs": {},
-        "extras": {
-          "1": {
-            "name": "Accurate",
-            "data": {
-              "type": "extra",
-              "description": "<p>You get +2 per Accurate rank to attack checks made with it.</p><p><br></p><p><em>Flat </em>1 point per rank.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          }
-        },
+        "extras": {},
         "defauts": {},
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
@@ -2045,28 +1888,13 @@
         "action": "simple",
         "portee": "close",
         "duree": "continuous",
-        "notes": "<p>You can change one type of thing into another.</p>",
-        "description": "<p>You can change one type of thing into another.</p>",
+        "notes": "<ul><li>You can change one type of thing into another.</li><li>You can change objects into other objects, altering their shape or material composition in the process. </li><li>You must touch the chosen object, which requires a close attack check if the object is held or worn by another character. </li><li>What you can transform affects cost per rank: </li><li class=\"ql-indent-1\">2 points: Transform one thing or substance into one other thing or substance, such as metal into wood, iron into glass, or broken objects into repaired ones.</li><li class=\"ql-indent-1\">3 points: Transform a broad group of things into a single result (any metal into gold, for example) or a single target into any of a broad group (one type of metal, such as lead, into any other metal, water into other liquids, and so forth).</li><li class=\"ql-indent-1\">4 points: Transform a broad group of targets into one of a broad group of results (solids into other solids, for example).</li><li class=\"ql-indent-1\">5 points: Transform any material into anything else.</li></ul>",
+        "description": "<ul><li>You can change one type of thing into another.</li><li>You can change objects into other objects, altering their shape or material composition in the process. </li><li>You must touch the chosen object, which requires a close attack check if the object is held or worn by another character. </li><li>What you can transform affects cost per rank: </li><li class=\"ql-indent-1\">2 points: Transform one thing or substance into one other thing or substance, such as metal into wood, iron into glass, or broken objects into repaired ones.</li><li class=\"ql-indent-1\">3 points: Transform a broad group of things into a single result (any metal into gold, for example) or a single target into any of a broad group (one type of metal, such as lead, into any other metal, water into other liquids, and so forth).</li><li class=\"ql-indent-1\">4 points: Transform a broad group of targets into one of a broad group of results (solids into other solids, for example).</li><li class=\"ql-indent-1\">5 points: Transform any material into anything else.</li></ul>",
         "effets": "<p>Rank 1 transforms 1 lb. Rank 10 transforms 400 lbs.</p>",
-        "effetsprincipaux": "<p>Rank 1 transforms 1 lb. Rank 10 transforms 400 lbs.</p>",
+        "effetsprincipaux": "Change one type of thing into another",
         "link": "",
         "descripteurs": {},
-        "extras": {
-          "1": {
-            "name": "Increased Mass",
-            "data": {
-              "type": "extra",
-              "description": "<p>Each rank of this extra increases the mass rank you can carry or move with the effect by 1.</p><p><br></p><p><em>Flat </em>1 point per rank.</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          }
-        },
+        "extras": {},
         "defauts": {},
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
@@ -2094,34 +1922,19 @@
       "type": "pouvoir",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
-        "type": "",
+        "type": "general",
         "activate": true,
         "special": "standard",
         "action": "simple",
         "portee": "personal",
         "duree": "sustained",
-        "notes": "<p>You can change your traits at will to suit your needs.</p>",
-        "description": "<p>You can change your traits at will to suit your needs.</p>",
+        "notes": "<p>You can change your traits at will to suit your needs.</p><p><br></p><ul><li>You can gain or use potentially any effect of the appropriate type and descriptor.</li><li>A Variable effect provides you with a set of (rank x 5) power points you can allocate to different effects. </li><li>Take an action on your turn and choose where to allocate your Variable power points. </li><li>It is a good idea to have a “menu” of commonly used options written down in advance to help speed up this process during play. </li><li>The effects you gain from your Variable effect are subject to the normal power level and series limits. </li><li class=\"ql-indent-1\">So you cannot, for example, acquire Enhanced Trait as a Variable effect to improve a trait beyond its power level limit, or acquire effects or descriptors the Gamemaster has specifically banned from the series. The GM has final say as to whether or not a particular use of a Variable effect is appropriate and may veto your allocations, if necessary. </li><li>You must also place descriptors on your Variable effect limiting its scope. </li><li class=\"ql-indent-1\">For example, a Variable effect that&nbsp;mimics other’s traits is limited to the traits its subject(s) possess; a Variable effect providing you with traits suitable to different shapes is limited by the form(s) you assume; a Variable effect providing adaptations is limited to the stimulus to which it adapts, and so forth. This descriptor does not reduce the effect’s cost unless it’s especially narrow or limiting, and the GM is the final arbiter of what constitutes a suitable descriptor and which descriptors are narrow enough to qualify for a Limited flaw. </li><li>The allocation of your Variable points is sustained, so if you stop maintaining your Variable effect for any reason, your allocated points “reset” to a “null” state: you lose any temporary traits and must take the action necessary to reallocate your Variable points again on your turn to regain them. </li><li>Points in a Continuous Variable effect remain where you set them without maintenance, unless the Variable effect itself is countered or nullified. Variable effects cannot be permanent in duration by definition.</li></ul>",
+        "description": "<p>You can change your traits at will to suit your needs.</p><p><br></p><ul><li>You can gain or use potentially any effect of the appropriate type and descriptor.</li><li>A Variable effect provides you with a set of (rank x 5) power points you can allocate to different effects. </li><li>Take an action on your turn and choose where to allocate your Variable power points. </li><li>It is a good idea to have a “menu” of commonly used options written down in advance to help speed up this process during play. </li><li>The effects you gain from your Variable effect are subject to the normal power level and series limits. </li><li class=\"ql-indent-1\">So you cannot, for example, acquire Enhanced Trait as a Variable effect to improve a trait beyond its power level limit, or acquire effects or descriptors the Gamemaster has specifically banned from the series. The GM has final say as to whether or not a particular use of a Variable effect is appropriate and may veto your allocations, if necessary. </li><li>You must also place descriptors on your Variable effect limiting its scope. </li><li class=\"ql-indent-1\">For example, a Variable effect that&nbsp;mimics other’s traits is limited to the traits its subject(s) possess; a Variable effect providing you with traits suitable to different shapes is limited by the form(s) you assume; a Variable effect providing adaptations is limited to the stimulus to which it adapts, and so forth. This descriptor does not reduce the effect’s cost unless it’s especially narrow or limiting, and the GM is the final arbiter of what constitutes a suitable descriptor and which descriptors are narrow enough to qualify for a Limited flaw. </li><li>The allocation of your Variable points is sustained, so if you stop maintaining your Variable effect for any reason, your allocated points “reset” to a “null” state: you lose any temporary traits and must take the action necessary to reallocate your Variable points again on your turn to regain them. </li><li>Points in a Continuous Variable effect remain where you set them without maintenance, unless the Variable effect itself is countered or nullified. Variable effects cannot be permanent in duration by definition.</li></ul>",
         "effets": "<p>Allocate (rank x 5) power points to any traits fitting descriptors.</p>",
-        "effetsprincipaux": "<p>Allocate (rank x 5) power points to any traits fitting descriptors.</p>",
+        "effetsprincipaux": "Allocate (rank x 5) power points to any traits fitting descriptors.",
         "link": "",
         "descripteurs": {},
-        "extras": {
-          "1": {
-            "name": "Affects Others",
-            "data": {
-              "type": "extra",
-              "description": "<p>This extra allows you to give someone else use of a personal effect. You must touch the subject as a standard action, and they have control over their use of the effect.  If the effect Affects Only Others, and not you, it has a net modifier of +0.</p><p><br></p><p><em>Flat </em>0 or 1 point</p>",
-              "rang": 1,
-              "edit": true,
-              "cout": {
-                "fixe": true,
-                "rang": false,
-                "value": 1
-              }
-            }
-          }
-        },
+        "extras": {},
         "defauts": {},
         "effectsVarianteSelected": "",
         "listEffectsVariantes": {},
@@ -2155,9 +1968,9 @@
         "action": "simple",
         "portee": "perception",
         "duree": "sustained",
-        "notes": "<p>You can manipulate the weather in your area.</p>",
-        "description": "<p>You can manipulate the weather in your area.</p>",
-        "effets": "<p>Environment effect (Cold, Heat, Impede Movement, Visibility).</p>",
+        "notes": "<p>You can manipulate the weather in your area.</p><p><br></p><p>Most effectively built&nbsp;using the&nbsp;<strong>Environment</strong>&nbsp;effect as the foundation, typically supplemented by an&nbsp;<strong>Array</strong>&nbsp;of offensive and defensive powers to reflect the full scale of a storm-caller's abilities.</p><p>1. The Core Power:&nbsp;Environment</p><p>This effect allows you to alter the conditions in a large area around you. It costs&nbsp;<strong>1 to 2 points per rank</strong>&nbsp;depending on the intensity of the effect.&nbsp;</p><ul><li><strong>Cold/Heat:</strong>&nbsp;Intense (1 pt/rank) or Extreme (2 pts/rank) temperature changes that force Fortitude checks.</li><li><strong>Impede Movement:</strong>&nbsp;High winds or icy ground can reduce movement speed by 1 or 2 ranks.</li><li><strong>Visibility:</strong>&nbsp;Fog, heavy rain, or blowing snow can apply a -2 or -5 penalty to Perception checks.</li><li><strong>Selective (+1 cost per rank):</strong>&nbsp;Highly recommended so you can keep your teammates from slipping on ice or being blinded by your fog.&nbsp;</li></ul><p>2. The Weather Array (Standard Builds)</p><p class=\"ql-indent-1\">Since you rarely need to drop a lightning bolt and a blizzard at the exact same time, you should build these as&nbsp;<strong>Alternate Effects</strong>&nbsp;to save points.&nbsp;</p><p class=\"ql-indent-2\"><strong>Lightning Bolt (Damage)</strong>&nbsp;(Ranged )A classic strike from the sky. Add&nbsp;<strong>Indirect 2</strong>&nbsp;to make it come from above.</p><p class=\"ql-indent-2\"><strong>Tornado/Gale (Move Object)</strong>&nbsp;(Area) Use a Cylinder Area to create a localized windstorm that throws enemies.</p><p class=\"ql-indent-2\"><strong>Fog Bank (Concealment)</strong>&nbsp;(Area) Visual senses, creating a thick mist that hides the team.</p><p class=\"ql-indent-2\"><strong>Thunderclap (Affliction)</strong>&nbsp;(Burst Area) Resisted by Fortitude; Dazed, Stunned, Incapacitated (or Hearing Impaired).</p><p class=\"ql-indent-2\"><strong>Flash Freeze (Affliction)</strong>&nbsp;(Cumulative) Hindered, Defenseless, Paralyzed to trap enemies in ice.</p><p>3. Utility &amp; Defense</p><ul><li><strong>Flight:</strong>&nbsp;Using wind currents to lift yourself (usually 2 points per rank).</li><li><strong>Immunity:</strong>&nbsp;Taking&nbsp;<strong>Immunity 2 (Weather)</strong>&nbsp;is a cheap way to ensure you aren't bothered by your own blizzards or extreme heat.</li><li><strong>Deflect:</strong>&nbsp;Use wind to knock bullets and projectiles out of the air.</li></ul><p><br></p>",
+        "description": "<p>You can manipulate the weather in your area.</p><p><br></p><p>Most effectively built&nbsp;using the&nbsp;<strong>Environment</strong>&nbsp;effect as the foundation, typically supplemented by an&nbsp;<strong>Array</strong>&nbsp;of offensive and defensive powers to reflect the full scale of a storm-caller's abilities.</p><p>1. The Core Power:&nbsp;Environment</p><p>This effect allows you to alter the conditions in a large area around you. It costs&nbsp;<strong>1 to 2 points per rank</strong>&nbsp;depending on the intensity of the effect.&nbsp;</p><ul><li><strong>Cold/Heat:</strong>&nbsp;Intense (1 pt/rank) or Extreme (2 pts/rank) temperature changes that force Fortitude checks.</li><li><strong>Impede Movement:</strong>&nbsp;High winds or icy ground can reduce movement speed by 1 or 2 ranks.</li><li><strong>Visibility:</strong>&nbsp;Fog, heavy rain, or blowing snow can apply a -2 or -5 penalty to Perception checks.</li><li><strong>Selective (+1 cost per rank):</strong>&nbsp;Highly recommended so you can keep your teammates from slipping on ice or being blinded by your fog.&nbsp;</li></ul><p>2. The Weather Array (Standard Builds)</p><p class=\"ql-indent-1\">Since you rarely need to drop a lightning bolt and a blizzard at the exact same time, you should build these as&nbsp;<strong>Alternate Effects</strong>&nbsp;to save points.&nbsp;</p><p class=\"ql-indent-2\"><strong>Lightning Bolt (Damage)</strong>&nbsp;(Ranged )A classic strike from the sky. Add&nbsp;<strong>Indirect 2</strong>&nbsp;to make it come from above.</p><p class=\"ql-indent-2\"><strong>Tornado/Gale (Move Object)</strong>&nbsp;(Area) Use a Cylinder Area to create a localized windstorm that throws enemies.</p><p class=\"ql-indent-2\"><strong>Fog Bank (Concealment)</strong>&nbsp;(Area) Visual senses, creating a thick mist that hides the team.</p><p class=\"ql-indent-2\"><strong>Thunderclap (Affliction)</strong>&nbsp;(Burst Area) Resisted by Fortitude; Dazed, Stunned, Incapacitated (or Hearing Impaired).</p><p class=\"ql-indent-2\"><strong>Flash Freeze (Affliction)</strong>&nbsp;(Cumulative) Hindered, Defenseless, Paralyzed to trap enemies in ice.</p><p>3. Utility &amp; Defense</p><ul><li><strong>Flight:</strong>&nbsp;Using wind currents to lift yourself (usually 2 points per rank).</li><li><strong>Immunity:</strong>&nbsp;Taking&nbsp;<strong>Immunity 2 (Weather)</strong>&nbsp;is a cheap way to ensure you aren't bothered by your own blizzards or extreme heat.</li><li><strong>Deflect:</strong>&nbsp;Use wind to knock bullets and projectiles out of the air.</li></ul><p><br></p>",
+        "effets": "<p>Environment effect (Cold, Heat, Impede Movement, Visibility).</p><p><br></p>",
         "effetsprincipaux": "<p>Environment effect (Cold, Heat, Impede Movement, Visibility).</p>",
         "link": "",
         "descripteurs": {},
@@ -2291,6 +2104,47 @@
           "rang": 1,
           "parrang": 2
         }
+      },
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "coreVersion": "12"
+      }
+    },
+    {
+      "_id": "ywqbsbhmpq",
+      "name": "Weaken",
+      "type": "pouvoir",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "system": {
+        "type": "attack",
+        "description": "<ul><li>Fortitude or Will vs. DC [10 + Weaken rank]</li><li class=\"ql-indent-1\">Success: No effect. </li><li class=\"ql-indent-1\">Failure: The target loses power points from the affected trait equal to the difference between the check result and the DC, up to a maximum of the Weaken rank.</li><li><br></li><li>You can temporarily lower one of a target’s traits, chosen when this effect is acquired. </li><li>You must touch the target, making a normal close attack check</li></ul>",
+        "notes": "<ul><li>Fortitude or Will vs. DC [10 + Weaken rank]</li><li class=\"ql-indent-1\">Success: No effect. </li><li class=\"ql-indent-1\">Failure: The target loses power points from the affected trait equal to the difference between the check result and the DC, up to a maximum of the Weaken rank.</li><li><br></li><li>You can temporarily lower one of a target’s traits, chosen when this effect is acquired. </li><li>You must touch the target, making a normal close attack check</li></ul>",
+        "rang": 1,
+        "edit": true,
+        "cout": {
+          "rang": 1,
+          "parrang": 1
+        },
+        "activate": false,
+        "special": "standard",
+        "action": "simple",
+        "portee": "close",
+        "duree": "instantane",
+        "effets": "<ul><li>Multiple failed resistance checks against a Weaken effect are cumulative, up to a maximum of the Weaken rank, at&nbsp;which point the effect cannot weaken the trait further. Lost points return at a rate of 1 per round at the end of each of the target’s turns. Inanimate objects do not recover weakened Toughness; they must be repaired. Objects may or may not recover other weakened traits, at the GM’s discretion and depending on the effect’s descriptors.</li><li class=\"ql-indent-1\">WEAKENING ABILITIES Abilities weakened below a rank of –5 become debilitated. See Debilitated Abilities for details of specific abilities at this point. It is not possible to weaken an ability past the point of debilitation. Any further uses of Weaken on the subject have no effect until the ability recovers to a rank of at least –5. </li><li class=\"ql-indent-1\">WEAKENING DEVICES Weaken with Affects Objects and the right descriptor(s) can lower the traits provided by a device (see the Removable flaw in this chapter and the Gadgets &amp; Gear chapter). For example, Weaken Magic could potentially drain the powers of a magical device as well as a target’s own magical powers. Likewise Weaken Electricity could affect an electrical device, and so on. This also applies to equipment, although it tends to have fewer traits to weaken, and the GM should feel free to disallow any Weaken effects that don’t make reasonable sense. For example, just because a Weaken Damage effect is possible doesn’t mean a character should be able to cause guns to do less damage; this sort of thing is better handled by an all-or-nothing effect like Nullify (see its description earlier in this chapter).</li></ul>",
+        "effetsprincipaux": "Temporarily lower one of a target’s traits",
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "carac": 0,
+        "check": ""
       },
       "effects": [],
       "folder": null,
