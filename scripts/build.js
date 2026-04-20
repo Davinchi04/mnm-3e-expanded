@@ -30,8 +30,8 @@ function calculatePowerCost(power) {
   // 1. Calculate per-rank modifiers from Extras
   if (power.system.extras) {
     for (let extra of Object.values(power.system.extras)) {
-      // Modifiers in powers might have their data nested or flat depending on how they were added
-      const extraData = extra.cout ? extra : (extra.system?.cout ? extra.system : extra);
+      // Modifiers in powers might have their data nested in 'system' or 'data' or flat at the root
+      const extraData = extra.data || (extra.cout ? extra : (extra.system?.cout ? extra.system : extra));
       if (extraData.cout) {
         if (extraData.cout.rang && !extraData.cout.fixe) {
           modCostPerRank += extraData.cout.value || 0;
@@ -49,7 +49,7 @@ function calculatePowerCost(power) {
   // 2. Calculate per-rank modifiers from Flaws
   if (power.system.defauts) {
     for (let flaw of Object.values(power.system.defauts)) {
-      const flawData = flaw.cout ? flaw : (flaw.system?.cout ? flaw.system : flaw);
+      const flawData = flaw.data || (flaw.cout ? flaw : (flaw.system?.cout ? flaw.system : flaw));
       if (flawData.cout) {
         if (flawData.cout.rang && !flawData.cout.fixe) {
           modCostPerRank -= (flawData.cout.value || 0);

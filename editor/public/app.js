@@ -188,9 +188,12 @@ function addModifier(type, id) {
   const targetKey = type === 'extra' ? 'extras' : 'defauts';
   if (!sys[targetKey]) sys[targetKey] = {};
   
-  // Clone the entire modifier object into the power's map
-  // This ensures the system expects the same structure (e.g. system.description)
-  sys[targetKey][id] = JSON.parse(JSON.stringify(mod));
+  // Clone the modifier and wrap system into data for Foundry compatibility
+  sys[targetKey][id] = {
+    name: mod.name,
+    details: true,
+    data: JSON.parse(JSON.stringify(mod.system))
+  };
 
   renderModifiers();
 }
