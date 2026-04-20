@@ -401,15 +401,25 @@ async function saveEntry() {
 async function newEntry() {
   if (!state.pack) return;
   const isModifier = ['extras', 'flaws'].includes(state.pack);
+  const isPower = state.pack === 'powers';
+  const isAdv = state.pack === 'advantages';
+
   const payload = {
     name: 'New Entry',
-    type: state.pack === 'powers' ? 'pouvoir' : 
-          (state.pack === 'advantages' ? 'talent' : 
+    type: isPower ? 'pouvoir' : 
+          (isAdv ? 'talent' : 
           (isModifier ? 'modificateur' : 'equipement')),
+    img: isPower ? 'systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg' :
+         (isModifier ? 'systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg' :
+         'systems/mutants-and-masterminds-3e/assets/icons/equipement.svg'),
     system: { 
       type: isModifier ? (state.pack === 'extras' ? 'extra' : 'defaut') : '',
       description: '', 
-      cout: state.pack === 'powers' ? { rang: 1, parrang: 1 } : 1 
+      notes: '',
+      rang: 1,
+      edit: true,
+      cout: isPower ? { rang: 1, parrang: 1 } : 
+            (isModifier ? { fixe: false, rang: true, value: 1 } : 1)
     },
     flags: {}
   };
