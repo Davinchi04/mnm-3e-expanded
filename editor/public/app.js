@@ -188,11 +188,9 @@ function addModifier(type, id) {
   const targetKey = type === 'extra' ? 'extras' : 'defauts';
   if (!sys[targetKey]) sys[targetKey] = {};
   
-  // Clone the modifier's system data into the power
-  sys[targetKey][id] = {
-    name: mod.name,
-    ...JSON.parse(JSON.stringify(mod.system))
-  };
+  // Clone the entire modifier object into the power's map
+  // This ensures the system expects the same structure (e.g. system.description)
+  sys[targetKey][id] = JSON.parse(JSON.stringify(mod));
 
   renderModifiers();
 }
