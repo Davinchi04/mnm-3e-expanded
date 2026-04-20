@@ -223,6 +223,17 @@ async function selectPack(pack) {
   const isModifier = ['extras', 'flaws'].includes(pack);
   const isAdv = pack === 'advantages';
 
+  // Refresh modifier lists whenever a pack is selected to ensure dropdowns are up to date
+  try {
+    const extrasRes = await fetch(`${API}/packs/extras`);
+    state.allExtras = await extrasRes.json();
+    const flawsRes = await fetch(`${API}/packs/flaws`);
+    state.allFlaws = await flawsRes.json();
+    populateModifierSelects();
+  } catch (e) {
+    console.error('Failed to refresh modifier lists');
+  }
+
   // Visibility logic
   document.querySelectorAll('[class*="-only"]').forEach(el => {
     const classes = el.className.split(' ');
@@ -389,11 +400,14 @@ async function saveEntry() {
 
 async function newEntry() {
   if (!state.pack) return;
+  const isModifier = ['extras', 'flaws'].includes(state.pack);
   const payload = {
     name: 'New Entry',
-    type: state.pack === 'powers' ? 'pouvoir' : (state.pack === 'advantages' ? 'talent' : 'equipement'),
+    type: state.pack === 'powers' ? 'pouvoir' : 
+          (state.pack === 'advantages' ? 'talent' : 
+          (isModifier ? 'modificateur' : 'equipement')),
     system: { 
-      type: '',
+      type: isModifier ? (state.pack === 'extras' ? 'extra' : 'defaut') : '',
       description: '', 
       cout: state.pack === 'powers' ? { rang: 1, parrang: 1 } : 1 
     },
