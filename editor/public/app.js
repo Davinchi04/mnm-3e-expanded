@@ -434,8 +434,36 @@ async function newEntry() {
       cout: isPower ? { rang: 1, parrang: 1 } : 
             (isModifier ? { fixe: false, rang: true, value: 1 } : 1)
     },
-    flags: {}
+    effects: [],
+    folder: null,
+    sort: 0,
+    flags: {},
+    _stats: {
+      systemId: "mutants-and-masterminds-3e",
+      systemVersion: "1.39.13",
+      coreVersion: "12"
+    }
   };
+
+  if (isPower) {
+    Object.assign(payload.system, {
+      activate: false,
+      special: "standard",
+      action: "simple",
+      portee: "personal",
+      duree: "instantane",
+      effets: "",
+      effetsprincipaux: "",
+      link: "",
+      descripteurs: {},
+      extras: {},
+      defauts: {},
+      effectsVarianteSelected: "",
+      listEffectsVariantes: {},
+      carac: 0,
+      check: ""
+    });
+  }
 
   try {
     const res = await fetch(`${API}/packs/${state.pack}`, {

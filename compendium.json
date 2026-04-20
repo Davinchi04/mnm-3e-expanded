@@ -2317,23 +2317,41 @@
       "_id": "zqzeslupxo",
       "name": "Immortality",
       "type": "pouvoir",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
       "system": {
         "type": "defense",
-        "description": "<ul><li>If your condition becomes dead, you return to life after a time. </li><li>Subtract your Immortality rank from a time rank of 19 (one month) to determine how long it takes. </li><li class=\"ql-indent-1\">So Immortality 11, for example, restores you to life in just 30 minutes (19 – 11 = time rank 8). </li><li class=\"ql-indent-1\">At rank 20, you recover from death at the start of each action round! When you recover, all your damage conditions are removed, but you also lose all accumulated hero points, starting over with none.</li></ul>",
-        "cout": {
-          "rang": 1,
-          "parrang": 2
-        },
-        "special": "",
+        "activate": false,
+        "special": "standard",
         "action": "none",
         "portee": "personal",
         "duree": "permanent",
-        "activate": false,
+        "notes": "<ul><li>If your condition becomes dead, you return to life after a time. </li><li>Subtract your Immortality rank from a time rank of 19 (one month) to determine how long it takes. </li><li class=\"ql-indent-1\">So Immortality 11, for example, restores you to life in just 30 minutes (19 – 11 = time rank 8). </li><li class=\"ql-indent-1\">At rank 20, you recover from death at the start of each action round! When you recover, all your damage conditions are removed, but you also lose all accumulated hero points, starting over with none.</li></ul>",
+        "description": "<ul><li>If your condition becomes dead, you return to life after a time. </li><li>Subtract your Immortality rank from a time rank of 19 (one month) to determine how long it takes. </li><li class=\"ql-indent-1\">So Immortality 11, for example, restores you to life in just 30 minutes (19 – 11 = time rank 8). </li><li class=\"ql-indent-1\">At rank 20, you recover from death at the start of each action round! When you recover, all your damage conditions are removed, but you also lose all accumulated hero points, starting over with none.</li></ul>",
         "effets": "<p><br></p>",
         "effetsprincipaux": "Recover from Death",
-        "notes": "<ul><li>If your condition becomes dead, you return to life after a time. </li><li>Subtract your Immortality rank from a time rank of 19 (one month) to determine how long it takes. </li><li class=\"ql-indent-1\">So Immortality 11, for example, restores you to life in just 30 minutes (19 – 11 = time rank 8). </li><li class=\"ql-indent-1\">At rank 20, you recover from death at the start of each action round! When you recover, all your damage conditions are removed, but you also lose all accumulated hero points, starting over with none.</li></ul>"
+        "link": "",
+        "descripteurs": {},
+        "extras": {},
+        "defauts": {},
+        "effectsVarianteSelected": "",
+        "listEffectsVariantes": {},
+        "edit": false,
+        "carac": 0,
+        "check": "",
+        "cout": {
+          "rang": 1,
+          "parrang": 2
+        }
       },
-      "flags": {}
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "systemId": "mutants-and-masterminds-3e",
+        "systemVersion": "1.39.13",
+        "coreVersion": "12"
+      }
     }
   ],
   "advantages": [
