@@ -101,7 +101,14 @@ const CSV_CONFIG = [
       type: 'equipement',
       system: {
         cout: parseInt(row.Cost) || 1,
-        description: `<p>${row.Notes}</p>`
+        description: `<p>${row.Notes}</p>`,
+        isVehicle: true,
+        typeVehicule: (row.Category || '').toLowerCase() === 'land' ? 'ground' : (row.Category || '').toLowerCase(),
+        size: row.Size || 'Medium',
+        strength: parseInt(row.Strength) || 0,
+        speed: parseInt(row.Speed) || 0,
+        defense: parseInt(row.Defense) || 0,
+        toughness: parseInt(row.Toughness) || 0
       }
     })
   },
@@ -113,7 +120,11 @@ const CSV_CONFIG = [
       type: 'equipement',
       system: {
         cout: parseInt(row.Cost) || 1,
-        description: `<p>${row.Notes}</p>`
+        description: `<p>${row.Notes}</p>`,
+        isHeadquarters: true,
+        size: row.Size || 'Medium',
+        toughness: parseInt(row.Toughness) || 0,
+        features: row.Features || ''
       }
     })
   }
