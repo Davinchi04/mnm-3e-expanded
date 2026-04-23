@@ -6150,25 +6150,6 @@
       "flags": {}
     },
     {
-      "_id": "zkxl1k30fq",
-      "name": "Armored Truck",
-      "type": "equipement",
-      "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
-      "system": {
-        "description": "<p>Heavily reinforced transport.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 9 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 11</div>",
-        "cout": 15,
-        "isVehicle": true,
-        "typeVehicule": "ground",
-        "size": "Huge",
-        "strength": 9,
-        "speed": 4,
-        "defense": 6,
-        "toughness": 11
-      },
-      "effects": [],
-      "flags": {}
-    },
-    {
       "_id": "pf5knin1jc",
       "name": "Helicopter",
       "type": "equipement",
@@ -6794,6 +6775,23 @@
       },
       "effects": [],
       "flags": {}
+    },
+    {
+      "_id": "99325a7d60a",
+      "img": "systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg",
+      "name": "Armored Truck",
+      "type": "equipement",
+      "system": {
+        "cout": 15,
+        "description": "<p>Heavily reinforced transport.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 9 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 11</div>",
+        "isVehicle": true,
+        "typeVehicule": "ground",
+        "size": "Huge",
+        "strength": 9,
+        "speed": 4,
+        "defense": 6,
+        "toughness": 11
+      }
     }
   ],
   "headquarters": [

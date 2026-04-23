@@ -1,9 +1,14 @@
 const fs = require('fs-extra');
 const path = require('path');
 const { parse } = require('csv-parse/sync');
+const crypto = require('crypto');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const COMPENDIUM_PATH = path.join(ROOT_DIR, 'compendium.json');
+
+function generateId(name, pack) {
+  return crypto.createHash('md5').update(`${pack}-${name.toLowerCase()}`).digest('hex').slice(0, 11);
+}
 
 const CSV_CONFIG = [
   { 
@@ -170,9 +175,10 @@ async function reconcile() {
           });
         }
       } else {
+        const defaultImg = config.pack === 'powers' ? 'systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg' : 'systems/mutants-and-masterminds-3e/assets/icons/equipement.svg';
         const newItem = {
-          _id: Math.random().toString(36).slice(2, 13),
-          img: 'systems/mutants-and-masterminds-3e/assets/icons/pouvoir.svg', // Default
+          _id: generateId(mapped.name, config.pack),
+          img: defaultImg,
           ...mapped
         };
         if (mapped.mods) {
