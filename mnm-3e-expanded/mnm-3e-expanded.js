@@ -239,6 +239,19 @@ Hooks.on('renderActorSheet', (app, html, data) => {
           `<span class="mnm-eq-cost item-detail" style="flex: 0 0 2rem; text-align: center;">${displayCost}</span>`
         );
       }
+
+      // 5. Vehicle / HQ Summary Injection
+      if ((item.system.isVehicle || item.system.isHeadquarters) && !$(el).find('.mnm-item-summary').length) {
+        let summary = "";
+        if (item.system.isVehicle) {
+          summary = `Str: ${item.system.strength || 0}, Spd: ${item.system.speed || 0}, Def: ${item.system.defense || 0}, Tou: ${item.system.toughness || 0}`;
+        } else if (item.system.isHeadquarters) {
+          summary = `Size: ${item.system.size || 'N/A'}, Tou: ${item.system.toughness || 0}`;
+        }
+        if (summary) {
+          $(el).find('.item-name').append(`<div class="mnm-item-summary" style="font-size: 0.85em; color: #555; margin-left: 32px; font-style: italic;">${summary}</div>`);
+        }
+      }
     }
   });
 });
@@ -283,74 +296,80 @@ Hooks.on('renderItemSheet', (app, html, data) => {
   if (item.type !== 'equipement') return;
 
   // --- VEHICLE / HQ FIELDS INJECTION ---
-  if (item.system.isVehicle || item.system.isHeadquarters) {
-    const isVehicle = item.system.isVehicle;
-    const isHQ = item.system.isHeadquarters;
-    
-    let extraFieldsHtml = `
-      <div class="mnm-expanded-stats-section" style="margin-top: 10px; border: 1px solid #7a7971; border-radius: 5px; padding: 10px; background: rgba(0,0,0,0.03);">
-        <h3 style="border-bottom: 1px solid #7a7971; margin-bottom: 10px;">${isVehicle ? 'Vehicle' : 'Headquarters'} Stats</h3>
+  const isVehicle = !!item.system.isVehicle;
+  const isHQ = !!item.system.isHeadquarters;
+  
+  let extraFieldsHtml = `
+    <div class="mnm-expanded-stats-section" style="margin-top: 10px; border: 1px solid #7a7971; border-radius: 5px; padding: 10px; background: rgba(0,0,0,0.03);">
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 10px; border-bottom: 1px solid #7a7971; padding-bottom: 5px;">
+        <label style="flex: 1; font-weight: bold;">Equipment Category</label>
+        <div style="flex: 2; display: flex; gap: 15px;">
+          <label style="display: flex; align-items: center; gap: 4px;"><input type="checkbox" name="system.isVehicle" ${isVehicle ? 'checked' : ''}> Vehicle</label>
+          <label style="display: flex; align-items: center; gap: 4px;"><input type="checkbox" name="system.isHeadquarters" ${isHQ ? 'checked' : ''}> HQ</label>
+        </div>
+      </div>
+  `;
+  
+  if (isVehicle) {
+    extraFieldsHtml += `
+      <h3 style="border-bottom: 1px solid #7a7971; margin-bottom: 10px;">Vehicle Stats</h3>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label style="flex: 1;">Vehicle Type</label>
+        <select name="system.typeVehicule" style="flex: 1;">
+          ${['ground', 'air', 'water', 'space', 'exotic'].map(t => `<option value="${t}" ${item.system.typeVehicule === t ? 'selected' : ''}>${t.charAt(0).toUpperCase() + t.slice(1)}</option>`).join('')}
+        </select>
+      </div>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label style="flex: 1;">Size</label>
+        <select name="system.size" style="flex: 1;">
+          ${['Diminutive', 'Tiny', 'Small', 'Medium', 'Large', 'Huge', 'Gargantuan', 'Colossal', 'Awesome'].map(s => `<option value="${s}" ${item.system.size === s ? 'selected' : ''}>${s}</option>`).join('')}
+        </select>
+      </div>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label style="flex: 1;">Strength</label>
+        <input type="number" name="system.strength" value="${item.system.strength || 0}" style="flex: 1;">
+      </div>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label style="flex: 1;">Speed</label>
+        <input type="number" name="system.speed" value="${item.system.speed || 0}" style="flex: 1;">
+      </div>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label style="flex: 1;">Defense</label>
+        <input type="number" name="system.defense" value="${item.system.defense || 0}" style="flex: 1;">
+      </div>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label style="flex: 1;">Toughness</label>
+        <input type="number" name="system.toughness" value="${item.system.toughness || 0}" style="flex: 1;">
+      </div>
     `;
-    
-    if (isVehicle) {
-      extraFieldsHtml += `
-        <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
-          <label style="flex: 1;">Vehicle Type</label>
-          <select name="system.typeVehicule" style="flex: 1;">
-            ${['ground', 'air', 'water', 'space', 'exotic'].map(t => `<option value="${t}" ${item.system.typeVehicule === t ? 'selected' : ''}>${t.charAt(0).toUpperCase() + t.slice(1)}</option>`).join('')}
-          </select>
-        </div>
-        <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
-          <label style="flex: 1;">Size</label>
-          <select name="system.size" style="flex: 1;">
-            ${['Diminutive', 'Tiny', 'Small', 'Medium', 'Large', 'Huge', 'Gargantuan', 'Colossal', 'Awesome'].map(s => `<option value="${s}" ${item.system.size === s ? 'selected' : ''}>${s}</option>`).join('')}
-          </select>
-        </div>
-        <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
-          <label style="flex: 1;">Strength</label>
-          <input type="number" name="system.strength" value="${item.system.strength || 0}" style="flex: 1;">
-        </div>
-        <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
-          <label style="flex: 1;">Speed</label>
-          <input type="number" name="system.speed" value="${item.system.speed || 0}" style="flex: 1;">
-        </div>
-        <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
-          <label style="flex: 1;">Defense</label>
-          <input type="number" name="system.defense" value="${item.system.defense || 0}" style="flex: 1;">
-        </div>
-        <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
-          <label style="flex: 1;">Toughness</label>
-          <input type="number" name="system.toughness" value="${item.system.toughness || 0}" style="flex: 1;">
-        </div>
-      `;
-    } else if (isHQ) {
-      extraFieldsHtml += `
-        <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
-          <label style="flex: 1;">Size</label>
-          <select name="system.size" style="flex: 1;">
-            ${['Diminutive', 'Tiny', 'Small', 'Medium', 'Large', 'Huge', 'Gargantuan', 'Colossal', 'Awesome'].map(s => `<option value="${s}" ${item.system.size === s ? 'selected' : ''}>${s}</option>`).join('')}
-          </select>
-        </div>
-        <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
-          <label style="flex: 1;">Toughness</label>
-          <input type="number" name="system.toughness" value="${item.system.toughness || 0}" style="flex: 1;">
-        </div>
-        <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
-          <label style="flex: 1;">Features</label>
-          <input type="text" name="system.features" value="${item.system.features || ''}" style="flex: 1;">
-        </div>
-      `;
-    }
-    
-    extraFieldsHtml += `</div>`;
-    
-    const injectionPoint = html.find('.sheet-body');
-    if (!html.find('.mnm-expanded-stats-section').length) {
-      if (injectionPoint.length) {
-        injectionPoint.prepend(extraFieldsHtml);
-      } else {
-        html.prepend(extraFieldsHtml);
-      }
+  } else if (isHQ) {
+    extraFieldsHtml += `
+      <h3 style="border-bottom: 1px solid #7a7971; margin-bottom: 10px;">Headquarters Stats</h3>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label style="flex: 1;">Size</label>
+        <select name="system.size" style="flex: 1;">
+          ${['Diminutive', 'Tiny', 'Small', 'Medium', 'Large', 'Huge', 'Gargantuan', 'Colossal', 'Awesome'].map(s => `<option value="${s}" ${item.system.size === s ? 'selected' : ''}>${s}</option>`).join('')}
+        </select>
+      </div>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label style="flex: 1;">Toughness</label>
+        <input type="number" name="system.toughness" value="${item.system.toughness || 0}" style="flex: 1;">
+      </div>
+      <div class="form-group" style="display: flex; align-items: center; margin-bottom: 5px;">
+        <label style="flex: 1;">Features</label>
+        <input type="text" name="system.features" value="${item.system.features || ''}" style="flex: 1;">
+      </div>
+    `;
+  }
+  
+  extraFieldsHtml += `</div>`;
+  
+  const injectionPoint = html.find('.sheet-body');
+  if (!html.find('.mnm-expanded-stats-section').length) {
+    if (injectionPoint.length) {
+      injectionPoint.prepend(extraFieldsHtml);
+    } else {
+      html.prepend(extraFieldsHtml);
     }
   }
 
