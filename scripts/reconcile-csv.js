@@ -101,7 +101,7 @@ const CSV_CONFIG = [
       type: 'equipement',
       system: {
         cout: parseInt(row.Cost) || 1,
-        description: `<p>${row.Notes}</p>`,
+        description: `<p>${row.Notes}</p><div class="mnm-stat-block" style="margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;"><strong>Str:</strong> ${row.Strength || 0} | <strong>Spd:</strong> ${row.Speed || 0} | <strong>Def:</strong> ${row.Defense || 0} | <strong>Tou:</strong> ${row.Toughness || 0}</div>`,
         isVehicle: true,
         typeVehicule: (row.Category || '').toLowerCase() === 'land' ? 'ground' : (row.Category || '').toLowerCase(),
         size: row.Size || 'Medium',
@@ -120,7 +120,7 @@ const CSV_CONFIG = [
       type: 'equipement',
       system: {
         cout: parseInt(row.Cost) || 1,
-        description: `<p>${row.Notes}</p>`,
+        description: `<p>${row.Notes}</p><div class="mnm-stat-block" style="margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;"><strong>Size:</strong> ${row.Size || 'Medium'} | <strong>Tou:</strong> ${row.Toughness || 0}<br><strong>Features:</strong> ${row.Features || 'None'}</div>`,
         isHeadquarters: true,
         size: row.Size || 'Medium',
         toughness: parseInt(row.Toughness) || 0,

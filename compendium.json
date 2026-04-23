@@ -6117,7 +6117,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard two-wheeled vehicle.</p>",
+        "description": "<p>Standard two-wheeled vehicle.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 1 | <strong>Spd:</strong> 6 | <strong>Def:</strong> 10 | <strong>Tou:</strong> 8</div>",
         "cout": 10,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6136,7 +6136,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard sedan.</p>",
+        "description": "<p>Standard sedan.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 7 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 8 | <strong>Tou:</strong> 8</div>",
         "cout": 10,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6155,7 +6155,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Heavily reinforced transport.</p>",
+        "description": "<p>Heavily reinforced transport.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 9 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 11</div>",
         "cout": 15,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6174,7 +6174,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard civilian helicopter.</p>",
+        "description": "<p>Standard civilian helicopter.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 8 | <strong>Spd:</strong> 7 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 9</div>",
         "cout": 19,
         "isVehicle": true,
         "typeVehicule": "air",
@@ -6193,7 +6193,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Military supersonic jet.</p>",
+        "description": "<p>Military supersonic jet.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 12 | <strong>Spd:</strong> 11 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 11</div>",
         "cout": 25,
         "isVehicle": true,
         "typeVehicule": "air",
@@ -6212,7 +6212,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard deep-sea vessel.</p>",
+        "description": "<p>Standard deep-sea vessel.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 12 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 4 | <strong>Tou:</strong> 12</div>",
         "cout": 15,
         "isVehicle": true,
         "typeVehicule": "water",
@@ -6231,7 +6231,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Military main battle tank.</p>",
+        "description": "<p>Military main battle tank.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 10 | <strong>Spd:</strong> 3 | <strong>Def:</strong> 4 | <strong>Tou:</strong> 12</div>",
         "cout": 25,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6250,7 +6250,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Single-engine propeller plane.</p>",
+        "description": "<p>Single-engine propeller plane.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 6 | <strong>Spd:</strong> 6 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 8</div>",
         "cout": 14,
         "isVehicle": true,
         "typeVehicule": "air",
@@ -6269,7 +6269,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard motorboat.</p>",
+        "description": "<p>Standard motorboat.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 6 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 8 | <strong>Tou:</strong> 6</div>",
         "cout": 10,
         "isVehicle": true,
         "typeVehicule": "water",
@@ -6288,7 +6288,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard interstellar vessel.</p>",
+        "description": "<p>Standard interstellar vessel.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 16 | <strong>Spd:</strong> 12 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 15</div>",
         "cout": 45,
         "isVehicle": true,
         "typeVehicule": "space",
@@ -6307,7 +6307,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Armored personnel carrier.</p>",
+        "description": "<p>Armored personnel carrier.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 10 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 12</div>",
         "cout": 20,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6326,7 +6326,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Equipped with siren and emergency lights.</p>",
+        "description": "<p>Equipped with siren and emergency lights.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 7 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 8 | <strong>Tou:</strong> 8</div>",
         "cout": 11,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6345,7 +6345,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Large four-wheel drive vehicle.</p>",
+        "description": "<p>Large four-wheel drive vehicle.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 8 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 9</div>",
         "cout": 12,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6364,7 +6364,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>High-end sedan with luxury features.</p>",
+        "description": "<p>High-end sedan with luxury features.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 7 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 8 | <strong>Tou:</strong> 8</div>",
         "cout": 11,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6383,7 +6383,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>High-performance sedan.</p>",
+        "description": "<p>High-performance sedan.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 7 | <strong>Spd:</strong> 6 | <strong>Def:</strong> 8 | <strong>Tou:</strong> 8</div>",
         "cout": 12,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6402,7 +6402,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Stretched luxury vehicle.</p>",
+        "description": "<p>Stretched luxury vehicle.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 8 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 9</div>",
         "cout": 13,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6421,7 +6421,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard utility truck.</p>",
+        "description": "<p>Standard utility truck.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 8 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 8 | <strong>Tou:</strong> 9</div>",
         "cout": 11,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6440,7 +6440,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard transport van.</p>",
+        "description": "<p>Standard transport van.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 8 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 8 | <strong>Tou:</strong> 9</div>",
         "cout": 11,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6459,7 +6459,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Equipped with medical gear.</p>",
+        "description": "<p>Equipped with medical gear.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 8 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 9</div>",
         "cout": 12,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6478,7 +6478,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Equipped with ladder and water cannon.</p>",
+        "description": "<p>Equipped with ladder and water cannon.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 9 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 11</div>",
         "cout": 15,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6497,7 +6497,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard public transport bus.</p>",
+        "description": "<p>Standard public transport bus.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 9 | <strong>Spd:</strong> 3 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 11</div>",
         "cout": 15,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6516,7 +6516,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Large heavy-duty truck.</p>",
+        "description": "<p>Large heavy-duty truck.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 10 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 12</div>",
         "cout": 20,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6535,7 +6535,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Locomotive and several cars.</p>",
+        "description": "<p>Locomotive and several cars.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 14 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 13</div>",
         "cout": 25,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6554,7 +6554,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard urban transit train.</p>",
+        "description": "<p>Standard urban transit train.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 13 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 13</div>",
         "cout": 20,
         "isVehicle": true,
         "typeVehicule": "ground",
@@ -6573,7 +6573,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard motorboat.</p>",
+        "description": "<p>Standard motorboat.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 6 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 8 | <strong>Tou:</strong> 6</div>",
         "cout": 10,
         "isVehicle": true,
         "typeVehicule": "water",
@@ -6592,7 +6592,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Luxury sea vessel.</p>",
+        "description": "<p>Luxury sea vessel.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 10 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 10</div>",
         "cout": 20,
         "isVehicle": true,
         "typeVehicule": "water",
@@ -6611,7 +6611,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Large cargo or passenger ship.</p>",
+        "description": "<p>Large cargo or passenger ship.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 15 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 14</div>",
         "cout": 30,
         "isVehicle": true,
         "typeVehicule": "water",
@@ -6630,7 +6630,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard coastal patrol vessel.</p>",
+        "description": "<p>Standard coastal patrol vessel.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 9 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 11</div>",
         "cout": 20,
         "isVehicle": true,
         "typeVehicule": "water",
@@ -6649,7 +6649,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Military warship.</p>",
+        "description": "<p>Military warship.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 16 | <strong>Spd:</strong> 5 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 16</div>",
         "cout": 50,
         "isVehicle": true,
         "typeVehicule": "water",
@@ -6668,7 +6668,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Heavy military warship.</p>",
+        "description": "<p>Heavy military warship.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 18 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 18</div>",
         "cout": 70,
         "isVehicle": true,
         "typeVehicule": "water",
@@ -6687,7 +6687,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Giant military vessel.</p>",
+        "description": "<p>Giant military vessel.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 20 | <strong>Spd:</strong> 4 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 20</div>",
         "cout": 100,
         "isVehicle": true,
         "typeVehicule": "water",
@@ -6706,7 +6706,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Small luxury aircraft.</p>",
+        "description": "<p>Small luxury aircraft.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 8 | <strong>Spd:</strong> 10 | <strong>Def:</strong> 6 | <strong>Tou:</strong> 10</div>",
         "cout": 30,
         "isVehicle": true,
         "typeVehicule": "air",
@@ -6725,7 +6725,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Large passenger aircraft.</p>",
+        "description": "<p>Large passenger aircraft.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 14 | <strong>Spd:</strong> 9 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 12</div>",
         "cout": 40,
         "isVehicle": true,
         "typeVehicule": "air",
@@ -6744,7 +6744,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Large military aircraft.</p>",
+        "description": "<p>Large military aircraft.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 16 | <strong>Spd:</strong> 9 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 14</div>",
         "cout": 60,
         "isVehicle": true,
         "typeVehicule": "air",
@@ -6763,7 +6763,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard orbital vessel.</p>",
+        "description": "<p>Standard orbital vessel.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 12 | <strong>Spd:</strong> 14 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 12</div>",
         "cout": 60,
         "isVehicle": true,
         "typeVehicule": "space",
@@ -6782,7 +6782,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Large interstellar warship.</p>",
+        "description": "<p>Large interstellar warship.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Str:</strong> 20 | <strong>Spd:</strong> 15 | <strong>Def:</strong> 2 | <strong>Tou:</strong> 20</div>",
         "cout": 150,
         "isVehicle": true,
         "typeVehicule": "space",
@@ -6803,7 +6803,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>A simple warehouse hideout.</p>",
+        "description": "<p>A simple warehouse hideout.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Medium | <strong>Tou:</strong> 8<br><strong>Features:</strong> Garage</div>",
         "cout": 2,
         "isHeadquarters": true,
         "size": "Medium",
@@ -6819,7 +6819,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>A sprawling estate with secret rooms.</p>",
+        "description": "<p>A sprawling estate with secret rooms.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Large | <strong>Tou:</strong> 8<br><strong>Features:</strong> Living Quarters</div>",
         "cout": 3,
         "isHeadquarters": true,
         "size": "Large",
@@ -6835,7 +6835,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>High-security city base.</p>",
+        "description": "<p>High-security city base.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Large | <strong>Tou:</strong> 10<br><strong>Features:</strong> Communications</div>",
         "cout": 4,
         "isHeadquarters": true,
         "size": "Large",
@@ -6851,7 +6851,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>A mystical or high-tech library base.</p>",
+        "description": "<p>A mystical or high-tech library base.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Medium | <strong>Tou:</strong> 10<br><strong>Features:</strong> Library</div>",
         "cout": 3,
         "isHeadquarters": true,
         "size": "Medium",
@@ -6867,7 +6867,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Hidden underground lair.</p>",
+        "description": "<p>Hidden underground lair.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Huge | <strong>Tou:</strong> 8<br><strong>Features:</strong> Concealed</div>",
         "cout": 4,
         "isHeadquarters": true,
         "size": "Huge",
@@ -6883,7 +6883,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>High-tech space station.</p>",
+        "description": "<p>High-tech space station.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Large | <strong>Tou:</strong> 12<br><strong>Features:</strong> Sealed</div>",
         "cout": 5,
         "isHeadquarters": true,
         "size": "Large",
@@ -6899,7 +6899,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Reinforced deep-sea laboratory.</p>",
+        "description": "<p>Reinforced deep-sea laboratory.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Huge | <strong>Tou:</strong> 12<br><strong>Features:</strong> Sealed</div>",
         "cout": 6,
         "isHeadquarters": true,
         "size": "Huge",
@@ -6915,7 +6915,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Large ancient or modern fortress.</p>",
+        "description": "<p>Large ancient or modern fortress.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Huge | <strong>Tou:</strong> 10<br><strong>Features:</strong> Defense System</div>",
         "cout": 5,
         "isHeadquarters": true,
         "size": "Huge",
@@ -6931,7 +6931,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Isolated landmass base.</p>",
+        "description": "<p>Isolated landmass base.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Colossal | <strong>Tou:</strong> 8<br><strong>Features:</strong> Dock</div>",
         "cout": 6,
         "isHeadquarters": true,
         "size": "Colossal",
@@ -6947,7 +6947,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Standard metropolitan precinct.</p>",
+        "description": "<p>Standard metropolitan precinct.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Large | <strong>Tou:</strong> 10<br><strong>Features:</strong> Holding Cells</div>",
         "cout": 4,
         "isHeadquarters": true,
         "size": "Large",
@@ -6963,7 +6963,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Hardened underground survival base.</p>",
+        "description": "<p>Hardened underground survival base.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Medium | <strong>Tou:</strong> 14<br><strong>Features:</strong> Reinforced</div>",
         "cout": 5,
         "isHeadquarters": true,
         "size": "Medium",
@@ -6979,7 +6979,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Advanced lunar installation.</p>",
+        "description": "<p>Advanced lunar installation.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Huge | <strong>Tou:</strong> 12<br><strong>Features:</strong> Sealed</div>",
         "cout": 7,
         "isHeadquarters": true,
         "size": "Huge",
@@ -6995,7 +6995,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>A legendary secret lair.</p>",
+        "description": "<p>A legendary secret lair.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Huge | <strong>Tou:</strong> 10<br><strong>Features:</strong> Computer, Concealed, Communications, Garage, Laboratory, Workshop, Library, Gym, Power System, Security System</div>",
         "cout": 4,
         "isHeadquarters": true,
         "size": "Huge",
@@ -7011,7 +7011,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Classic superhero headquarters.</p>",
+        "description": "<p>Classic superhero headquarters.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Large | <strong>Tou:</strong> 8<br><strong>Features:</strong> Living Quarters, Personnel, Communications, Computer, Gym, Library, Laboratory, Hangar, Garage, Security System</div>",
         "cout": 3,
         "isHeadquarters": true,
         "size": "Large",
@@ -7027,7 +7027,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Arctic crystalline sanctuary.</p>",
+        "description": "<p>Arctic crystalline sanctuary.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Huge | <strong>Tou:</strong> 14<br><strong>Features:</strong> Sealed, Concealed, Library, Laboratory, Communications, Computer, Defense System, Power System, Personnel</div>",
         "cout": 5,
         "isHeadquarters": true,
         "size": "Huge",
@@ -7043,7 +7043,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Urban skyscraper for inventors.</p>",
+        "description": "<p>Urban skyscraper for inventors.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Huge | <strong>Tou:</strong> 10<br><strong>Features:</strong> Laboratory, Workshop, Communications, Computer, Hangar, Living Quarters, Power System, Security System</div>",
         "cout": 4,
         "isHeadquarters": true,
         "size": "Huge",
@@ -7059,7 +7059,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Space-faring orbital base.</p>",
+        "description": "<p>Space-faring orbital base.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> Colossal | <strong>Tou:</strong> 12<br><strong>Features:</strong> Sealed, Communications, Computer, Defense System, Power System, Personnel, Hangar, Infirmary, Holding Cells</div>",
         "cout": 6,
         "isHeadquarters": true,
         "size": "Colossal",
@@ -7075,7 +7075,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Medical treatment facility feature.</p>",
+        "description": "<p>Medical treatment facility feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Infirmary</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7091,7 +7091,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Scientific research facility feature.</p>",
+        "description": "<p>Scientific research facility feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Laboratory</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7107,7 +7107,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Mechanical repair and creation facility feature.</p>",
+        "description": "<p>Mechanical repair and creation facility feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Workshop</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7123,7 +7123,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Security containment facility feature.</p>",
+        "description": "<p>Security containment facility feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Holding Cells</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7139,7 +7139,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Independent energy source feature.</p>",
+        "description": "<p>Independent energy source feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Power System</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7155,7 +7155,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Emergency destruction mechanism feature.</p>",
+        "description": "<p>Emergency destruction mechanism feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Self-Destruct</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7171,7 +7171,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Vehicle storage and maintenance feature.</p>",
+        "description": "<p>Vehicle storage and maintenance feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Garage</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7187,7 +7187,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Aircraft storage and maintenance feature.</p>",
+        "description": "<p>Aircraft storage and maintenance feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Hangar</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7203,7 +7203,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Training and physical therapy facility feature.</p>",
+        "description": "<p>Training and physical therapy facility feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Gym</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7219,7 +7219,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Support staff and guards feature.</p>",
+        "description": "<p>Support staff and guards feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Personnel</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7235,7 +7235,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Advanced monitoring and access control feature.</p>",
+        "description": "<p>Advanced monitoring and access control feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Security System</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7251,7 +7251,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Automated weaponry and shields feature.</p>",
+        "description": "<p>Automated weaponry and shields feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Defense System</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7267,7 +7267,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Hidden location or cloaking feature.</p>",
+        "description": "<p>Hidden location or cloaking feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Concealed</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7283,7 +7283,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Self-contained life support and airtight feature.</p>",
+        "description": "<p>Self-contained life support and airtight feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Sealed</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7299,7 +7299,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Watercraft storage and maintenance feature.</p>",
+        "description": "<p>Watercraft storage and maintenance feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Dock</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7315,7 +7315,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Data and information storage facility feature.</p>",
+        "description": "<p>Data and information storage facility feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Library</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7331,7 +7331,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Residential facilities for occupants feature.</p>",
+        "description": "<p>Residential facilities for occupants feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Living Quarters</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7347,7 +7347,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Advanced signal broadcasting and receiving feature.</p>",
+        "description": "<p>Advanced signal broadcasting and receiving feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Communications</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
@@ -7363,7 +7363,7 @@
       "type": "equipement",
       "img": "systems/mutants-and-masterminds-3e/assets/icons/equipement.svg",
       "system": {
-        "description": "<p>Advanced data processing and analysis feature.</p>",
+        "description": "<p>Advanced data processing and analysis feature.</p><div class=\"mnm-stat-block\" style=\"margin-top: 5px; padding: 5px; border-top: 1px solid #ccc; font-size: 0.9em;\"><strong>Size:</strong> N/A | <strong>Tou:</strong> N/A<br><strong>Features:</strong> Computer</div>",
         "cout": 1,
         "isHeadquarters": true,
         "size": "N/A",
