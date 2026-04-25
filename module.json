@@ -18,9 +18,9 @@
     "minimum": "12",
     "verified": "13"
   },
-  "url": "https://github.com/alexsaintc-dotcom/mnm-3e-expanded",
-  "manifest": "https://raw.githubusercontent.com/alexsaintc-dotcom/mnm-3e-expanded/main/module.json",
-  "download": "https://github.com/alexsaintc-dotcom/mnm-3e-expanded/archive/refs/heads/main.zip",
+  "url": "https://github.com/Davinchi/mnm-3e-expanded",
+  "manifest": "https://raw.githubusercontent.com/Davinchi/mnm-3e-expanded/main/module.json",
+  "download": "https://github.com/Davinchi/mnm-3e-expanded/archive/refs/heads/main.zip",
   "relationships": {
     "systems": [
       {
