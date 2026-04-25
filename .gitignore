@@ -5,6 +5,7 @@
 !/module.json
 !/mnm-3e-expanded.js
 !/packs/
+!/packs/**
 !/README.md
 !/.gitignore
 
