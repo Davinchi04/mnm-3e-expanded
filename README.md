@@ -5,7 +5,7 @@ A Comprehensive Library of Advantages, Powers, Effects, Flaws, and Items for Mut
 ## Installation
 
 To install the module, use the following manifest URL:
-https://raw.githubusercontent.com/Davinchi/mnm-3e-expanded/main/module.json
+https://raw.githubusercontent.com/Davichi04/mnm-3e-expanded/main/module.json
 
 ## Features
 
