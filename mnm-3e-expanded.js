@@ -1,4 +1,4 @@
-console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.5.5) ', 'background: #800080; color: #fff; font-weight: bold;');
+console.log('%c M&M 3E EXPANDED | SYSTEM HIJACK ACTIVE (V3.5.6) ', 'background: #800080; color: #fff; font-weight: bold;');
 
 /**
  * Safely get the original cost of an item.
