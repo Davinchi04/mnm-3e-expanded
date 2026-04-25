@@ -1,6 +1,6 @@
 # M&M 3e Expanded
 
-A Comprehensive Library of Advantages, Powers, Effects, Flaws, and Items for Mutants & Masterminds 3e.
+Comprehensive Compendium Library of Advantages, Powers, Effects, Flaws, and Items for Mutants & Masterminds 3e
 
 ## Installation
 
